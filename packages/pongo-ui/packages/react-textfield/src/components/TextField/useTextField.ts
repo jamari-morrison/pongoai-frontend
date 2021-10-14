@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { getNativeElementProps, resolveShorthand } from '@fluentui/react-utilities';
-// import { useTextFieldState } from './useTextFieldState';
+import { useTextFieldState } from './useTextFieldState';
 import type { TextFieldProps, TextFieldSlots, TextFieldState } from './TextField.types';
 
-export const textFieldShorthandProps: (keyof TextFieldSlots)[] = ['root', 'input'];
+export const textFieldShorthandProps: (keyof TextFieldSlots)[] = [
+  'root',
+  'input',
+  'placeholderText',
+  'textFieldBorder',
+];
 
 export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>): TextFieldState => {
   const {
@@ -14,6 +19,10 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     error = false,
     appearance = 'standard',
     input,
+    placeholder = 'Enter text',
+    label,
+    placeholderText,
+    textFieldBorder,
     onChange,
   } = props;
 
@@ -24,6 +33,8 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     disabled,
     error,
     appearance,
+    placeholder,
+    label,
     onChange,
     root: getNativeElementProps('div', {
       ref,
@@ -31,12 +42,21 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     }),
     components: {
       root: 'div',
+      textFieldBorder: 'div',
+      placeholderText: 'span',
       input: 'input',
     },
-    input: resolveShorthand(input, { required: true }),
+    textFieldBorder: resolveShorthand(textFieldBorder, { required: true }),
+    placeholderText: resolveShorthand(placeholderText, { required: true }),
+    input: resolveShorthand(input, {
+      required: true,
+      defaultProps: {
+        type: 'text',
+      },
+    }),
   };
 
-  // useTextFieldState(state); test
+  useTextFieldState(state);
 
   return state;
 };

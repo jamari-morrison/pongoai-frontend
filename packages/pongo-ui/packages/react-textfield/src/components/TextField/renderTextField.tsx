@@ -8,6 +8,9 @@ export const renderTextField = (state: TextFieldState) => {
 
   return (
     <slots.root {...slotProps.root}>
+      <slots.textFieldBorder {...slotProps.textFieldBorder}>
+        {state.placeholder !== undefined && <slots.placeholderText {...slotProps.placeholderText} />}
+      </slots.textFieldBorder>
       <slots.input {...slotProps.input} />
     </slots.root>
   );

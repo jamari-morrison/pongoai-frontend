@@ -1631,10 +1631,10 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@pongoai/react-theme@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.0.5.tgz#1979836a7f690a14bd4dedaaaf7e37a516e96082"
-  integrity sha512-LE5A6WK7yvK1TpFZ/c8NUGxADW+VXXoLWlbTZzcAHdZ++zeH3lPsiEfVzrU4if6LW6A4/ebzHTsUbgWjGKmqnA==
+"@pongoai/react-theme@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.0.7.tgz#bd54e426da784e54eb95879bd26309b2554faa5e"
+  integrity sha512-QhcM1AVtz6vpYv56EYBEVMnKXUFyXPAZZiZxaiPWmrqklHxl7AHh3HWmMPgNa3wy8hxLGP/Dt/NGSun9+coj8w==
 
 "@popperjs/core@^2.5.4", "@popperjs/core@^2.6.0":
   version "2.10.2"

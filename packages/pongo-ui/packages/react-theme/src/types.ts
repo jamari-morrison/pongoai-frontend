@@ -22,6 +22,7 @@ export type ColorTokens = {
   neutral2Disabled: string;
   neutral2DisabledBackground: string;
   neutral3: string;
+  neutral3Background: string;
   neutral3Hover: string;
   neutral3Active: string;
 };

@@ -16,6 +16,7 @@ export const webLightTokens: ColorTokens = {
   neutral2Disabled: '#c3c3c3',
   neutral2DisabledBackground: '#fafafa',
   neutral3: '#636364',
+  neutral3Background: '#f0f0f0',
   neutral3Hover: '#525252',
   neutral3Active: '#4D4D4D',
 };

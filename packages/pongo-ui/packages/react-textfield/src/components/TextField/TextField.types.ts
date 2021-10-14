@@ -7,6 +7,16 @@ export type TextFieldSlots = {
   root: IntrinsicShorthandProps<'div'>;
 
   /**
+   * The border around the TextField component.
+   */
+  textFieldBorder: IntrinsicShorthandProps<'div'>;
+
+  /**
+   * The visible placeholder text for the TextField component.
+   */
+  placeholderText: IntrinsicShorthandProps<'span'>;
+
+  /**
    * Hidden input used to handle the TextField's functionality.
    */
   input: IntrinsicShorthandProps<'input'>;
@@ -47,7 +57,14 @@ export type TextFieldCommons = {
   error?: boolean;
 
   /**
-   * The text that appears in the TextField when no value is set.
+   * The label that appears in the TextField when no value is set. When a value is set the label will still be visible.
+   * Mutually exclusive with `placeholder` prop.
+   */
+  label?: string;
+
+  /**
+   * The label that appears in the TextField when no value is set. When a value is set the label will not be visible.
+   * Mutually exclusive with `label` prop.
    */
   placeholder?: string;
 
@@ -62,7 +79,7 @@ export type TextFieldCommons = {
    * Callback to be called when the value changes.
    */
   onChange?: (
-    ev: React.FormEvent<HTMLInputElement>,
+    ev: React.ChangeEvent<HTMLInputElement>,
     data: {
       value: string;
     },
