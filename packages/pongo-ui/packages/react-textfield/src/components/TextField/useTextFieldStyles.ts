@@ -10,16 +10,13 @@ const useRootStyles = makeStyles({
   root: {
     position: 'relative',
     width: '300px',
-    height: '50px',
+    height: '55px',
   },
 
   inputFocus: (theme: Theme) => ({
     ':focus-within': {
       [`& .${textFieldBorderClassName}`]: {
         borderColor: theme.palette.brand1,
-        ':after': {
-          background: theme.palette.brand1,
-        },
       },
       [`& .${placeholderTextClassName}`]: {
         color: theme.palette.brand1,
@@ -50,7 +47,7 @@ const useRootStyles = makeStyles({
   filled: (theme: Theme) => ({
     ':focus-within': {
       [`& .${placeholderTextClassName}`]: {
-        transform: 'translateY(-20%)',
+        transform: 'translateY(-25%)',
         opacity: 1,
         fontSize: '12px',
       },
@@ -62,9 +59,9 @@ const useRootStyles = makeStyles({
       ':after': {
         content: "''",
         position: 'absolute',
-        top: '-8px',
+        top: '-10px',
         right: '-8px',
-        bottom: '-8px',
+        bottom: '-10px',
         left: '-8px',
         boxSizing: 'border-box',
         border: `2px solid black`,
@@ -78,35 +75,41 @@ const useRootStyles = makeStyles({
 const useInputStyles = makeStyles({
   input: (theme: Theme) => ({
     position: 'absolute',
+    margin: '0px',
+    padding: '0px',
     height: '100%',
     width: '90%',
+    background: 'none',
     left: '5%',
     fontFamily: theme.fonts.fontFamily.base,
-    fontSize: '16px',
+    fontSize: theme.fonts.fontSize[500],
     border: 'none',
     outline: 'none',
     display: 'block',
-    background: 'none',
-    '::placeholder': {
-      opacity: '0',
-    },
   }),
 
-  standard: {
-    padding: '0px',
-  },
-
-  outlined: {
-    padding: '0px',
+  labelPlaceholderFocus: {
+    '::placeholder': {
+      opacity: '0',
+      transition: 'opacity .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
+    },
+    ':focus': {
+      '::placeholder': {
+        opacity: '1',
+      },
+    },
   },
 
   filled: {
-    padding: '10px 0px',
+    padding: '8px 0px',
   },
 
   disabled: (theme: Theme) => ({
     cursor: 'not-allowed',
     color: theme.palette.neutral2Disabled,
+    '::placeholder': {
+      color: theme.palette.neutral2Disabled,
+    },
   }),
 });
 
@@ -133,43 +136,15 @@ const useTextFieldBorder = makeStyles({
   filled: (theme: Theme) => ({
     background: theme.palette.neutral3Background,
     borderRadius: '6px 6px 0px 0px',
-
-    ':after': {
-      content: "''",
-      position: 'absolute',
-      height: '2px',
-      width: '100%',
-      background: theme.palette.neutral3,
-      top: '100%',
-    },
+    borderBottom: `2px solid ${theme.palette.neutral3}`,
   }),
 
-  outlinedDisabled: (theme: Theme) => ({
+  disabled: (theme: Theme) => ({
     borderColor: theme.palette.neutral2Disabled,
   }),
 
-  standardDisabled: (theme: Theme) => ({
-    borderColor: theme.palette.neutral2Disabled,
-  }),
-
-  filledDisabled: (theme: Theme) => ({
-    ':after': {
-      background: theme.palette.neutral2Disabled,
-    },
-  }),
-
-  outlinedError: (theme: Theme) => ({
+  error: (theme: Theme) => ({
     borderColor: 'red',
-  }),
-
-  standardError: (theme: Theme) => ({
-    borderColor: 'red',
-  }),
-
-  filledError: (theme: Theme) => ({
-    ':after': {
-      background: 'red',
-    },
   }),
 });
 
@@ -218,7 +193,7 @@ const usePlaceholderText = makeStyles({
   },
 
   filled: {
-    transform: 'translateY(-20%)',
+    transform: 'translateY(-25%)',
     fontSize: '12px',
   },
 
@@ -243,7 +218,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
 
   state.input.className = mergeClasses(
     inputStyles.input,
-    inputStyles[state.appearance!],
+    state.label && state.placeholder && inputStyles.labelPlaceholderFocus,
     state.disabled && inputStyles.disabled,
     state.input.className,
   );
@@ -252,23 +227,19 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     textFieldBorderClassName,
     textFieldBorderStyles.textFieldBorder,
     textFieldBorderStyles[state.appearance as 'outlined' | 'standard' | 'filled'],
-    state.disabled &&
-      textFieldBorderStyles[
-        (state.appearance + 'Disabled') as 'outlinedDisabled' | 'standardDisabled' | 'filledDisabled'
-      ],
-    state.error &&
-      textFieldBorderStyles[(state.appearance + 'Error') as 'outlinedError' | 'standardError' | 'filledError'],
+    state.disabled && textFieldBorderStyles.disabled,
+    state.error && textFieldBorderStyles.error,
     state.textFieldBorder.className,
   );
 
-  state.placeholderText.className = mergeClasses(
+  state.textFieldLabel.className = mergeClasses(
     placeholderTextClassName,
     placeholderTextStyles.placeholderText,
     !state.disabled ? placeholderTextStyles.enabled : placeholderTextStyles.disabled,
     state.error && placeholderTextStyles.error,
     state.input.value !== '' &&
       (state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder),
-    state.placeholderText.className,
+    state.textFieldLabel.className,
   );
 
   return state;

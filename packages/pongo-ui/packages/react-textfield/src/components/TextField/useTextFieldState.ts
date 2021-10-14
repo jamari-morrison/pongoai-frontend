@@ -25,17 +25,13 @@ export const useTextFieldState = (state: TextFieldState) => {
     updateValue(ev.target.value, ev);
   };
 
-  if (label || placeholder) {
-    state.placeholderText.children = label || placeholder;
-  }
+  label && (state.textFieldLabel.children = label);
 
   state.input.value = currentValue;
   state.input.onChange = onInputChange;
   state.input.autoComplete = autocomplete;
   state.input.disabled = disabled;
-  if (label || placeholder) {
-    state.input.placeholder = label || placeholder;
-  }
+  placeholder && (state.input.placeholder = placeholder);
   state.input.ref = inputRef;
 
   return state;

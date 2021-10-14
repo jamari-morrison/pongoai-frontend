@@ -3,12 +3,7 @@ import { getNativeElementProps, resolveShorthand } from '@fluentui/react-utiliti
 import { useTextFieldState } from './useTextFieldState';
 import type { TextFieldProps, TextFieldSlots, TextFieldState } from './TextField.types';
 
-export const textFieldShorthandProps: (keyof TextFieldSlots)[] = [
-  'root',
-  'input',
-  'placeholderText',
-  'textFieldBorder',
-];
+export const textFieldShorthandProps: (keyof TextFieldSlots)[] = ['root', 'input', 'textFieldLabel', 'textFieldBorder'];
 
 export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>): TextFieldState => {
   const {
@@ -19,9 +14,9 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     error = false,
     appearance = 'standard',
     input,
-    placeholder = 'Enter text',
+    placeholder = 'Password',
     label,
-    placeholderText,
+    textFieldLabel,
     textFieldBorder,
     onChange,
   } = props;
@@ -43,11 +38,11 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     components: {
       root: 'div',
       textFieldBorder: 'div',
-      placeholderText: 'span',
+      textFieldLabel: 'span',
       input: 'input',
     },
     textFieldBorder: resolveShorthand(textFieldBorder, { required: true }),
-    placeholderText: resolveShorthand(placeholderText, { required: true }),
+    textFieldLabel: resolveShorthand(textFieldLabel, { required: true }),
     input: resolveShorthand(input, {
       required: true,
       defaultProps: {

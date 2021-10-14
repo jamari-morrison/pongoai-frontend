@@ -23,8 +23,8 @@ export const BasicTextFieldExample = () => {
     <div className={styles.root}>
       <Header2>Standard TextField</Header2>
       <div className={styles.row}>
-        <TextField label="Type here" />
-        <TextField label="Disabled" disabled />
+        <TextField label="Password" />
+        <TextField disabled />
         <TextField error label="Error" defaultValue="Hello World" />
       </div>
       <Header2>Outlined TextField</Header2>
@@ -35,7 +35,7 @@ export const BasicTextFieldExample = () => {
       </div>
       <Header2>Filled TextField</Header2>
       <div className={styles.row}>
-        <TextField appearance="filled" label="hello" />
+        <TextField appearance="filled" placeholder="hello" />
         <TextField appearance="filled" disabled />
         <TextField error appearance="filled" label="Error" defaultValue="Hello World" />
       </div>

@@ -12,9 +12,9 @@ export type TextFieldSlots = {
   textFieldBorder: IntrinsicShorthandProps<'div'>;
 
   /**
-   * The visible placeholder text for the TextField component.
+   * The visible label text for the TextField component.
    */
-  placeholderText: IntrinsicShorthandProps<'span'>;
+  textFieldLabel: IntrinsicShorthandProps<'span'>;
 
   /**
    * Hidden input used to handle the TextField's functionality.
