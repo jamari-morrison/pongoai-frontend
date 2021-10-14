@@ -10,8 +10,8 @@ const placeholderTextClassName = 'pongoai-TextField-label';
 const useRootStyles = makeStyles({
   root: {
     position: 'relative',
-    width: '300px',
-    height: '55px',
+    minWidth: '300px',
+    minHeight: '48px',
   },
 
   inputFocus: (theme: Theme) => ({
@@ -41,7 +41,7 @@ const useRootStyles = makeStyles({
   standard: (theme: Theme) => ({
     ':focus-within': {
       [`& .${placeholderTextClassName}`]: {
-        transform: 'translateY(-50%)',
+        transform: 'translateY(-25%)',
         opacity: 1,
         fontSize: '12px',
       },
@@ -63,9 +63,9 @@ const useRootStyles = makeStyles({
       ':after': {
         content: "''",
         position: 'absolute',
-        top: '-10px',
+        top: '-8px',
         right: '-8px',
-        bottom: '-10px',
+        bottom: '-8px',
         left: '-8px',
         boxSizing: 'border-box',
         border: `2px solid black`,
@@ -74,6 +74,14 @@ const useRootStyles = makeStyles({
     }),
     { selector: 'focus-within' },
   ),
+});
+
+const useTextFieldWrapperStyles = makeStyles({
+  wrapper: () => ({
+    position: 'relative',
+    width: '300px',
+    height: '48px',
+  }),
 });
 
 const useInputStyles = makeStyles({
@@ -104,7 +112,7 @@ const useInputStyles = makeStyles({
     },
   },
 
-  filled: {
+  lowerTextAlignment: {
     padding: '8px 0px',
   },
 
@@ -190,7 +198,7 @@ const usePlaceholderTextStyles = makeStyles({
   }),
 
   standard: {
-    transform: 'translateY(-50%)',
+    transform: 'translateY(-25%)',
     fontSize: '12px',
   },
 
@@ -210,13 +218,21 @@ const usePlaceholderTextStyles = makeStyles({
 });
 
 const useTextFieldLegendStyles = makeStyles({
-  textFieldLegend: {
+  textFieldLegend: (theme: Theme) => ({
     position: 'relative',
-    padding: '0px',
     margin: '0px',
+    padding: '0px',
     visibility: 'hidden',
-    height: '0px',
-  },
+    height: '3px',
+    fontFamily: theme.fonts.fontFamily.base,
+    fontSize: '12px',
+
+    '& span': {
+      paddingLeft: '3px',
+      paddingRight: '3px',
+      display: 'inline-block',
+    },
+  }),
 
   active: {
     width: 'auto',
@@ -227,12 +243,39 @@ const useTextFieldLegendStyles = makeStyles({
   },
 });
 
+const useHelperTextStyles = makeStyles({
+  helperText: (theme: Theme) => ({
+    position: 'relative',
+    width: '90%',
+    left: '5%',
+    padding: '0px',
+    margin: '0px',
+    fontSize: '12px',
+    lineHeight: theme.fonts.fontLineHeight[500],
+    fontFamily: theme.fonts.fontFamily.base,
+  }),
+
+  enabled: (theme: Theme) => ({
+    color: theme.palette.neutral3,
+  }),
+
+  disabled: (theme: Theme) => ({
+    color: theme.palette.neutral2Disabled,
+  }),
+
+  error: (theme: Theme) => ({
+    color: 'red',
+  }),
+});
+
 export const useTextFieldStyles = (state: TextFieldState) => {
   const rootStyles = useRootStyles();
   const inputStyles = useInputStyles();
   const textFieldBorderStyles = useTextFieldBorderStyles();
   const placeholderTextStyles = usePlaceholderTextStyles();
   const textFieldLegendStyles = useTextFieldLegendStyles();
+  const textFieldWrapperStyles = useTextFieldWrapperStyles();
+  const helperTextStyles = useHelperTextStyles();
 
   state.root.className = mergeClasses(
     rootStyles.root,
@@ -242,10 +285,19 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     state.root.className,
   );
 
+  state.textFieldWrapper.className = mergeClasses(textFieldWrapperStyles.wrapper, state.textFieldWrapper.className);
+
+  state.textFieldHelperText.className = mergeClasses(
+    helperTextStyles.helperText,
+    state.disabled ? helperTextStyles.disabled : helperTextStyles.enabled,
+    state.error && helperTextStyles.error,
+    state.textFieldHelperText.className,
+  );
+
   state.input.className = mergeClasses(
     inputStyles.input,
     state.label && state.placeholder && inputStyles.labelPlaceholderFocus,
-    state.appearance === 'filled' && inputStyles.filled,
+    (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
     state.disabled && inputStyles.disabled,
     state.input.className,
   );

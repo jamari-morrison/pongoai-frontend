@@ -8,6 +8,8 @@ export const textFieldShorthandProps: (keyof TextFieldSlots)[] = [
   'input',
   'textFieldLabel',
   'textFieldLegend',
+  'textFieldHelperText',
+  'textFieldWrapper',
   'textFieldBorder',
 ];
 
@@ -21,11 +23,15 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     appearance = 'standard',
     input,
     placeholder,
+    required = false,
     label,
     password = false,
+    helperText,
+    textFieldHelperText,
     textFieldLabel,
     textFieldLegend,
     textFieldBorder,
+    textFieldWrapper,
     onChange,
   } = props;
 
@@ -38,6 +44,8 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     appearance,
     placeholder,
     password,
+    helperText,
+    required,
     label,
     onChange,
     root: getNativeElementProps('div', {
@@ -48,12 +56,16 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
       root: 'div',
       textFieldBorder: 'fieldset',
       textFieldLegend: 'legend',
+      textFieldHelperText: 'p',
+      textFieldWrapper: 'div',
       textFieldLabel: 'label',
       input: 'input',
     },
     textFieldBorder: resolveShorthand(textFieldBorder, { required: true }),
     textFieldLegend: resolveShorthand(textFieldLegend, { required: true }),
+    textFieldWrapper: resolveShorthand(textFieldWrapper, { required: true }),
     textFieldLabel: resolveShorthand(textFieldLabel, { required: true }),
+    textFieldHelperText: resolveShorthand(textFieldHelperText, { required: true }),
     input: resolveShorthand(input, {
       required: true,
       defaultProps: {

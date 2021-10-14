@@ -9,8 +9,8 @@ const inputClassName = 'pongoai-Switch-input';
 
 const useRootStyles = makeStyles({
   root: {
-    '--switch-width': '42px',
-    '--switch-height': '26px',
+    '--switch-width': '48px',
+    '--switch-height': '28px',
     '--switch-thumb-size': '20px',
     '--switch-checked-opacity': '0',
     '--switch-unchecked-opacity': '0',
