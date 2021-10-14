@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { clamp, useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
+import { useId, useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
 import type { TextFieldState } from './TextField.types';
 
 export const useTextFieldState = (state: TextFieldState) => {
   const { defaultValue, value, autocomplete, disabled, error, placeholder, label, appearance, onChange } = state;
+  const { id } = state.root;
 
   const inputRef = useMergedRefs(state.input.ref);
-
+  const textFieldId = useId('textField-', id);
   const [currentValue, setCurrentValue] = useControllableState({
     defaultState: defaultValue,
     state: value,
@@ -25,12 +26,22 @@ export const useTextFieldState = (state: TextFieldState) => {
     updateValue(ev.target.value, ev);
   };
 
-  label && (state.textFieldLabel.children = label);
+  state.textFieldBorder['aria-hidden'] = true;
 
+  // Label Props
+  label && (state.textFieldLabel.children = label);
+  label && (state.textFieldLabel.htmlFor = textFieldId);
+
+  // Legend Prop
+  label && (state.textFieldLegend.children = label);
+
+  // Input Prop
   state.input.value = currentValue;
   state.input.onChange = onInputChange;
   state.input.autoComplete = autocomplete;
   state.input.disabled = disabled;
+  error && (state.input['aria-invalid'] = error);
+  label && (state.input.id = textFieldId);
   placeholder && (state.input.placeholder = placeholder);
   state.input.ref = inputRef;
 

@@ -21,23 +21,29 @@ export const BasicTextFieldExample = () => {
 
   return (
     <div className={styles.root}>
-      <Header2>Standard TextField</Header2>
+      <Header2>Standard Text Field</Header2>
       <div className={styles.row}>
         <TextField label="Password" />
         <TextField disabled />
-        <TextField error label="Error" defaultValue="Hello World" />
+        <TextField error label="Error" />
       </div>
-      <Header2>Outlined TextField</Header2>
+      <Header2>Outlined Text Field</Header2>
       <div className={styles.row}>
         <TextField appearance="outlined" />
         <TextField appearance="outlined" disabled />
-        <TextField error appearance="outlined" label="Error" defaultValue="Hello World" />
+        <TextField error appearance="outlined" label="Error" />
       </div>
-      <Header2>Filled TextField</Header2>
+      <Header2>Filled Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="filled" placeholder="hello" />
+        <TextField appearance="filled" placeholder="hello" label="test" />
         <TextField appearance="filled" disabled />
-        <TextField error appearance="filled" label="Error" defaultValue="Hello World" />
+        <TextField error appearance="filled" label="Error" />
+      </div>
+      <Header2>Password Text Field</Header2>
+      <div className={styles.row}>
+        <TextField appearance="standard" placeholder="Enter your password" label="Password" password />
+        <TextField appearance="outlined" placeholder="Enter your password" label="Password" password />
+        <TextField appearance="filled" placeholder="Enter your password" label="Password" password />
       </div>
     </div>
   );

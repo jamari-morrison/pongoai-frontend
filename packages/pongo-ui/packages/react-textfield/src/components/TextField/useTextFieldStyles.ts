@@ -4,7 +4,8 @@ import type { TextFieldState } from './TextField.types';
 import { Theme } from '@pongoai/react-theme';
 
 const textFieldBorderClassName = 'pongoai-TextField-border';
-const placeholderTextClassName = 'pongoai-TextField-placeholderText';
+const legendClassName = 'pongoai-TextField-legend';
+const placeholderTextClassName = 'pongoai-TextField-label';
 
 const useRootStyles = makeStyles({
   root: {
@@ -30,6 +31,9 @@ const useRootStyles = makeStyles({
         transform: 'translateY(-50%)',
         opacity: 1,
         fontSize: '12px',
+      },
+      [`& .${legendClassName}`]: {
+        width: 'auto',
       },
     },
   }),
@@ -113,15 +117,18 @@ const useInputStyles = makeStyles({
   }),
 });
 
-const useTextFieldBorder = makeStyles({
+const useTextFieldBorderStyles = makeStyles({
   textFieldBorder: {
     position: 'absolute',
+    padding: `0px 12px`,
+    margin: '0px',
     width: '100%',
     height: '100%',
     boxSizing: 'border-box',
     touchAction: 'none',
     pointerEvents: 'none',
     userSelect: 'none',
+    border: 'none',
   },
 
   outlined: (theme: Theme) => ({
@@ -148,7 +155,7 @@ const useTextFieldBorder = makeStyles({
   }),
 });
 
-const usePlaceholderText = makeStyles({
+const usePlaceholderTextStyles = makeStyles({
   placeholderText: (theme: Theme) => ({
     position: 'absolute',
     background: 'none',
@@ -202,11 +209,30 @@ const usePlaceholderText = makeStyles({
   },
 });
 
+const useTextFieldLegendStyles = makeStyles({
+  textFieldLegend: {
+    position: 'relative',
+    padding: '0px',
+    margin: '0px',
+    visibility: 'hidden',
+    height: '0px',
+  },
+
+  active: {
+    width: 'auto',
+  },
+
+  inactive: {
+    width: '0px',
+  },
+});
+
 export const useTextFieldStyles = (state: TextFieldState) => {
   const rootStyles = useRootStyles();
   const inputStyles = useInputStyles();
-  const textFieldBorderStyles = useTextFieldBorder();
-  const placeholderTextStyles = usePlaceholderText();
+  const textFieldBorderStyles = useTextFieldBorderStyles();
+  const placeholderTextStyles = usePlaceholderTextStyles();
+  const textFieldLegendStyles = useTextFieldLegendStyles();
 
   state.root.className = mergeClasses(
     rootStyles.root,
@@ -219,6 +245,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
   state.input.className = mergeClasses(
     inputStyles.input,
     state.label && state.placeholder && inputStyles.labelPlaceholderFocus,
+    state.appearance === 'filled' && inputStyles.filled,
     state.disabled && inputStyles.disabled,
     state.input.className,
   );
@@ -240,6 +267,13 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     state.input.value !== '' &&
       (state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder),
     state.textFieldLabel.className,
+  );
+
+  state.textFieldLegend.className = mergeClasses(
+    legendClassName,
+    textFieldLegendStyles.textFieldLegend,
+    state.input.value !== '' ? textFieldLegendStyles.active : textFieldLegendStyles.inactive,
+    state.textFieldLegend.className,
   );
 
   return state;

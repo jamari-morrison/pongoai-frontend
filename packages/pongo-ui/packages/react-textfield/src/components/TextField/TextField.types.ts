@@ -9,12 +9,17 @@ export type TextFieldSlots = {
   /**
    * The border around the TextField component.
    */
-  textFieldBorder: IntrinsicShorthandProps<'div'>;
+  textFieldBorder: IntrinsicShorthandProps<'fieldset'>;
 
   /**
    * The visible label text for the TextField component.
    */
-  textFieldLabel: IntrinsicShorthandProps<'span'>;
+  textFieldLabel: IntrinsicShorthandProps<'label'>;
+
+  /**
+   * The hidden label legend element used for hiding the formset in the outlined text field.
+   */
+  textFieldLegend: IntrinsicShorthandProps<'legend'>;
 
   /**
    * Hidden input used to handle the TextField's functionality.
@@ -74,6 +79,11 @@ export type TextFieldCommons = {
    * @default outline
    */
   appearance?: 'standard' | 'outlined' | 'filled';
+
+  /**
+   * Whether the TextField should render as type password.
+   */
+  password?: boolean;
 
   /**
    * Callback to be called when the value changes.
