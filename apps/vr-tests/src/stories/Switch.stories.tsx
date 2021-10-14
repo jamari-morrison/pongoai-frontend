@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FluentProvider } from '@fluentui/react-provider';
-import { Switch } from '@pongoai/react-switch';
+import { Switch } from '../../../../packages/pongo-ui/packages/react-switch/src/index';
 import { webLightTheme } from '@pongoai/react-theme';
 import { makeStyles } from '@fluentui/react-make-styles';
 

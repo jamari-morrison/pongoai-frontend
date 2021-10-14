@@ -1,4 +1,5 @@
 import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
 import type { CheckboxState } from './Checkbox.types';
 import { Theme } from '@pongoai/react-theme';
 
@@ -41,6 +42,23 @@ const useRootStyles = makeStyles({
       borderColor: theme.palette.neutral3Active,
     },
   }),
+
+  focusIndicator: createFocusIndicatorStyleRule(
+    theme => ({
+      ':after': {
+        content: "''",
+        position: 'absolute',
+        top: '0px',
+        right: '0px',
+        bottom: '0px',
+        left: '0px',
+        boxSizing: 'border-box',
+        border: `2px solid black`,
+        borderRadius: '4px',
+      },
+    }),
+    { selector: 'focus-within' },
+  ),
 });
 
 const useIndicatorStyles = makeStyles({
@@ -125,6 +143,7 @@ export const useCheckboxStyles = (state: CheckboxState) => {
   state.root.className = mergeClasses(
     rootStyles.root,
     !state.disabled && (state.input.checked ? rootStyles.checked : rootStyles.unchecked),
+    !state.disabled && rootStyles.focusIndicator,
     state.root.className,
   );
 

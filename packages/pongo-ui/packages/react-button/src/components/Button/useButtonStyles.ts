@@ -1,4 +1,5 @@
 import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
+import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
 import type { ButtonState } from './Button.types';
 
 const useRootStyles = makeStyles({
@@ -16,9 +17,11 @@ const useRootStyles = makeStyles({
     fontWeight: theme.fonts.fontWeight.regular,
     fontSize: theme.fonts.fontSize[300],
     outline: 'none',
+  }),
 
-    '&:focus-visible': {
-      '&:after': {
+  focusIndicator: createFocusIndicatorStyleRule(
+    {
+      ':after': {
         content: "''",
         position: 'absolute',
         top: '-8px',
@@ -26,11 +29,12 @@ const useRootStyles = makeStyles({
         bottom: '-8px',
         left: '-8px',
         boxSizing: 'border-box',
-        border: '2px solid black',
-        borderRadius: '2px',
+        border: `2px solid black`,
+        borderRadius: '4px',
       },
     },
-  }),
+    { selector: 'focus-within' },
+  ),
 
   enabled: {
     cursor: 'pointer',
@@ -146,6 +150,7 @@ export const useButtonStyles = (state: ButtonState) => {
 
   state.root.className = mergeClasses(
     rootStyles.root,
+    !state.disabled && rootStyles.focusIndicator,
     state.disabled ? rootStyles.disabled : rootStyles.enabled,
     state.disabled
       ? rootStyles[

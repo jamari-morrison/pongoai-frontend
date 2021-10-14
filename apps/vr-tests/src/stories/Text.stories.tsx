@@ -1,6 +1,16 @@
 import * as React from 'react';
 import { FluentProvider } from '@fluentui/react-provider';
-import { Text, Body, Caption, Display, Header1, Header2, Header3, SubHeadline, Title } from '@pongoai/react-text';
+import {
+  Text,
+  Body,
+  Caption,
+  Display,
+  Header1,
+  Header2,
+  Header3,
+  SubHeadline,
+  Title,
+} from '../../../../packages/pongo-ui/packages/react-text/src/index';
 import { makeStyles } from '@fluentui/react-make-styles';
 import { webLightTheme } from '@pongoai/react-theme';
 

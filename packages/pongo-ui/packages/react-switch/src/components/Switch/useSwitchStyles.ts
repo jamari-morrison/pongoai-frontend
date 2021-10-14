@@ -1,5 +1,6 @@
 import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import type { SwitchState } from '@fluentui/react-switch';
+import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
 import { Theme } from '@pongoai/react-theme';
 
 const rootClassName = 'pongoai-Switch-root';
@@ -23,6 +24,23 @@ const useRootStyles = makeStyles({
     touchAction: 'none',
     verticalAlign: 'bottom',
   },
+
+  focusIndicator: createFocusIndicatorStyleRule(
+    {
+      ':after': {
+        content: "''",
+        position: 'absolute',
+        top: '-8px',
+        right: '-8px',
+        bottom: '-8px',
+        left: '-8px',
+        boxSizing: 'border-box',
+        border: `2px solid black`,
+        borderRadius: '4px',
+      },
+    },
+    { selector: 'focus-within' },
+  ),
 
   unchecked: (theme: Theme) => ({
     ':hover .pongoai-Switch-thumb': {
@@ -244,6 +262,7 @@ export const useSwitchStyles = (state: SwitchState) => {
   state.root.className = mergeClasses(
     rootClassName + (checked ? ' checked' : ''),
     rootStyles.root,
+    !disabled && rootStyles.focusIndicator,
     !disabled && rootStyles.checked,
     !disabled && rootStyles.unchecked,
     disabled ? rootStyles.disabled : rootStyles.enabled,

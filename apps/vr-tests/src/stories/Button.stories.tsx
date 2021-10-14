@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { FluentProvider } from '@fluentui/react-provider';
-// TODO: Remove this and use @pongoai/react-button
 import { Button } from '../../../../packages/pongo-ui/packages/react-button/src/index';
 import { webLightTheme } from '@pongoai/react-theme';
 import { makeStyles } from '@fluentui/react-make-styles';
