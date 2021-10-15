@@ -96,11 +96,11 @@ export type TextFieldCommons = {
   helperText?: string;
 
   /**
-   * Whether the TextField should render as type password.
+   * The type of TextField to render
    *
-   * @default false
+   * @default text
    */
-  password?: boolean;
+  type?: 'text' | 'password' | 'number' | 'search';
 
   /**
    * Whether the TextField should be required.

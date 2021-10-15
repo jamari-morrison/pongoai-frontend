@@ -41,9 +41,21 @@ export const BasicTextFieldExample = () => {
       </div>
       <Header2>Password Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Enter your password" label="Password" password />
-        <TextField appearance="outlined" placeholder="Enter your password" label="Password" password />
-        <TextField appearance="filled" placeholder="Enter your password" label="Password" password />
+        <TextField appearance="standard" placeholder="Enter your password" label="Password" type="password" />
+        <TextField appearance="outlined" placeholder="Enter your password" label="Password" type="password" />
+        <TextField appearance="filled" placeholder="Enter your password" label="Password" type="password" />
+      </div>
+      <Header2>Number Text Field</Header2>
+      <div className={styles.row}>
+        <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />
+        <TextField appearance="outlined" placeholder="Enter your age" label="Age" type="number" />
+        <TextField appearance="filled" placeholder="Enter your age" label="Age" type="number" />
+      </div>
+      <Header2>Search Text Field</Header2>
+      <div className={styles.row}>
+        <TextField appearance="standard" placeholder="Type to find..." label="Search surveys" type="search" />
+        <TextField appearance="outlined" placeholder="Type to find..." label="Search surveys" type="search" />
+        <TextField appearance="filled" placeholder="Type to find..." label="Search surveys" type="search" />
       </div>
       <Header2>Required Text Field</Header2>
       <div className={styles.row}>

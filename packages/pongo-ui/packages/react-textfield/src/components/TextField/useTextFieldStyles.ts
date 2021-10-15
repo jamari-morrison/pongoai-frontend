@@ -11,7 +11,7 @@ const useRootStyles = makeStyles({
   root: {
     position: 'relative',
     minWidth: '300px',
-    minHeight: '48px',
+    minHeight: '50px',
   },
 
   inputFocus: (theme: Theme) => ({
@@ -41,7 +41,7 @@ const useRootStyles = makeStyles({
   standard: (theme: Theme) => ({
     ':focus-within': {
       [`& .${placeholderTextClassName}`]: {
-        transform: 'translateY(-25%)',
+        transform: 'translateY(-30%)',
         opacity: 1,
         fontSize: '12px',
       },
@@ -51,7 +51,7 @@ const useRootStyles = makeStyles({
   filled: (theme: Theme) => ({
     ':focus-within': {
       [`& .${placeholderTextClassName}`]: {
-        transform: 'translateY(-25%)',
+        transform: 'translateY(-30%)',
         opacity: 1,
         fontSize: '12px',
       },
@@ -79,26 +79,26 @@ const useRootStyles = makeStyles({
 const useTextFieldWrapperStyles = makeStyles({
   wrapper: () => ({
     position: 'relative',
-    width: '300px',
+    width: '320px',
     height: '48px',
   }),
 });
 
 const useInputStyles = makeStyles({
-  input: (theme: Theme) => ({
+  input: {
     position: 'absolute',
     margin: '0px',
     padding: '0px',
     height: '100%',
-    width: '90%',
+    width: '100%',
+    paddingLeft: '10px',
+    paddingRight: '10px',
     background: 'none',
-    left: '5%',
-    fontFamily: theme.fonts.fontFamily.base,
-    fontSize: theme.fonts.fontSize[500],
     border: 'none',
     outline: 'none',
     display: 'block',
-  }),
+    boxSizing: 'border-box',
+  },
 
   labelPlaceholderFocus: {
     '::placeholder': {
@@ -113,8 +113,13 @@ const useInputStyles = makeStyles({
   },
 
   lowerTextAlignment: {
-    padding: '8px 0px',
+    paddingTop: '15px',
   },
+
+  fontStyles: (theme: Theme) => ({
+    fontFamily: theme.fonts.fontFamily.base,
+    fontSize: theme.fonts.fontSize[500],
+  }),
 
   disabled: (theme: Theme) => ({
     cursor: 'not-allowed',
@@ -128,10 +133,10 @@ const useInputStyles = makeStyles({
 const useTextFieldBorderStyles = makeStyles({
   textFieldBorder: {
     position: 'absolute',
-    padding: `0px 12px`,
     margin: '0px',
     width: '100%',
     height: '100%',
+    padding: '0px 5px',
     boxSizing: 'border-box',
     touchAction: 'none',
     pointerEvents: 'none',
@@ -168,9 +173,10 @@ const usePlaceholderTextStyles = makeStyles({
     position: 'absolute',
     background: 'none',
     height: '100%',
+    width: '100%',
+    margin: '0px',
+    padding: '0px 5px',
     fontSize: theme.fonts.fontSize[500],
-    width: '90%',
-    left: '5%',
     fontFamily: theme.fonts.fontFamily.base,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
@@ -198,7 +204,7 @@ const usePlaceholderTextStyles = makeStyles({
   }),
 
   standard: {
-    transform: 'translateY(-25%)',
+    transform: 'translateY(-30%)',
     fontSize: '12px',
   },
 
@@ -208,7 +214,7 @@ const usePlaceholderTextStyles = makeStyles({
   },
 
   filled: {
-    transform: 'translateY(-25%)',
+    transform: 'translateY(-30%)',
     fontSize: '12px',
   },
 
@@ -223,13 +229,12 @@ const useTextFieldLegendStyles = makeStyles({
     margin: '0px',
     padding: '0px',
     visibility: 'hidden',
-    height: '3px',
+    height: '0px',
     fontFamily: theme.fonts.fontFamily.base,
     fontSize: '12px',
 
     '& span': {
-      paddingLeft: '3px',
-      paddingRight: '3px',
+      padding: '0 5px',
       display: 'inline-block',
     },
   }),
@@ -246,9 +251,8 @@ const useTextFieldLegendStyles = makeStyles({
 const useHelperTextStyles = makeStyles({
   helperText: (theme: Theme) => ({
     position: 'relative',
-    width: '90%',
-    left: '5%',
-    padding: '0px',
+    width: '100%',
+    padding: '0px 10px',
     margin: '0px',
     fontSize: '12px',
     lineHeight: theme.fonts.fontLineHeight[500],
@@ -296,6 +300,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
 
   state.input.className = mergeClasses(
     inputStyles.input,
+    inputStyles.fontStyles,
     state.label && state.placeholder && inputStyles.labelPlaceholderFocus,
     (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
     state.disabled && inputStyles.disabled,

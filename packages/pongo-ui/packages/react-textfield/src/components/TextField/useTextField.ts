@@ -25,7 +25,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     placeholder,
     required = false,
     label,
-    password = false,
+    type = 'text',
     helperText,
     textFieldHelperText,
     textFieldLabel,
@@ -43,7 +43,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     error,
     appearance,
     placeholder,
-    password,
+    type,
     helperText,
     required,
     label,
@@ -69,7 +69,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     input: resolveShorthand(input, {
       required: true,
       defaultProps: {
-        type: password ? 'password' : 'text',
+        type: type,
       },
     }),
   };
