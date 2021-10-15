@@ -120,12 +120,12 @@ export type TextFieldCommons = {
   /**
    * The nearest content to render within the TextField
    */
-  prefix?: JSX.Element;
+  prefix?: string | JSX.Element;
 
   /**
    * The furthest content to render within the TextField
    */
-  suffix?: JSX.Element;
+  suffix?: string | JSX.Element;
 
   /**
    * Whether the TextField should be required.

@@ -87,8 +87,8 @@ const useTextFieldWrapperStyles = makeStyles({
 });
 
 const useInputStyles = makeStyles({
-  input: {
-    position: 'absolute',
+  input: (theme: Theme) => ({
+    position: 'relative',
     margin: '0px',
     padding: '0px',
     height: '100%',
@@ -100,9 +100,11 @@ const useInputStyles = makeStyles({
     outline: 'none',
     display: 'block',
     boxSizing: 'border-box',
-  },
+    fontSize: '18px',
+    fontFamily: theme.fonts.fontFamily.base,
+  }),
 
-  labelPlaceholderFocus: {
+  labelPlaceholderFocus: (theme: Theme) => ({
     '::placeholder': {
       opacity: '0',
       transition: 'opacity .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
@@ -110,18 +112,22 @@ const useInputStyles = makeStyles({
     ':focus': {
       '::placeholder': {
         opacity: '1',
+        color: theme.palette.neutral2Disabled,
       },
     },
+  }),
+
+  suffix: {
+    paddingLeft: '0px',
+  },
+
+  prefix: {
+    paddingRight: '0px',
   },
 
   lowerTextAlignment: {
     paddingTop: '15px',
   },
-
-  fontStyles: (theme: Theme) => ({
-    fontFamily: theme.fonts.fontFamily.base,
-    fontSize: theme.fonts.fontSize[500],
-  }),
 
   disabled: (theme: Theme) => ({
     cursor: 'not-allowed',
@@ -178,7 +184,7 @@ const usePlaceholderTextStyles = makeStyles({
     width: '100%',
     margin: '0px',
     padding: '0px 10px',
-    fontSize: theme.fonts.fontSize[500],
+    fontSize: '18px',
     fontFamily: theme.fonts.fontFamily.base,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
@@ -254,10 +260,9 @@ const useHelperTextStyles = makeStyles({
   helperText: (theme: Theme) => ({
     position: 'relative',
     width: '100%',
-    padding: '0px 10px',
+    padding: '5px 0px 0px 10px',
     margin: '0px',
     fontSize: '12px',
-    lineHeight: theme.fonts.fontLineHeight[500],
     fontFamily: theme.fonts.fontFamily.base,
   }),
 
@@ -276,15 +281,14 @@ const useHelperTextStyles = makeStyles({
 
 const useInputWrapperStyles = makeStyles({
   inputWrapper: {
-    // position: 'relative',
+    position: 'relative',
     height: '100%',
-    // width: 'auto',
-    background: 'green',
+    width: '100%',
   },
 });
 
 const useSuffixPrefixStyles = makeStyles({
-  container: {
+  container: (theme: Theme) => ({
     position: 'relative',
     height: 'auto',
     width: 'auto',
@@ -292,14 +296,24 @@ const useSuffixPrefixStyles = makeStyles({
     justifyContent: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    background: 'rgb(243, 242, 241)',
     color: 'rgb(96, 94, 92)',
     alignItems: 'center',
     whiteSpace: 'nowrap',
     flexShrink: 0,
     padding: '0px 10px',
     boxSizing: 'border-box',
+
+    fontFamily: theme.fonts.fontFamily.base,
+    fontSize: '18px',
+  }),
+
+  lowerTextAlignment: {
+    paddingTop: '15px',
   },
+
+  disabled: (theme: Theme) => ({
+    color: theme.palette.neutral2Disabled,
+  }),
 });
 
 export const useTextFieldStyles = (state: TextFieldState) => {
@@ -321,9 +335,19 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     state.root.className,
   );
 
-  state.textFieldSuffix.className = mergeClasses(prefixSuffixStyles.container, state.textFieldSuffix.className);
+  state.textFieldSuffix.className = mergeClasses(
+    prefixSuffixStyles.container,
+    (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
+    state.disabled && prefixSuffixStyles.disabled,
+    state.textFieldSuffix.className,
+  );
 
-  state.textFieldPrefix.className = mergeClasses(prefixSuffixStyles.container, state.textFieldPrefix.className);
+  state.textFieldPrefix.className = mergeClasses(
+    prefixSuffixStyles.container,
+    (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
+    state.disabled && prefixSuffixStyles.disabled,
+    state.textFieldPrefix.className,
+  );
 
   state.textFieldWrapper.className = mergeClasses(textFieldWrapperStyles.wrapper, state.textFieldWrapper.className);
 
@@ -338,8 +362,9 @@ export const useTextFieldStyles = (state: TextFieldState) => {
 
   state.input.className = mergeClasses(
     inputStyles.input,
-    inputStyles.fontStyles,
-    state.label && state.placeholder && inputStyles.labelPlaceholderFocus,
+    state.suffix && inputStyles.suffix,
+    state.prefix && inputStyles.prefix,
+    state.label && state.placeholder && !state.suffix && inputStyles.labelPlaceholderFocus,
     (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
     state.disabled && inputStyles.disabled,
     state.input.className,
@@ -359,7 +384,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     placeholderTextStyles.placeholderText,
     !state.disabled ? placeholderTextStyles.enabled : placeholderTextStyles.disabled,
     state.error && placeholderTextStyles.error,
-    state.input.value !== '' &&
+    (state.input.value !== '' || state.suffix !== undefined) &&
       (state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder),
     state.textFieldLabel.className,
   );
@@ -367,7 +392,9 @@ export const useTextFieldStyles = (state: TextFieldState) => {
   state.textFieldLegend.className = mergeClasses(
     legendClassName,
     textFieldLegendStyles.textFieldLegend,
-    state.input.value !== '' ? textFieldLegendStyles.active : textFieldLegendStyles.inactive,
+    state.input.value !== '' || state.suffix !== undefined
+      ? textFieldLegendStyles.active
+      : textFieldLegendStyles.inactive,
     state.textFieldLegend.className,
   );
 
