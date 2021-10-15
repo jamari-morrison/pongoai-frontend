@@ -81,6 +81,8 @@ const useTextFieldWrapperStyles = makeStyles({
     position: 'relative',
     width: '320px',
     height: '48px',
+    display: 'flex',
+    flexDirection: 'row',
   }),
 });
 
@@ -175,7 +177,7 @@ const usePlaceholderTextStyles = makeStyles({
     height: '100%',
     width: '100%',
     margin: '0px',
-    padding: '0px 5px',
+    padding: '0px 10px',
     fontSize: theme.fonts.fontSize[500],
     fontFamily: theme.fonts.fontFamily.base,
     whiteSpace: 'nowrap',
@@ -272,14 +274,44 @@ const useHelperTextStyles = makeStyles({
   }),
 });
 
+const useInputWrapperStyles = makeStyles({
+  inputWrapper: {
+    // position: 'relative',
+    height: '100%',
+    // width: 'auto',
+    background: 'green',
+  },
+});
+
+const useSuffixPrefixStyles = makeStyles({
+  container: {
+    position: 'relative',
+    height: 'auto',
+    width: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    flexDirection: 'column',
+    background: 'rgb(243, 242, 241)',
+    color: 'rgb(96, 94, 92)',
+    alignItems: 'center',
+    whiteSpace: 'nowrap',
+    flexShrink: 0,
+    padding: '0px 10px',
+    boxSizing: 'border-box',
+  },
+});
+
 export const useTextFieldStyles = (state: TextFieldState) => {
   const rootStyles = useRootStyles();
   const inputStyles = useInputStyles();
+  const inputWrapperStyles = useInputWrapperStyles();
   const textFieldBorderStyles = useTextFieldBorderStyles();
   const placeholderTextStyles = usePlaceholderTextStyles();
   const textFieldLegendStyles = useTextFieldLegendStyles();
   const textFieldWrapperStyles = useTextFieldWrapperStyles();
   const helperTextStyles = useHelperTextStyles();
+  const prefixSuffixStyles = useSuffixPrefixStyles();
 
   state.root.className = mergeClasses(
     rootStyles.root,
@@ -289,6 +321,10 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     state.root.className,
   );
 
+  state.textFieldSuffix.className = mergeClasses(prefixSuffixStyles.container, state.textFieldSuffix.className);
+
+  state.textFieldPrefix.className = mergeClasses(prefixSuffixStyles.container, state.textFieldPrefix.className);
+
   state.textFieldWrapper.className = mergeClasses(textFieldWrapperStyles.wrapper, state.textFieldWrapper.className);
 
   state.textFieldHelperText.className = mergeClasses(
@@ -297,6 +333,8 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     state.error && helperTextStyles.error,
     state.textFieldHelperText.className,
   );
+
+  state.inputWrapper.className = mergeClasses(inputWrapperStyles.inputWrapper, state.inputWrapper.className);
 
   state.input.className = mergeClasses(
     inputStyles.input,

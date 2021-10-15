@@ -9,15 +9,19 @@ export const renderTextField = (state: TextFieldState) => {
   return (
     <slots.root {...slotProps.root}>
       <slots.textFieldWrapper {...slotProps.textFieldWrapper}>
+        {state.suffix !== undefined && <slots.textFieldSuffix {...slotProps.textFieldSuffix} />}
         <slots.textFieldBorder {...slotProps.textFieldBorder}>
           {state.label !== undefined && state.appearance === 'outlined' && (
             <slots.textFieldLegend {...slotProps.textFieldLegend}>
               <span>{slotProps.textFieldLegend.children}</span>
             </slots.textFieldLegend>
           )}
-          {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
         </slots.textFieldBorder>
-        <slots.input {...slotProps.input} />
+        <slots.inputWrapper {...slotProps.inputWrapper}>
+          <slots.input {...slotProps.input} />
+          {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
+        </slots.inputWrapper>
+        {state.prefix !== undefined && <slots.textFieldPrefix {...slotProps.textFieldPrefix} />}
       </slots.textFieldWrapper>
       {state.helperText && <slots.textFieldHelperText {...slotProps.textFieldHelperText} />}
     </slots.root>

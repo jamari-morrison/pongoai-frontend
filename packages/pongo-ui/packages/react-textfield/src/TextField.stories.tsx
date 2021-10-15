@@ -23,43 +23,70 @@ export const BasicTextFieldExample = () => {
     <div className={styles.root}>
       <Header2>Standard Text Field</Header2>
       <div className={styles.row}>
-        <TextField label="Password" />
-        <TextField disabled />
-        <TextField error label="Error" />
+        <TextField label="Standard" placeholder="Enter your text" />
+        <TextField label="Standard" placeholder="Enter your text" disabled />
+        <TextField label="Standard" placeholder="Enter your text" helperText="Error" error />
       </div>
       <Header2>Outlined Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="outlined" />
-        <TextField appearance="outlined" disabled />
-        <TextField error appearance="outlined" label="Error asdjlaskdhjkashdkjl" />
+        <TextField appearance="outlined" placeholder="Enter your text" label="Outlined" />
+        <TextField appearance="outlined" placeholder="Enter your text" label="Outlined" disabled />
+        <TextField appearance="outlined" label="Standard" placeholder="Enter your text" helperText="Error" error />
       </div>
       <Header2>Filled Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="filled" placeholder="hello" label="test" />
-        <TextField appearance="filled" disabled />
-        <TextField error appearance="filled" label="Error" />
+        <TextField appearance="filled" placeholder="Enter your text" label="Filled" />
+        <TextField appearance="filled" placeholder="Enter your text" label="Filled" disabled />
+        <TextField appearance="filled" label="Standard" placeholder="Enter your text" helperText="Error" error />
       </div>
+      <Header2>Required Text Field</Header2>
+      <div className={styles.row}>
+        <TextField appearance="standard" placeholder="Enter your name" label="Required *" required />
+      </div>
+    </div>
+  );
+};
+
+export const TextFieldPasswordExample = () => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.root}>
       <Header2>Password Text Field</Header2>
       <div className={styles.row}>
         <TextField appearance="standard" placeholder="Enter your password" label="Password" type="password" />
         <TextField appearance="outlined" placeholder="Enter your password" label="Password" type="password" />
         <TextField appearance="filled" placeholder="Enter your password" label="Password" type="password" />
       </div>
-      <Header2>Number Text Field</Header2>
-      <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />
-        <TextField appearance="outlined" placeholder="Enter your age" label="Age" type="number" />
-        <TextField appearance="filled" placeholder="Enter your age" label="Age" type="number" />
-      </div>
+    </div>
+  );
+};
+
+export const TextFieldSearchExample = () => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.root}>
       <Header2>Search Text Field</Header2>
       <div className={styles.row}>
         <TextField appearance="standard" placeholder="Type to find..." label="Search surveys" type="search" />
         <TextField appearance="outlined" placeholder="Type to find..." label="Search surveys" type="search" />
         <TextField appearance="filled" placeholder="Type to find..." label="Search surveys" type="search" />
       </div>
-      <Header2>Required Text Field</Header2>
+    </div>
+  );
+};
+
+export const TextFieldNumberExample = () => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.root}>
+      <Header2>Number Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Enter your name" label="Required *" required />
+        <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />
+        <TextField appearance="outlined" placeholder="Enter your age" label="Age" type="number" />
+        <TextField appearance="filled" placeholder="Enter your age" label="Age" type="number" />
       </div>
     </div>
   );

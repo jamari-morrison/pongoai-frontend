@@ -32,6 +32,21 @@ export type TextFieldSlots = {
   textFieldHelperText: IntrinsicShorthandProps<'p'>;
 
   /**
+   * The inner nearest content to render within the TextField.
+   */
+  textFieldSuffix: IntrinsicShorthandProps<'div'>;
+
+  /**
+   * The inner furthest content to render within the TextField.
+   */
+  textFieldPrefix: IntrinsicShorthandProps<'div'>;
+
+  /**
+   * The wrapper around the input and Label element.
+   */
+  inputWrapper: IntrinsicShorthandProps<'div'>;
+
+  /**
    * Hidden input used to handle the TextField's functionality.
    */
   input: IntrinsicShorthandProps<'input'>;
@@ -101,6 +116,16 @@ export type TextFieldCommons = {
    * @default text
    */
   type?: 'text' | 'password' | 'number' | 'search';
+
+  /**
+   * The nearest content to render within the TextField
+   */
+  prefix?: JSX.Element;
+
+  /**
+   * The furthest content to render within the TextField
+   */
+  suffix?: JSX.Element;
 
   /**
    * Whether the TextField should be required.

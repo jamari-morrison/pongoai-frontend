@@ -13,7 +13,8 @@ export const useTextFieldState = (state: TextFieldState) => {
     error,
     placeholder,
     label,
-    appearance,
+    prefix,
+    suffix,
     onChange,
   } = state;
   const { id } = state.root;
@@ -40,6 +41,13 @@ export const useTextFieldState = (state: TextFieldState) => {
     updateValue(ev.target.value, ev);
   };
 
+  // Prefix Props
+  prefix && (state.textFieldPrefix.children = prefix);
+
+  // Suffix Props
+  suffix && (state.textFieldSuffix.children = suffix);
+
+  // Border Props
   state.textFieldBorder['aria-hidden'] = true;
 
   // Label Props
