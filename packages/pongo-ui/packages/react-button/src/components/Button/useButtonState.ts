@@ -4,7 +4,7 @@ import type { ButtonState } from './Button.types';
 export const useButtonState = (state: ButtonState): ButtonState => {
   const { disabled } = state;
   const {
-    as,
+    as = 'button',
     tabIndex,
     role,
     onClick: onClickCallback,
@@ -79,7 +79,7 @@ export const useButtonState = (state: ButtonState): ButtonState => {
   }
   // Otherwise if it is a button:
   else {
-    state.root.disabled = disabled;
+    disabled && (state.root.disabled = disabled);
   }
 
   return state;

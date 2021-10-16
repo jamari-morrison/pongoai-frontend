@@ -16,12 +16,18 @@ export const renderTextField = (state: TextFieldState) => {
             </slots.textFieldLegend>
           )}
         </slots.textFieldBorder>
-        {state.suffix !== undefined && <slots.textFieldSuffix {...slotProps.textFieldSuffix} />}
+        {(state.suffix !== undefined || state.type === 'search') && (
+          <slots.textFieldSuffix {...slotProps.textFieldSuffix} />
+        )}
         {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
         <slots.inputWrapper {...slotProps.inputWrapper}>
           <slots.input {...slotProps.input} />
         </slots.inputWrapper>
-        {state.prefix !== undefined && <slots.textFieldPrefix {...slotProps.textFieldPrefix} />}
+        {(state.prefix !== undefined ||
+          state.type === 'search' ||
+          (state.type === 'password' && state.input.value !== '')) && (
+          <slots.textFieldPrefix {...slotProps.textFieldPrefix} />
+        )}
       </slots.textFieldWrapper>
       {state.helperText && <slots.textFieldHelperText {...slotProps.textFieldHelperText} />}
     </slots.root>

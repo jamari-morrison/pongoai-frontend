@@ -9,8 +9,8 @@ const useRootStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     verticalAlign: 'middle',
-    minWidth: '60px',
-    minHeight: '35px',
+    width: 'auto',
+    height: '35px',
     transition: 'background 50ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 50ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
     fontFamily: theme.fonts.fontFamily.base,
     fontStyle: 'normal',
@@ -135,8 +135,8 @@ const useRootStyles = makeStyles({
   },
 
   circular: {
-    minWidth: '38px',
-    minHeight: '38px',
+    width: '38px',
+    height: '38px',
     borderRadius: '100%',
   },
 

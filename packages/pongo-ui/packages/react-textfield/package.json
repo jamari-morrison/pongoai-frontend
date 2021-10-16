@@ -24,7 +24,8 @@
   "dependencies": {
     "@fluentui/react-utilities": "9.0.0-beta.1",
     "@fluentui/react-make-styles": "9.0.0-beta.1",
-    "@fluentui/react-tabster": "9.0.0-alpha.68"
+    "@fluentui/react-tabster": "9.0.0-alpha.68",
+    "@pongoai/react-button": "0.0.8"
   },
   "devDependencies": {
     "@pongoai/react-text": "^0.0.5",

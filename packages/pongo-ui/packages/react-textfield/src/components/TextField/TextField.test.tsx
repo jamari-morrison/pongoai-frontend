@@ -1,7 +1,7 @@
 import { TextField } from './TextField';
 import { isConformant } from '../../common/isConformant';
 
-describe('Text', () => {
+describe('TextField', () => {
   isConformant({
     Component: TextField,
     displayName: 'TextField',

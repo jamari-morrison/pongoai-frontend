@@ -1,6 +1,6 @@
 {
   "name": "@pongoai/react-button",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Button control that allows users to make an action through a press.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",

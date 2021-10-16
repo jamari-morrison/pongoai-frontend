@@ -1619,6 +1619,15 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
+"@pongoai/react-button@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.0.8.tgz#d7b5cafd48e4e1ba8b70c9dd864572aed1ca15ae"
+  integrity sha512-k5NbKZG5gznXbLiCIf3mMGiNnMJrJbvxVI4465jqGQrBtWJVAlp5wdTaeut0OcRLlChDW2bGMI0Z+5lGsahNUg==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-tabster" "9.0.0-alpha.68"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
 "@pongoai/react-text@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.5.tgz#cd5a9b3f7f6f2ded02ddd80ef60807ef56c478bd"
