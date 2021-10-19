@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
-import { TextField } from '../../../../packages/pongo-ui/packages/react-textfield/src/index';
+import { TextField, Password, Search } from '../../../../packages/pongo-ui/packages/react-textfield/src/index';
 import { makeStyles } from '@fluentui/react-make-styles';
 
 const useStyles = makeStyles({
@@ -53,9 +53,9 @@ export const BasicTextFieldExample = () => {
           <TextField appearance="standard" placeholder="Enter your name" label="Required *" required />
         </div>
         <div className={styles.row}>
-          <TextField appearance="standard" placeholder="Enter your password" label="Password" type="password" />
-          <TextField appearance="outlined" placeholder="Enter your password" label="Password" type="password" />
-          <TextField appearance="filled" placeholder="Enter your password" label="Password" type="password" />
+          <Password appearance="standard" placeholder="Enter your password" label="Password" />
+          <Password appearance="outlined" placeholder="Enter your password" label="Password" />
+          <Password appearance="filled" placeholder="Enter your password" label="Password" />
         </div>
         <div className={styles.row}>
           <TextField appearance="standard" suffix="https://" prefix=".com" />
@@ -118,9 +118,9 @@ export const BasicTextFieldExample = () => {
           />
         </div>
         <div className={styles.row}>
-          <TextField appearance="standard" placeholder="Type to find..." label="Search surveys" type="search" />
-          <TextField appearance="outlined" placeholder="Type to find..." label="Search surveys" type="search" />
-          <TextField appearance="filled" placeholder="Type to find..." label="Search surveys" type="search" />
+          <Search appearance="standard" placeholder="Type to find..." label="Search surveys" />
+          <Search appearance="outlined" placeholder="Type to find..." label="Search surveys" />
+          <Search appearance="filled" placeholder="Type to find..." label="Search surveys" />
         </div>
         <div className={styles.row}>
           <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />

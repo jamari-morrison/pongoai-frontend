@@ -4,7 +4,7 @@ import type { TextFieldSlots, TextFieldCommons } from '../TextField/TextField.ty
 
 export type MultilineSlots = Omit<
   TextFieldSlots,
-  'suffix' | 'prefix' | 'input' | 'inputWrapper' | 'textFieldWrapper' | 'textFieldSuffix' | 'textFieldPrefix'
+  'input' | 'inputWrapper' | 'textFieldWrapper' | 'textFieldSuffix' | 'textFieldPrefix'
 > & {
   /**
    * Hidden input used to handle the Multiline Text Field's functionality.

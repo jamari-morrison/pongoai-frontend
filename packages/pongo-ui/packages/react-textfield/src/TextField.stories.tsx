@@ -58,21 +58,6 @@ export const BasicTextFieldExample = () => {
   );
 };
 
-export const TextFieldPasswordExample = () => {
-  const styles = useStyles();
-
-  return (
-    <div className={styles.root}>
-      <Header2>Password Text Field</Header2>
-      <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Enter your password" label="Password" type="password" />
-        <TextField appearance="outlined" placeholder="Enter your password" label="Password" type="password" />
-        <TextField appearance="filled" placeholder="Enter your password" label="Password" type="password" />
-      </div>
-    </div>
-  );
-};
-
 export const TextFieldSuffixPrefixExample = () => {
   const styles = useStyles();
 
@@ -140,20 +125,6 @@ export const TextFieldSuffixPrefixExample = () => {
           helperText="Please enter a number"
           type="number"
         />
-      </div>
-    </div>
-  );
-};
-export const TextFieldSearchExample = () => {
-  const styles = useStyles();
-
-  return (
-    <div className={styles.root}>
-      <Header2>Search Text Field</Header2>
-      <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Type to find..." label="Search surveys" type="search" />
-        <TextField appearance="outlined" placeholder="Type to find..." label="Search surveys" type="search" />
-        <TextField appearance="filled" placeholder="Type to find..." label="Search surveys" type="search" />
       </div>
     </div>
   );

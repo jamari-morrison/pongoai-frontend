@@ -101,6 +101,7 @@ export const useInputStyles = makeStyles({
     display: 'block',
     boxSizing: 'border-box',
     fontSize: '18px',
+    transition: 'flex-grow 1s cubic-bezier(0.33, 0.0, 0.67, 1), font-size .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
     fontFamily: theme.fonts.fontFamily.base,
     '::-ms-reveal': {
       display: 'none',
@@ -182,7 +183,7 @@ export const useTextFieldBorderStyles = makeStyles({
   }),
 });
 
-const usePlaceholderTextStyles = makeStyles({
+export const usePlaceholderTextStyles = makeStyles({
   placeholderText: (theme: Theme) => ({
     position: 'absolute',
     background: 'none',
@@ -237,7 +238,7 @@ const usePlaceholderTextStyles = makeStyles({
   },
 });
 
-const useTextFieldLegendStyles = makeStyles({
+export const useTextFieldLegendStyles = makeStyles({
   textFieldLegend: (theme: Theme) => ({
     position: 'relative',
     margin: '0px',
