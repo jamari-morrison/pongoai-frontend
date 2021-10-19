@@ -28,7 +28,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     placeholder,
     required = false,
     label,
-    type = 'text',
+    number = false,
     helperText,
     suffix,
     prefix,
@@ -51,7 +51,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     error,
     appearance,
     placeholder,
-    type,
+    number,
     suffix,
     prefix,
     helperText,
@@ -85,7 +85,7 @@ export const useTextField = (props: TextFieldProps, ref: React.Ref<HTMLElement>)
     input: resolveShorthand(input, {
       required: true,
       defaultProps: {
-        type: type,
+        type: number ? 'number' : 'text',
       },
     }),
   };

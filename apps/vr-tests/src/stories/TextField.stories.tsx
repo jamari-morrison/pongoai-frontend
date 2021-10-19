@@ -69,7 +69,7 @@ export const BasicTextFieldExample = () => {
             placeholder="Enter a price"
             suffix="$"
             prefix="total"
-            type="number"
+            number
           />
           <TextField
             appearance="outlined"
@@ -77,7 +77,7 @@ export const BasicTextFieldExample = () => {
             placeholder="Enter a price"
             suffix="$"
             prefix="total"
-            type="number"
+            number
           />
           <TextField
             appearance="filled"
@@ -85,7 +85,7 @@ export const BasicTextFieldExample = () => {
             placeholder="Enter a price"
             suffix="$"
             prefix="total"
-            type="number"
+            number
           />
         </div>
         <div className={styles.row}>
@@ -96,7 +96,7 @@ export const BasicTextFieldExample = () => {
             suffix={<TestIcon />}
             prefix="total"
             helperText="Please enter a number"
-            type="number"
+            number
           />
           <TextField
             appearance="outlined"
@@ -105,7 +105,7 @@ export const BasicTextFieldExample = () => {
             suffix={<TestIcon />}
             prefix="total"
             helperText="Please enter a number"
-            type="number"
+            number
           />
           <TextField
             appearance="filled"
@@ -114,7 +114,7 @@ export const BasicTextFieldExample = () => {
             suffix={<TestIcon />}
             prefix="total"
             helperText="Please enter a number"
-            type="number"
+            number
           />
         </div>
         <div className={styles.row}>
@@ -123,9 +123,9 @@ export const BasicTextFieldExample = () => {
           <Search appearance="filled" placeholder="Type to find..." label="Search surveys" />
         </div>
         <div className={styles.row}>
-          <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />
-          <TextField appearance="outlined" placeholder="Enter your age" label="Age" type="number" />
-          <TextField appearance="filled" placeholder="Enter your age" label="Age" type="number" />
+          <TextField appearance="standard" placeholder="Enter your age" label="Age" number />
+          <TextField appearance="outlined" placeholder="Enter your age" label="Age" number />
+          <TextField appearance="filled" placeholder="Enter your age" label="Age" number />
         </div>
       </div>
     </FluentProvider>

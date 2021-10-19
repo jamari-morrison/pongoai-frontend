@@ -77,7 +77,7 @@ export const TextFieldSuffixPrefixExample = () => {
           placeholder="Enter a price"
           suffix="$"
           prefix="total"
-          type="number"
+          number
         />
         <TextField
           appearance="outlined"
@@ -85,16 +85,9 @@ export const TextFieldSuffixPrefixExample = () => {
           placeholder="Enter a price"
           suffix="$"
           prefix="total"
-          type="number"
+          number
         />
-        <TextField
-          appearance="filled"
-          label="Currency"
-          placeholder="Enter a price"
-          suffix="$"
-          prefix="total"
-          type="number"
-        />
+        <TextField appearance="filled" label="Currency" placeholder="Enter a price" suffix="$" prefix="total" number />
       </div>
       <Header2>Icon Example</Header2>
       <div className={styles.row}>
@@ -105,7 +98,7 @@ export const TextFieldSuffixPrefixExample = () => {
           suffix={<TestIcon />}
           prefix="total"
           helperText="Please enter a number"
-          type="number"
+          number
         />
         <TextField
           appearance="outlined"
@@ -114,7 +107,7 @@ export const TextFieldSuffixPrefixExample = () => {
           suffix={<TestIcon />}
           prefix="total"
           helperText="Please enter a number"
-          type="number"
+          number
         />
         <TextField
           appearance="filled"
@@ -123,7 +116,7 @@ export const TextFieldSuffixPrefixExample = () => {
           suffix={<TestIcon />}
           prefix="total"
           helperText="Please enter a number"
-          type="number"
+          number
         />
       </div>
     </div>
@@ -137,9 +130,9 @@ export const TextFieldNumberExample = () => {
     <div className={styles.root}>
       <Header2>Number Text Field</Header2>
       <div className={styles.row}>
-        <TextField appearance="standard" placeholder="Enter your age" label="Age" type="number" />
-        <TextField appearance="outlined" placeholder="Enter your age" label="Age" type="number" />
-        <TextField appearance="filled" placeholder="Enter your age" label="Age" type="number" />
+        <TextField appearance="standard" placeholder="Enter your age" label="Age" number />
+        <TextField appearance="outlined" placeholder="Enter your age" label="Age" number />
+        <TextField appearance="filled" placeholder="Enter your age" label="Age" number />
       </div>
     </div>
   );

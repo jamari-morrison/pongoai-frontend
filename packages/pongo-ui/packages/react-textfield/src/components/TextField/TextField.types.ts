@@ -111,11 +111,11 @@ export type TextFieldCommons = {
   helperText?: string;
 
   /**
-   * The type of TextField to render
+   * Whether the TextField should be rendered as type number
    *
-   * @default text
+   * @default false
    */
-  type?: 'text' | 'password' | 'number' | 'search';
+  number?: boolean;
 
   /**
    * The nearest content to render within the TextField

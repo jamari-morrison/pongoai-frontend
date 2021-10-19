@@ -312,37 +312,6 @@ const useSuffixPrefixStyles = makeStyles({
     fontSize: '18px',
   }),
 
-  icon: {
-    '& .pongoai-TextField-icon-button': {
-      width: '34px',
-      height: '34px',
-      tabIndex: 1,
-    },
-  },
-
-  focusIndicator: createFocusIndicatorStyleRule(
-    (theme: Theme) => ({
-      '& .pongoai-TextField-icon-button': {
-        ':after': {
-          top: '0px',
-          right: '0px',
-          bottom: '0px',
-          left: '0px',
-          background: theme.palette.neutral3,
-          border: `none`,
-          opacity: '.2',
-          zIndex: '-1',
-          borderRadius: '999px',
-        },
-      },
-    }),
-    { selector: 'focus-within' },
-  ),
-
-  passwordIconVisible: {
-    visibility: 'hidden',
-  },
-
   lowerTextAlignment: {
     paddingTop: '15px',
   },
@@ -382,9 +351,6 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     prefixSuffixStyles.container,
     (state.appearance === 'filled' || state.appearance === 'standard') && prefixSuffixStyles.lowerTextAlignment,
     state.disabled && prefixSuffixStyles.disabled,
-    state.type === 'password' && state.input.value === '' && prefixSuffixStyles.passwordIconVisible,
-    (state.type === 'password' || state.type === 'search') && prefixSuffixStyles.icon,
-    (state.type === 'password' || state.type === 'search') && prefixSuffixStyles.focusIndicator,
     state.textFieldPrefix.className,
   );
 
@@ -401,9 +367,9 @@ export const useTextFieldStyles = (state: TextFieldState) => {
 
   state.input.className = mergeClasses(
     inputStyles.input,
-    (state.suffix !== undefined || state.type === 'search') && inputStyles.suffix,
-    (state.prefix !== undefined || state.type === 'password' || state.type === 'search') && inputStyles.prefix,
-    state.label && state.placeholder && !state.suffix && state.type !== 'search' && inputStyles.labelPlaceholderFocus,
+    state.suffix !== undefined && inputStyles.suffix,
+    state.prefix !== undefined && inputStyles.prefix,
+    state.label && state.placeholder && !state.suffix && inputStyles.labelPlaceholderFocus,
     (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
     state.disabled && inputStyles.disabled,
     state.input.className,
@@ -423,7 +389,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
     placeholderTextStyles.placeholderText,
     !state.disabled ? placeholderTextStyles.enabled : placeholderTextStyles.disabled,
     state.error && placeholderTextStyles.error,
-    (state.input.value !== '' || state.suffix !== undefined || state.type === 'search') &&
+    (state.input.value !== '' || state.suffix !== undefined) &&
       (state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder),
     state.textFieldLabel.className,
   );
@@ -431,7 +397,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
   state.textFieldLegend.className = mergeClasses(
     legendClassName,
     textFieldLegendStyles.textFieldLegend,
-    state.input.value !== '' || state.suffix !== undefined || state.type === 'search'
+    state.input.value !== '' || state.suffix !== undefined
       ? textFieldLegendStyles.active
       : textFieldLegendStyles.inactive,
     state.textFieldLegend.className,
