@@ -3,11 +3,11 @@ import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
 import type { TextFieldState } from './TextField.types';
 import { Theme } from '@pongoai/react-theme';
 
-const textFieldBorderClassName = 'pongoai-TextField-border';
-const legendClassName = 'pongoai-TextField-legend';
-const placeholderTextClassName = 'pongoai-TextField-label';
+export const textFieldBorderClassName = 'pongoai-TextField-border';
+export const legendClassName = 'pongoai-TextField-legend';
+export const placeholderTextClassName = 'pongoai-TextField-label';
 
-const useRootStyles = makeStyles({
+export const useRootStyles = makeStyles({
   root: {
     position: 'relative',
     minWidth: '300px',
@@ -76,7 +76,7 @@ const useRootStyles = makeStyles({
   ),
 });
 
-const useTextFieldWrapperStyles = makeStyles({
+export const useTextFieldWrapperStyles = makeStyles({
   wrapper: () => ({
     position: 'relative',
     width: '100%',
@@ -86,7 +86,7 @@ const useTextFieldWrapperStyles = makeStyles({
   }),
 });
 
-const useInputStyles = makeStyles({
+export const useInputStyles = makeStyles({
   input: (theme: Theme) => ({
     position: 'absolute',
     margin: '0px',
@@ -143,7 +143,7 @@ const useInputStyles = makeStyles({
   }),
 });
 
-const useTextFieldBorderStyles = makeStyles({
+export const useTextFieldBorderStyles = makeStyles({
   textFieldBorder: {
     position: 'absolute',
     margin: '0px',
@@ -262,7 +262,7 @@ const useTextFieldLegendStyles = makeStyles({
   },
 });
 
-const useHelperTextStyles = makeStyles({
+export const useHelperTextStyles = makeStyles({
   helperText: (theme: Theme) => ({
     position: 'relative',
     padding: '5px 0px 0px 10px',
@@ -284,7 +284,7 @@ const useHelperTextStyles = makeStyles({
   }),
 });
 
-const useInputWrapperStyles = makeStyles({
+export const useInputWrapperStyles = makeStyles({
   inputWrapper: {
     position: 'relative',
     height: '100%',
