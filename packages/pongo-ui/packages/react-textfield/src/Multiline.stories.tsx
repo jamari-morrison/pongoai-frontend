@@ -34,6 +34,7 @@ export const BasicMultilineExample = () => {
       <Header2>Outlined Multiline Text Field</Header2>
       <div className={styles.row}>
         <Multiline appearance="outlined" placeholder="Enter your text" label="Outlined" />
+        <TextField appearance="outlined" label="Outlined" placeholder="Enter your text" />
         <Multiline appearance="outlined" placeholder="Enter your text" label="Outlined" disabled />
         <Multiline appearance="outlined" label="Standard" placeholder="Enter your text" helperText="Error" error />
       </div>

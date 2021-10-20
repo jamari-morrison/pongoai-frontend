@@ -13,7 +13,12 @@ export type MultilineSlots = Omit<
 };
 
 export type MultilineCommons = Omit<TextFieldCommons, 'type' | 'prefix' | 'suffix' | 'onChange'> & {
-  minRows?: number;
+  /**
+   * Whether the Multiline should be able to resize.
+   *
+   * @default true
+   */
+  resize?: boolean;
 
   /**
    * Callback to be called when the value changes.

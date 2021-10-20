@@ -5,7 +5,7 @@ import { Theme } from '@pongoai/react-theme';
 
 export const textFieldBorderClassName = 'pongoai-TextField-border';
 export const legendClassName = 'pongoai-TextField-legend';
-export const placeholderTextClassName = 'pongoai-TextField-label';
+export const labelClassName = 'pongoai-TextField-label';
 
 export const useRootStyles = makeStyles({
   root: {
@@ -19,7 +19,7 @@ export const useRootStyles = makeStyles({
       [`& .${textFieldBorderClassName}`]: {
         borderColor: theme.palette.brand1,
       },
-      [`& .${placeholderTextClassName}`]: {
+      [`& .${labelClassName}`]: {
         color: theme.palette.brand1,
       },
     },
@@ -27,7 +27,7 @@ export const useRootStyles = makeStyles({
 
   outlined: (theme: Theme) => ({
     ':focus-within': {
-      [`& .${placeholderTextClassName}`]: {
+      [`& .${labelClassName}`]: {
         transform: 'translateY(-50%)',
         opacity: 1,
         fontSize: '12px',
@@ -40,7 +40,7 @@ export const useRootStyles = makeStyles({
 
   standard: (theme: Theme) => ({
     ':focus-within': {
-      [`& .${placeholderTextClassName}`]: {
+      [`& .${labelClassName}`]: {
         transform: 'translateY(-30%)',
         opacity: 1,
         fontSize: '12px',
@@ -50,7 +50,7 @@ export const useRootStyles = makeStyles({
 
   filled: (theme: Theme) => ({
     ':focus-within': {
-      [`& .${placeholderTextClassName}`]: {
+      [`& .${labelClassName}`]: {
         transform: 'translateY(-30%)',
         opacity: 1,
         fontSize: '12px',
@@ -183,8 +183,8 @@ export const useTextFieldBorderStyles = makeStyles({
   }),
 });
 
-export const usePlaceholderTextStyles = makeStyles({
-  placeholderText: (theme: Theme) => ({
+export const useLabelStyles = makeStyles({
+  label: (theme: Theme) => ({
     position: 'absolute',
     background: 'none',
     height: '100%',
@@ -326,7 +326,7 @@ export const useTextFieldStyles = (state: TextFieldState) => {
   const inputStyles = useInputStyles();
   const inputWrapperStyles = useInputWrapperStyles();
   const textFieldBorderStyles = useTextFieldBorderStyles();
-  const placeholderTextStyles = usePlaceholderTextStyles();
+  const labelStyles = useLabelStyles();
   const textFieldLegendStyles = useTextFieldLegendStyles();
   const textFieldWrapperStyles = useTextFieldWrapperStyles();
   const helperTextStyles = useHelperTextStyles();
@@ -385,12 +385,12 @@ export const useTextFieldStyles = (state: TextFieldState) => {
   );
 
   state.textFieldLabel.className = mergeClasses(
-    placeholderTextClassName,
-    placeholderTextStyles.placeholderText,
-    !state.disabled ? placeholderTextStyles.enabled : placeholderTextStyles.disabled,
-    state.error && placeholderTextStyles.error,
+    labelClassName,
+    labelStyles.label,
+    !state.disabled ? labelStyles.enabled : labelStyles.disabled,
+    state.error && labelStyles.error,
     (state.input.value !== '' || state.suffix !== undefined) &&
-      (state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder),
+      (state.label !== undefined ? labelStyles[state.appearance!] : labelStyles.placeholder),
     state.textFieldLabel.className,
   );
 

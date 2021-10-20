@@ -42,7 +42,7 @@ export const useMultilineState = (state: MultilineState) => {
   // Legend Props
   label && (state.textFieldLegend.children = label);
 
-  // Input Props
+  // Textarea Props
   state.textarea.value = currentValue;
   state.textarea.onChange = onInputChange;
   state.textarea.autoComplete = autocomplete;

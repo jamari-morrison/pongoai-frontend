@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'react-checkbox',
+  displayName: 'react-textfield',
   preset: 'ts-jest',
   collectCoverage: true,
   setupFilesAfterEnv: ['./config/tests.js'],

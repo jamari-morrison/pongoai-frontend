@@ -5,12 +5,12 @@ import {
   useInputStyles,
   useInputWrapperStyles,
   useTextFieldBorderStyles,
-  usePlaceholderTextStyles,
+  useLabelStyles,
   useTextFieldLegendStyles,
   useTextFieldWrapperStyles,
   useHelperTextStyles,
   textFieldBorderClassName,
-  placeholderTextClassName,
+  labelClassName,
   legendClassName,
 } from '../TextField/index';
 import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
@@ -80,7 +80,7 @@ export const useSearchStyles = (state: SearchState) => {
   const inputStyles = useInputStyles();
   const inputWrapperStyles = useInputWrapperStyles();
   const textFieldBorderStyles = useTextFieldBorderStyles();
-  const placeholderTextStyles = usePlaceholderTextStyles();
+  const labelStyles = useLabelStyles();
   const textFieldLegendStyles = useTextFieldLegendStyles();
   const textFieldWrapperStyles = useTextFieldWrapperStyles();
   const buttonStyles = useButtonStyles();
@@ -140,11 +140,11 @@ export const useSearchStyles = (state: SearchState) => {
   );
 
   state.textFieldLabel.className = mergeClasses(
-    placeholderTextClassName,
-    placeholderTextStyles.placeholderText,
-    !state.disabled ? placeholderTextStyles.enabled : placeholderTextStyles.disabled,
-    state.error && placeholderTextStyles.error,
-    state.label !== undefined ? placeholderTextStyles[state.appearance!] : placeholderTextStyles.placeholder,
+    labelClassName,
+    labelStyles.label,
+    !state.disabled ? labelStyles.enabled : labelStyles.disabled,
+    state.error && labelStyles.error,
+    state.label !== undefined ? labelStyles[state.appearance!] : labelStyles.placeholder,
     state.textFieldLabel.className,
   );
 
