@@ -16,9 +16,16 @@ export type MultilineCommons = Omit<TextFieldCommons, 'type' | 'prefix' | 'suffi
   /**
    * Whether the Multiline should be able to resize.
    *
-   * @default true
+   * @default false
    */
   resize?: boolean;
+
+  /**
+   * Whether Multiline should automatically adjust its height based off its content,
+   *
+   * @default true
+   */
+  autoAdjust?: boolean;
 
   /**
    * Callback to be called when the value changes.

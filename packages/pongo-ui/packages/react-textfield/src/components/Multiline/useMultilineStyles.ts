@@ -47,6 +47,10 @@ const useTextAreaStyles = makeStyles({
   disableResize: {
     resize: 'none',
   },
+
+  autoAdjust: {
+    overflow: 'hidden',
+  },
 });
 
 const useMultilineBorderStyles = makeStyles({
@@ -137,6 +141,7 @@ export const useMultilineStyles = (state: MultilineState) => {
     (state.appearance === 'filled' || state.appearance === 'standard') && textAreaStyles.lowerTextAlignment,
     !state.resize && textAreaStyles.disableResize,
     state.disabled && inputStyles.disabled,
+    state.autoAdjust && textAreaStyles.autoAdjust,
     state.textarea.className,
   );
 

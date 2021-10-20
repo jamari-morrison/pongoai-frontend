@@ -3,11 +3,23 @@ import { useId, useControllableState, useBoolean, useEventCallback, useMergedRef
 import type { MultilineState } from './Multiline.types';
 
 export const useMultilineState = (state: MultilineState) => {
-  const { defaultValue, value, autocomplete, disabled, helperText, required, error, placeholder, label, onChange } =
-    state;
+  const {
+    autoAdjust,
+    defaultValue,
+    value,
+    autocomplete,
+    disabled,
+    helperText,
+    required,
+    error,
+    placeholder,
+    label,
+    onChange,
+  } = state;
   const { id } = state.root;
 
   const inputRef = useMergedRefs(state.textarea.ref);
+  const [currentHeight, setCurrentHeight] = React.useState();
   const labelId = label ? useId('textField-label', id) : undefined;
   const helperTextId = helperText ? useId('textField-label', id) : undefined;
   const [currentValue, setCurrentValue] = useControllableState({
@@ -24,10 +36,22 @@ export const useMultilineState = (state: MultilineState) => {
     setCurrentValue(incomingValue);
   });
 
-  const onInputChange = (ev: React.ChangeEvent<HTMLTextAreaElement>) => {
-    updateValue(ev.target.value, ev);
+  /**
+   * Updates the textarea height to the current scroll height.
+   */
+  const updateTextareaHeight = () => {
+    inputRef.current!.style.height = '';
+    inputRef.current!.style.height = inputRef.current!.scrollHeight + 'px';
   };
 
+  const onInputChange = (ev: React.ChangeEvent<HTMLTextAreaElement>) => {
+    updateValue(ev.target.value, ev);
+    autoAdjust && updateTextareaHeight();
+  };
+
+  const textareaStyles = {
+    height: currentHeight,
+  };
   // Border Props
   state.textFieldBorder['aria-hidden'] = true;
 
@@ -44,6 +68,7 @@ export const useMultilineState = (state: MultilineState) => {
 
   // Textarea Props
   state.textarea.value = currentValue;
+  // state.textarea.style = textareaStyles;
   state.textarea.onChange = onInputChange;
   state.textarea.autoComplete = autocomplete;
   state.textarea.disabled = disabled;
