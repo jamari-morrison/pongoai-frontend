@@ -39,21 +39,28 @@ export const useMultilineState = (state: MultilineState) => {
   /**
    * Updates the textarea height to the current scroll height.
    */
-  const updateTextareaHeight = () => {
+  const updateTextareaHeight = React.useCallback(() => {
     inputRef.current!.style.height = '';
     inputRef.current!.style.height = inputRef.current!.scrollHeight + 'px';
-  };
+  }, []);
 
-  const onInputChange = (ev: React.ChangeEvent<HTMLTextAreaElement>) => {
-    updateValue(ev.target.value, ev);
-    autoAdjust && updateTextareaHeight();
-  };
+  const onInputChange = React.useCallback(
+    (ev: React.ChangeEvent<HTMLTextAreaElement>) => {
+      updateValue(ev.target.value, ev);
+      autoAdjust && updateTextareaHeight();
+    },
+    [updateValue, autoAdjust, updateTextareaHeight],
+  );
 
-  const textareaStyles = {
-    height: currentHeight,
-  };
+  const onClick = React.useCallback(ev => {
+    ev.preventDefault();
+    ev.stopPropagation();
+    inputRef.current!.focus();
+  }, []);
+
   // Border Props
   state.textFieldBorder['aria-hidden'] = true;
+  state.textFieldBorder.onClick = onClick;
 
   // Label Props
   label && (state.textFieldLabel.children = label);

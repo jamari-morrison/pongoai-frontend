@@ -30,7 +30,7 @@ export const useMultiline = (props: MultilineProps, ref: React.Ref<HTMLElement>)
     textFieldLabel,
     textFieldLegend,
     textFieldBorder,
-    resize = false,
+    resizable = false,
     onChange,
   } = props;
 
@@ -42,7 +42,7 @@ export const useMultiline = (props: MultilineProps, ref: React.Ref<HTMLElement>)
     error,
     appearance,
     placeholder,
-    resize,
+    resizable,
     helperText,
     autoAdjust,
     required,

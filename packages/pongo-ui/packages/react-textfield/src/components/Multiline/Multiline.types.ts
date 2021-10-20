@@ -18,7 +18,7 @@ export type MultilineCommons = Omit<TextFieldCommons, 'type' | 'prefix' | 'suffi
    *
    * @default false
    */
-  resize?: boolean;
+  resizable?: boolean;
 
   /**
    * Whether Multiline should automatically adjust its height based off its content,

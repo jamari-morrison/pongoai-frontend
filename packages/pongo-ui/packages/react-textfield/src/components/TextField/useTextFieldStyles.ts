@@ -176,6 +176,7 @@ export const useTextFieldBorderStyles = makeStyles({
 
   disabled: (theme: Theme) => ({
     borderColor: theme.palette.neutral2Disabled,
+    cursor: 'not-allowed',
   }),
 
   error: (theme: Theme) => ({
@@ -188,7 +189,7 @@ export const useLabelStyles = makeStyles({
     position: 'absolute',
     background: 'none',
     height: '100%',
-    width: '100%',
+    width: 'auto',
     margin: '0px',
     padding: '0px 10px',
     fontSize: '18px',
@@ -266,10 +267,11 @@ export const useTextFieldLegendStyles = makeStyles({
 export const useHelperTextStyles = makeStyles({
   helperText: (theme: Theme) => ({
     position: 'relative',
-    padding: '5px 0px 0px 10px',
+    padding: '5px 10px 0px 10px',
     margin: '0px',
     fontSize: '12px',
     fontFamily: theme.fonts.fontFamily.base,
+    textAlign: 'left',
   }),
 
   enabled: (theme: Theme) => ({
