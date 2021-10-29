@@ -22,6 +22,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@fluentui/react-positioning": "9.0.0-beta.1",
     "@fluentui/react-utilities": "9.0.0-beta.1",
     "@fluentui/react-make-styles": "9.0.0-beta.1",
     "@fluentui/react-tabster": "9.0.0-alpha.68",

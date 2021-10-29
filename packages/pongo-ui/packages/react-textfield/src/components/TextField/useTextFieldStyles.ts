@@ -101,14 +101,7 @@ export const useInputStyles = makeStyles({
     display: 'block',
     boxSizing: 'border-box',
     fontSize: '18px',
-    transition: 'flex-grow 1s cubic-bezier(0.33, 0.0, 0.67, 1), font-size .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
     fontFamily: theme.fonts.fontFamily.base,
-    '::-ms-reveal': {
-      display: 'none',
-    },
-    '::-webkit-search-cancel-button': {
-      display: 'none',
-    },
   }),
 
   labelPlaceholderFocus: (theme: Theme) => ({
@@ -250,7 +243,7 @@ export const useTextFieldLegendStyles = makeStyles({
     fontSize: '12px',
 
     '& span': {
-      padding: '0 5px',
+      padding: '0 3px',
       display: 'inline-block',
     },
   }),
@@ -295,7 +288,7 @@ export const useInputWrapperStyles = makeStyles({
   },
 });
 
-const useSuffixPrefixStyles = makeStyles({
+export const useSuffixPrefixStyles = makeStyles({
   container: (theme: Theme) => ({
     position: 'relative',
     height: 'auto',

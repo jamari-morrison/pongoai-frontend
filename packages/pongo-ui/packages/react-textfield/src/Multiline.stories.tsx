@@ -24,12 +24,8 @@ export const BasicMultilineExample = () => {
       <Header2>Standard Multiline Text Field</Header2>
       <div className={styles.row}>
         <Multiline label="Standard" placeholder="Enter your text" />
-        <TextField label="Standard" placeholder="Enter your text" />
         <Multiline label="Standard" placeholder="Enter your text" disabled />
         <Multiline label="Standard" placeholder="Enter your text" helperText="Error" error />
-      </div>
-      <div className={styles.row}>
-        <TextField label="Standard" placeholder="Enter your text" />
       </div>
       <Header2>Outlined Multiline Text Field</Header2>
       <div className={styles.row}>

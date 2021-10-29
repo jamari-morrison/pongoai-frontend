@@ -2,5 +2,5 @@ steps:
   - task: NodeTool@0
     displayName: 'Install Node'
     inputs:
-      versionSpec: '>=16.x'
+      versionSpec: '16.x'
       checkLatest: true

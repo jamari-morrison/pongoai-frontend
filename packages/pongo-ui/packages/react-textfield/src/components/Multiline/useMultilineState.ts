@@ -19,9 +19,8 @@ export const useMultilineState = (state: MultilineState) => {
   const { id } = state.root;
 
   const inputRef = useMergedRefs(state.textarea.ref);
-  const [currentHeight, setCurrentHeight] = React.useState();
-  const labelId = label ? useId('textField-label', id) : undefined;
-  const helperTextId = helperText ? useId('textField-label', id) : undefined;
+  const labelId = label ? useId('multiline-label', id) : undefined;
+  const helperTextId = helperText ? useId('multiline-label', id) : undefined;
   const [currentValue, setCurrentValue] = useControllableState({
     defaultState: defaultValue,
     state: value,

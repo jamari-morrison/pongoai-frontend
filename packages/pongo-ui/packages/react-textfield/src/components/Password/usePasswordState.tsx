@@ -10,8 +10,8 @@ export const usePasswordState = (state: PasswordState) => {
   const { id } = state.root;
 
   const inputRef = useMergedRefs(state.input.ref);
-  const labelId = label ? useId('textField-label', id) : undefined;
-  const helperTextId = helperText ? useId('textField-label', id) : undefined;
+  const labelId = label ? useId('password-label', id) : undefined;
+  const helperTextId = helperText ? useId('password-label', id) : undefined;
   const [isPasswordVisible, { toggle: passwordVisibility }] = useBoolean(false);
   const [currentValue, setCurrentValue] = useControllableState({
     defaultState: defaultValue,
