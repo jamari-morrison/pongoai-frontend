@@ -68,22 +68,41 @@ const useListStyles = makeStyles({
       fontFamily: theme.fonts.fontFamily.base,
       fontSize: '18px',
       userSelect: 'none',
+      outline: 'none',
     },
   }),
 
   activeListItem: (theme: Theme) => ({
     [`& .active`]: {
-      background: 'red',
+      background: '#e6e9ff',
+      ':hover': {
+        background: '#ccd1ff',
+      },
+      ':active': {
+        background: '#abb3ff',
+      },
+      ':focus-within': {
+        background: '#ccd1ff',
+        ':hover': {
+          background: '#c2c8ff',
+        },
+        ':active': {
+          background: '#abb3ff',
+        },
+      },
     },
   }),
 
   inactiveListItem: (theme: Theme) => ({
-    [`& .${listClassName}`]: {
+    [`& .inactive`]: {
       background: 'white',
       ':hover': {
         background: theme.palette.neutral2Hover,
       },
       ':active': {
+        background: theme.palette.neutral2Active,
+      },
+      ':focus-within': {
         background: theme.palette.neutral2Active,
       },
     },

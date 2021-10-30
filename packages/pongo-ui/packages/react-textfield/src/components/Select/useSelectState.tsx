@@ -75,10 +75,10 @@ export const useSelectState = (state: SelectState) => {
     const clampedValue = clamp(incomingValue, 0, options.length - 1);
     const optionValue = options[clampedValue].value;
 
-    setCurrentOptionIndex(clampedValue);
     internalState.current.focusedValue = clampedValue;
     setCurrentValue(optionValue);
     setVisibleFalse();
+    setCurrentOptionIndex(clampedValue);
     onChange?.(ev, { value: optionValue });
   });
 
@@ -95,7 +95,6 @@ export const useSelectState = (state: SelectState) => {
       };
 
       const onOptionKeyUp = (ev: any) => {
-        ev.preventDefault();
         ev.stopPropagation();
         switch (ev.key) {
           case 'Escape': {
@@ -117,7 +116,6 @@ export const useSelectState = (state: SelectState) => {
       };
 
       const onOptionKeyDown = (ev: any) => {
-        ev.preventDefault();
         ev.stopPropagation();
         const incomingValue = getKeyDownValue(ev, internalState.current.focusedValue, options.length - 1);
         internalState.current.focusedValue = incomingValue;
@@ -126,24 +124,21 @@ export const useSelectState = (state: SelectState) => {
 
       (optionItemsRef.current[i] as any) = React.createRef();
 
-      // const selectedStyles = {
-      //   background: options[i].value === options[internalState.current.currentOptionIndex].value && '#e6e9ff' ? ,
-      // };
-
-      console.log(options[i].value === currentValue);
-
       items.push(
         <li
-          className={options[i].value === options[currentOptionIndex].value ? 'active' : listClassName}
+          className={
+            options[i].value === options[currentOptionIndex].value
+              ? listClassName + ' active'
+              : listClassName + ' inactive'
+          }
           ref={optionItemsRef.current[i]}
           role="option"
           aria-selected={options[i].value === options[currentOptionIndex].value}
           data-value={value}
-          // onClick={onOptionClick}
+          onClick={onOptionClick as any}
           onKeyUp={onOptionKeyUp}
           onKeyDown={onOptionKeyDown}
           key={i}
-          // style={selectedStyles}
           tabIndex={-1}
         >
           {label}
@@ -151,10 +146,10 @@ export const useSelectState = (state: SelectState) => {
       );
     }
     return items;
-  }, []);
+  }, [options, currentOptionIndex]);
 
   const onKeyUp = (ev: any) => {
-    ev.preventDefault();
+    //ev.preventDefault();
     ev.stopPropagation();
     switch (ev.key) {
       case 'Escape': {
@@ -175,7 +170,7 @@ export const useSelectState = (state: SelectState) => {
   const onBlur = React.useCallback(
     ev => {
       // Call if no inner child element maintains focus.
-      //!ev.currentTarget.contains(ev.relatedTarget) && setVisibleFalse();
+      !ev.currentTarget.contains(ev.relatedTarget) && setVisibleFalse();
     },
     [setVisibleFalse],
   );
@@ -214,7 +209,7 @@ export const useSelectState = (state: SelectState) => {
   state.list.ref = useMergedRefs(state.list.ref, containerRef);
 
   // Select Props
-  // (state.selectButton.children = options[currentOptionIndex].label);
+  state.selectButton.children = options[currentOptionIndex]?.label;
   state.selectButton.onClick = toggleVisible;
   state.selectButton.ref = useMergedRefs(state.selectButton.ref, selectButtonRef, targetRef);
   state.selectButton.role = 'button';
@@ -225,7 +220,7 @@ export const useSelectState = (state: SelectState) => {
 
   // Input Props
   state.input.tabIndex = -1;
-  // state.input.value = currentValue;
+  //state.input.value = currentValue;
   // state.input.onChange = onInputChange;
   // state.input.autoComplete = autocomplete;
   // state.input.disabled = disabled;
