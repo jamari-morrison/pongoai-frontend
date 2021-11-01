@@ -29,6 +29,7 @@
     "@pongoai/react-rating": { "implicitDependencies": [] },
     "@pongoai/react-theme": { "implicitDependencies": [] },
     "@pongoai/react-textfield": { "implicitDependencies": [] },
+    "@pongoai/react-label": { "implicitDependencies": [] },
     "@pongoai/react-icon": { "implicitDependencies": [] },
     "@pongoai/react-text": { "implicitDependencies": [] },
     "@pongoai/react-switch": { "implicitDependencies": [] },
