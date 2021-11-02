@@ -25,6 +25,10 @@
       "root": "packages/pongo-ui/packages/react-button",
       "projectType": "library"
     },
+    "@pongoai/react-link": {
+      "root": "packages/pongo-ui/packages/react-link",
+      "projectType": "library"
+    },
     "@pongoai/react-label": {
       "root": "packages/pongo-ui/packages/react-label",
       "projectType": "library"

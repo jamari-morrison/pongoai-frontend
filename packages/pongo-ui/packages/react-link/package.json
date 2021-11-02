@@ -1,7 +1,7 @@
 {
-  "name": "@pongoai/react-label",
+  "name": "@pongoai/react-link",
   "version": "0.0.0-alpha.0",
-  "description": "A Label that provides a title to a form component.",
+  "description": "A customizable link that helps with site navigation.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
