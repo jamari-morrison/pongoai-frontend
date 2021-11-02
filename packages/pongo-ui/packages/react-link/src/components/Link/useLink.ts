@@ -4,18 +4,19 @@ import type { LinkProps, LinkSlots, LinkState } from './Link.types';
 
 export const linkShorthandProps: (keyof LinkSlots)[] = ['root'];
 
-export const useLink = (props: LinkProps, ref: React.Ref<HTMLElement>): LinkState => {
-  const { disabled = false, inline = false } = props;
+export const useLink = (props: LinkProps, ref: React.Ref<HTMLAnchorElement | HTMLButtonElement>): LinkState => {
+  const { disabled = false } = props;
+  const as = props.as || (props.href ? 'a' : 'button');
 
   const state: LinkState = {
     disabled,
-    inline,
     components: {
       root: 'a',
     },
-    root: getNativeElementProps('a', {
+    root: getNativeElementProps(as, {
       ref,
       ...props,
+      as,
     }),
   };
 

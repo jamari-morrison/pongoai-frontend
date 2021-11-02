@@ -7,7 +7,7 @@ import type { LinkProps } from './Link.types';
 /**
  * The Link control allows you to easily customize your anchor elements.
  */
-export const Link = React.forwardRef<HTMLElement, LinkProps>((props, ref) => {
+export const Link = React.forwardRef<HTMLAnchorElement | HTMLButtonElement, LinkProps>((props, ref) => {
   const state = useLink(props, ref);
 
   useLinkStyles(state);

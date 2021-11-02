@@ -7,16 +7,18 @@ const useRootStyles = makeStyles({
     fontFamily: theme.fonts.fontFamily.base,
     fontSize: theme.fonts.fontSize[300],
     fontWeight: theme.fonts.fontWeight.regular,
+    backgroundColor: 'transparent',
+    border: 'none',
     boxSizing: 'border-box',
     display: 'inline',
     overflow: 'inherit',
-    textDecoration: 'underline',
     textOverflow: 'inherit',
     userSelect: 'text',
   }),
 
   disabled: (theme: Theme) => ({
     color: theme.palette.neutral2Disabled,
+    textDecoration: 'underline',
     cursor: 'not-allowed',
   }),
 
@@ -25,9 +27,11 @@ const useRootStyles = makeStyles({
     cursor: 'pointer',
     ':hover': {
       color: theme.palette.brand1Hover,
+      textDecoration: 'underline',
     },
     ':active': {
       color: theme.palette.brand1Active,
+      textDecoration: 'underline',
     },
   }),
 

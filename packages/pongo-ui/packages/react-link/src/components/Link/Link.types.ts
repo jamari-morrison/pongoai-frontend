@@ -4,7 +4,7 @@ export type LinkSlots = {
   /**
    * The root of the Link.
    */
-  root: IntrinsicShorthandProps<'a'>;
+  root: IntrinsicShorthandProps<'a', 'button'>;
 };
 
 export type LinkCommons = {
@@ -14,13 +14,6 @@ export type LinkCommons = {
    * @default false
    */
   disabled?: boolean;
-
-  /**
-   * Whether the link should appear inline with text content.
-   *
-   * @default false
-   */
-  inline?: boolean;
 };
 
 export type LinkProps = ComponentProps<LinkSlots> & LinkCommons;

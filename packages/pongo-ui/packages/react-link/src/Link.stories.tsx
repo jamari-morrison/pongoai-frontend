@@ -23,6 +23,8 @@ export const BasicLinkExample = () => {
       <Header2>Basic Example</Header2>
       <div className={styles.row}>
         <Link>Basic</Link>
+        <Link disabled>Basic</Link>
+        <Link disabled>Basic</Link>
       </div>
     </div>
   );
