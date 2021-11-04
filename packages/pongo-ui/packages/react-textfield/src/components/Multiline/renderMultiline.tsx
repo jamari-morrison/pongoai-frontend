@@ -15,7 +15,7 @@ export const renderMultiline = (state: MultilineState) => {
           </slots.textFieldLegend>
         )}
         {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
-        <slots.textarea {...slotProps.textarea} />
+        <slots.textarea {...slotProps.textarea} data-testid="test-id" />
       </slots.textFieldBorder>
       {state.helperText && <slots.textFieldHelperText {...slotProps.textFieldHelperText} />}
     </slots.root>

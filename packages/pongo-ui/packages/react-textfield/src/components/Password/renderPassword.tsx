@@ -18,7 +18,7 @@ export const renderPassword = (state: PasswordState) => {
         </slots.textFieldBorder>
         {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
         <slots.inputWrapper {...slotProps.inputWrapper}>
-          <slots.input {...slotProps.input} />
+          <slots.input {...slotProps.input} data-testid="test-id" />
         </slots.inputWrapper>
         {state.input.value !== '' && <slots.showIconWrapper {...slotProps.showIconWrapper} />}
       </slots.textFieldWrapper>

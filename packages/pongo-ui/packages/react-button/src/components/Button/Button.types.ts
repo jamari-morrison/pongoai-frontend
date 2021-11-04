@@ -1,10 +1,11 @@
 import type { ComponentProps, ComponentState, IntrinsicShorthandProps } from '@fluentui/react-utilities';
-
+import { ARIAButtonShorthandProps } from '@fluentui/react-aria';
 export type ButtonSlots = {
   /**
    * The root of the Button.
    */
-  root: IntrinsicShorthandProps<'button'>;
+  //root: IntrinsicShorthandProps<'button'> | IntrinsicShorthandProps<'a'>;
+  root: ARIAButtonShorthandProps;
 };
 
 export type ButtonCommons = {
