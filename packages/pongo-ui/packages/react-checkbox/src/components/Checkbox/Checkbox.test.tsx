@@ -1,8 +1,7 @@
+import React from 'react';
 import { Checkbox } from './Checkbox';
 import { isConformant } from '../../common/isConformant';
-import '@testing-library/react';
 import { render, RenderResult, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
 import { resetIdsForTests } from '@fluentui/react-utilities';
 
 describe('Checkbox', () => {

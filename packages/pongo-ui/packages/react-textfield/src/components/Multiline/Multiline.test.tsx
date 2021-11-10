@@ -1,10 +1,9 @@
+import React from 'react';
 import { Multiline } from './Multiline';
 import { isConformant } from '../../common/isConformant';
-import '@testing-library/react';
 import { render, RenderResult, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
-import { resetIdsForTests } from '@fluentui/react-utilities';
 import userEvent from '@testing-library/user-event';
+import { resetIdsForTests } from '@fluentui/react-utilities';
 
 describe('Multiline', () => {
   let renderedComponent: RenderResult | undefined;

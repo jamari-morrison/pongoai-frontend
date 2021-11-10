@@ -1,10 +1,9 @@
+import React from 'react';
 import { TextField } from './TextField';
 import { isConformant } from '../../common/isConformant';
-import '@testing-library/react';
 import { render, RenderResult, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
-import { resetIdsForTests } from '@fluentui/react-utilities';
 import userEvent from '@testing-library/user-event';
+import { resetIdsForTests } from '@fluentui/react-utilities';
 
 //credit to https://github.com/microsoft/fluentui for being the base of this set of tests
 describe('TextField', () => {

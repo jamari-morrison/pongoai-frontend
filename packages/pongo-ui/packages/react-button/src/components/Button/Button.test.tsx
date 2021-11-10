@@ -1,10 +1,8 @@
-import { Button } from './Button';
-import { isConformant } from '../../common/isConformant';
-import '@testing-library/react';
-import { render, RenderResult, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
-import { resetIdsForTests } from '@fluentui/react-utilities';
-import { ButtonCommons, ButtonProps } from './Button.types';
+import { Button } from './Button';
+import { ButtonProps } from './Button.types';
+import { isConformant } from '../../common/isConformant';
+import { render, RenderResult, fireEvent } from '@testing-library/react';
 
 //credit to https://github.com/microsoft/fluentui for being the base of this set of tests
 describe('Button', () => {

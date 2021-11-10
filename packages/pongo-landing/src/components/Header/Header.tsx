@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useFluent } from '@fluentui/react-shared-contexts';
 import { makeStyles } from '@fluentui/react-make-styles';
-import { LogoIcon } from '../../../../../../pongo-ui/packages/react-icon/src';
-import { Header3, Text } from '../../../../../../pongo-ui/packages/react-text/src';
+import { LogoIcon } from '@pongoai/react-icon';
+import { Header3, Text } from '@pongoai/react-text';
 
 const useStyles = makeStyles({
   header: {
@@ -103,7 +103,7 @@ export const Header = () => {
     <div className={styles.header}>
       <LogoIcon className={styles.headerLeftOuterContainer} />
       <span className={styles.headerTitle}>
-        <Text size={100} weight="black">
+        <Text size={500} weight="bold">
           Pongo AI
         </Text>
       </span>
