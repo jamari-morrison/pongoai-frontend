@@ -26,11 +26,11 @@
     "@fluentui/react-positioning": "9.0.0-beta.1",
     "@fluentui/react-tabster": "9.0.0-alpha.68",
     "@fluentui/react-utilities": "9.0.0-beta.1",
-    "@pongoai/react-button": "0.0.8"
+    "@pongoai/react-button": "0.0.9"
   },
   "devDependencies": {
     "@fluentui/react-conformance": "^0.5.1",
-    "@pongoai/react-text": "^0.0.5",
+    "@pongoai/react-text": "^0.0.6",
     "@storybook/react": "^6.3.9",
     "@testing-library/dom": "^8.10.1",
     "@testing-library/user-event": "^13.5.0",

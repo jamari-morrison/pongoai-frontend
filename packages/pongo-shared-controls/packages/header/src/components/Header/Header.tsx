@@ -97,17 +97,17 @@ export const Header = () => {
   const { dir } = useFluent();
   const styles = useStyles();
 
-  const justifyContent = { justifyContent: dir === 'rtl' ? 'left' : 'right' };
+  // const justifyContent = { justifyContent: dir === 'rtl' ? 'left' : 'right' };
 
   return (
     <div className={styles.header}>
       <LogoIcon className={styles.headerLeftOuterContainer} />
       <span className={styles.headerTitle}>
-        <Text size={100} weight="black">
+        <Text size={500} weight="bold">
           Pongo AI
         </Text>
       </span>
-      <span className={styles.headerInnerContainer} style={justifyContent}>
+      {/* <span className={styles.headerInnerContainer} style={justifyContent}>
         <span className={styles.headerButton}>
           <Header3>Home</Header3>
         </span>
@@ -120,7 +120,7 @@ export const Header = () => {
         <span className={styles.headerButton}>
           <Header3>News</Header3>
         </span>
-      </span>
+      </span> */}
       <span className={styles.headerRightOuterContainer} />
     </div>
   );

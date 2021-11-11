@@ -11,7 +11,13 @@
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "@fluentui/react-provider": "9.0.0-alpha.85",
+    "@pongoai/react-button": "^0.0.9",
+    "@pongoai/react-text": "^0.0.6",
+    "@pongoai/react-icon": "^0.0.2",
+    "@pongoai/react-theme": "^0.0.7",
+    "@pongoai/react-link": "^0.0.0-alpha.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

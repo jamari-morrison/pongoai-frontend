@@ -2704,12 +2704,14 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@pongoai/react-button@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.0.4.tgz#973c011c63bdb1990b8b1185e4e73b93527e68db"
-  integrity sha512-E5zynty386fplALQE7ZWpX5uFAqTk0HOrcAc3JzMZHQ/A5ZKaBGCtt/TzS7Zi4eV62AQ+JL5/cvwXp042ZD/Uw==
+"@pongoai/react-button@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.0.9.tgz#adca752dd3e2230cad0922496880c571316c3ef0"
+  integrity sha512-wS3DmGDizKpe8/+gLZaaV9nIkKuegcm6wfgPvgViFcODFoZJvS63b8wxtYj2yzuVvmJht+2dqPWjwMxRTxT8gQ==
   dependencies:
+    "@fluentui/react-aria" "^9.0.0-beta.2"
     "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
 "@pongoai/react-checkbox@0.0.0":
@@ -2728,6 +2730,22 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
+"@pongoai/react-icon@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.2.tgz#0c50d9952ac18580ec8887465f93dd833706c9ce"
+  integrity sha512-wGDSMhJ+3MmCoRVtzokgpENRL217WnjA6ShKHUgX+FdIA4R/5x7eKAz2zXAIpSeG15E/ZvmLZO73O8csxLhgmA==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-link@^0.0.0-alpha.0":
+  version "0.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-link/-/react-link-0.0.0-alpha.0.tgz#1a70b0ba58b6801d09bf83b12197c1f8bd3b20d4"
+  integrity sha512-INTY8Efz4q7INvGYWXzAhkP/k9hje37JzLYeTzj7iVjDUictbKrLHjzmx1B0PAG79p4d4WsCoCGFTEV6CgPLBw==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
 "@pongoai/react-switch@0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@pongoai/react-switch/-/react-switch-0.0.0.tgz#b3a370e885ccaf3d4d5873ece4d79913722cbfa3"
@@ -2741,6 +2759,14 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.4.tgz#ae810c62f54f9f0b42717518b8d0da03556a85d0"
   integrity sha512-ukyYS0J/AweWwHx6MsExcJYOcSPh3MqdfY5vmlO72Tl7wqG69lbKB/sUSWrj8ylvhTxaLxPBAwNGo8zHzX+V1g==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-text@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.6.tgz#b8440d6df27cc9e7fa2706db9488e9bfe4b6b6f5"
+  integrity sha512-wHD65Hb7lbN3Gl9uCuXnHVG907aw2DyfKADJdQITgn+Y++C4SoIIXk01y5T1gRokB1tYYqP4NY+T5d/V9yUpUQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
