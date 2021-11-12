@@ -13,6 +13,7 @@ const useRootStyles = makeStyles({
     display: 'inline',
     overflow: 'inherit',
     textOverflow: 'inherit',
+    textDecoration: 'none',
     userSelect: 'text',
   }),
 

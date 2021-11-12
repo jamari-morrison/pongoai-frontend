@@ -2738,10 +2738,18 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-link@^0.0.0-alpha.0":
-  version "0.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-link/-/react-link-0.0.0-alpha.0.tgz#1a70b0ba58b6801d09bf83b12197c1f8bd3b20d4"
-  integrity sha512-INTY8Efz4q7INvGYWXzAhkP/k9hje37JzLYeTzj7iVjDUictbKrLHjzmx1B0PAG79p4d4WsCoCGFTEV6CgPLBw==
+"@pongoai/react-link@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-link/-/react-link-0.0.1.tgz#59448a2fd1979d9dbf06fea0c33b2ffd8782d102"
+  integrity sha512-lNiyfOqpDC9fjMiQVisBMEC11MgjNJAkPsIS3q8vdlfiS9gFQYhFhGXHnLZW/lvdyHZ/0k8dVgvxAOQ6On2uxQ==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-rating@^0.0.2-alpha.0":
+  version "0.0.2-alpha.0"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-rating/-/react-rating-0.0.2-alpha.0.tgz#d275264c86c982821d1f4376f880a082d9d2eed6"
+  integrity sha512-fAg8vkUUXrAMXDBfi2zuQsK16loaLiCzUMyChxUOodgvN48OVmUbCXBx2sOOLIgEJFae6+Ib/AAmsgjEkQsAWg==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"

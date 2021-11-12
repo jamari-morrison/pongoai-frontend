@@ -17,7 +17,8 @@
     "@pongoai/react-text": "^0.0.6",
     "@pongoai/react-icon": "^0.0.2",
     "@pongoai/react-theme": "^0.0.7",
-    "@pongoai/react-link": "^0.0.0-alpha.0"
+    "@pongoai/react-link": "^0.0.1",
+    "@pongoai/react-rating": "^0.0.2-alpha.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

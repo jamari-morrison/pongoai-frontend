@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { makeStyles } from '@fluentui/react-make-styles';
 import { LogoIcon } from '@pongoai/react-icon';
 import { Text } from '@pongoai/react-text';
@@ -57,11 +58,15 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <LogoIcon className={styles.headerLeftOuterContainer} />
+      <Link href="/" passHref>
+        <LogoIcon className={styles.headerLeftOuterContainer} />
+      </Link>
       <span className={styles.headerTitle}>
-        <Text size={500} weight="bold">
-          Pongo AI
-        </Text>
+        <Link href="/" passHref>
+          <Text size={500} weight="bold">
+            Pongo AI
+          </Text>
+        </Link>
       </span>
       <span className={styles.headerRightOuterContainer} />
     </div>

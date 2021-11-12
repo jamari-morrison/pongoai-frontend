@@ -3,13 +3,13 @@ import type { RatingState } from './Rating.types';
 
 const useRootStyles = makeStyles({
   root: {
-    '--rating-star-size': '45px',
+    '--rating-star-size': '34px',
     position: 'relative',
     display: 'inline-flex',
     userSelect: 'none',
     touchAction: 'none',
     verticalAlign: 'bottom',
-    width: '270px',
+    width: '200px',
     height: 'var(--rating-star-size)',
     flexDirection: 'column',
   },
@@ -31,8 +31,8 @@ const useStarStyles = makeStyles({
       transform: 'translateX(50%)',
       alignItems: 'center',
       '> svg': {
-        width: '45px',
-        height: '45px',
+        width: 'var(--rating-star-size)',
+        height: 'var(--rating-star-size)',
         strokeWidth: '3',
       },
     },
