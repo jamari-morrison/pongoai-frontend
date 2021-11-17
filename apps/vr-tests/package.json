@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "chromatic": "^5.10.2",
+    "chromatic": "^v6.0.6",
     "@pongoai/react-theme": "0.0.7",
     "@pongoai/react-text": "0.0.4",
     "@pongoai/react-icon": "0.0.1",

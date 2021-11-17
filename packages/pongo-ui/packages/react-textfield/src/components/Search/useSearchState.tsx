@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useId, useControllableState, useBoolean, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
+import { useId, useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
 import { Button } from '../../../../react-button/src/index';
 import { SearchIcon, CancelIcon } from './defaultIcons';
 import type { SearchState } from './Search.types';

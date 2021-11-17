@@ -6,7 +6,6 @@ import {
   useEventCallback,
   useMergedRefs,
   clamp,
-  optionProperties,
 } from '@fluentui/react-utilities';
 import { Chevron } from './defaultIcons';
 import { usePopper } from '@fluentui/react-positioning';

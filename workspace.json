@@ -1,20 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "pongo-landing": {
-      "root": "packages/pongo-landing",
-      "projectType": "library"
-    },
-    "pongo-dashboard": {
-      "root": "packages/pongo-dashboard",
-      "projectType": "library"
-    },
-    "pongo-ui": {
-      "root": "packages/pongo-ui",
-      "projectType": "library"
-    },
-    "pongo-shared-controls": {
-      "root": "packages/pongo-shared-controls",
+    "pongo-site": {
+      "root": "packages/pongo-site",
       "projectType": "library"
     },
     "@pongoai/header": {

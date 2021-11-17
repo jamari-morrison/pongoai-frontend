@@ -14,7 +14,6 @@ import {
   legendClassName,
   useSuffixPrefixStyles,
 } from '../TextField/index';
-import { createFocusIndicatorStyleRule } from '@fluentui/react-tabster';
 import { Theme } from '@pongoai/react-theme';
 import { listClassName } from './useSelectState';
 
@@ -58,7 +57,7 @@ const useListStyles = makeStyles({
     background: 'white',
     boxShadow: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)',
     transition: 'height 1s cubic-bezier(0.33, 0.0, 0.67, 1)',
-
+    zIndex: '1000',
     [`& .${listClassName}`]: {
       height: '38px',
       padding: '0px 10px 0px 10px',

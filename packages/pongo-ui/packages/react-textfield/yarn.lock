@@ -1918,10 +1918,10 @@
     "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-text@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.5.tgz#cd5a9b3f7f6f2ded02ddd80ef60807ef56c478bd"
-  integrity sha512-ijiEGVWIB/RJDOw0tFyAiR+EcIkyNc+OoVbDcuASFzXz74H6T/TSl+mt3pojjU6JoLiTgagyDhJjM3ZVANtnPQ==
+"@pongoai/react-text@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.6.tgz#b8440d6df27cc9e7fa2706db9488e9bfe4b6b6f5"
+  integrity sha512-wHD65Hb7lbN3Gl9uCuXnHVG907aw2DyfKADJdQITgn+Y++C4SoIIXk01y5T1gRokB1tYYqP4NY+T5d/V9yUpUQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"

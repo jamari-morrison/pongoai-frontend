@@ -20,9 +20,7 @@
     "build": [{ "target": "build", "projects": "dependencies" }]
   },
   "projects": {
-    "pongo-landing": { "implicitDependencies": [] },
-    "pongo-dashboard": { "implicitDependencies": [] },
-    "pongo-ui": { "implicitDependencies": [] },
+    "pongo-site": { "implicitDependencies": [] },
     "@pongoai/header": { "implicitDependencies": [] },
     "@pongoai/react-button": { "implicitDependencies": [] },
     "@pongoai/react-checkbox": { "implicitDependencies": [] },

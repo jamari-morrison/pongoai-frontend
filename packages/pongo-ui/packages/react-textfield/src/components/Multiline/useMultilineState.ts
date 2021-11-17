@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useId, useControllableState, useBoolean, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
+import { useId, useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
 import type { MultilineState } from './Multiline.types';
 
 export const useMultilineState = (state: MultilineState) => {
