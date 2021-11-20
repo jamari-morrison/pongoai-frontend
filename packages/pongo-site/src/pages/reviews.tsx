@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { Header } from '../components/Header';
+import { Header, Sidebar, Content } from '../components';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
 import { Text, Body, SubHeadline } from '@pongoai/react-text';
@@ -108,16 +108,19 @@ export const Reviews: NextPage = () => {
   return (
     <FluentProvider theme={webLightTheme}>
       <Header />
-      <div className={styles.cardCollection}>
-        <div className={styles.cardContainer}>
-          <SurveyAnalyticsCard />
-          <RatingCard />
+      <Sidebar activePage="reviews" />
+      <Content>
+        <div className={styles.cardCollection}>
+          <div className={styles.cardContainer}>
+            <SurveyAnalyticsCard />
+            <RatingCard />
+          </div>
+          <div className={styles.cardContainer}>
+            <ScoreCard />
+            <KeywordsCard />
+          </div>
         </div>
-        <div className={styles.cardContainer}>
-          <ScoreCard />
-          <KeywordsCard />
-        </div>
-      </div>
+      </Content>
     </FluentProvider>
   );
 };

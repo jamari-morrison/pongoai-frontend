@@ -6,8 +6,8 @@ import { Text } from '@pongoai/react-text';
 
 const useStyles = makeStyles({
   header: {
-    position: 'relative',
-    height: '60px',
+    position: 'fixed',
+    height: '68px',
     width: '100%',
     display: 'flex',
     justifyContent: 'left',
@@ -15,11 +15,12 @@ const useStyles = makeStyles({
     background: '#2060cf',
     boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
     gap: '15px',
+    zIndex: 100,
   },
 
   headerLeftOuterContainer: {
     position: 'relative',
-    width: '80px',
+    width: '68px',
     height: '100%',
     display: 'flex',
     flexShrink: 0,
