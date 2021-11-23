@@ -2498,7 +2498,7 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@pongoai/react-button@^0.0.9":
+"@pongoai/react-button@0.0.9", "@pongoai/react-button@^0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.0.9.tgz#adca752dd3e2230cad0922496880c571316c3ef0"
   integrity sha512-wS3DmGDizKpe8/+gLZaaV9nIkKuegcm6wfgPvgViFcODFoZJvS63b8wxtYj2yzuVvmJht+2dqPWjwMxRTxT8gQ==
@@ -2572,6 +2572,17 @@
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-textfield@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-textfield/-/react-textfield-0.0.7.tgz#c316a6303370306258d716ca6bf338611e26a0ef"
+  integrity sha512-iKDv6GS1Xa0nawFh+3WX3X4cRl5Hc6VXbOumWVARdXui/iruRPoSOnsuXjEECuc6oo6cidoLXRw5NYEDenqSgA==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-positioning" "9.0.0-beta.1"
+    "@fluentui/react-tabster" "9.0.0-alpha.68"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+    "@pongoai/react-button" "0.0.9"
 
 "@pongoai/react-theme@0.0.7", "@pongoai/react-theme@^0.0.7":
   version "0.0.7"

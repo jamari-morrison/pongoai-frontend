@@ -25,9 +25,11 @@ const useStyles = makeStyles({
     display: 'flex',
     gap: '15px',
     flexDirection: 'column',
+    flexShrink: 0,
     textAlign: 'center',
     boxShadow: 'inset 0px 0px 25px 1px rgba(0, 0, 0, 0.1)',
     boxSizing: 'border-box',
+    zIndex: 1000,
   },
 
   sidebarLink: {
@@ -38,6 +40,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
     gap: '0px',
+    flexShrink: 0,
     textAlign: 'center',
     cursor: 'pointer',
   },

@@ -7,9 +7,9 @@ type ContentProps = {
 
 const useStyles = makeStyles({
   root: {
-    position: 'absolute',
-    left: '68px',
-    top: '68px',
+    position: 'relative',
+    paddingLeft: '68px',
+    paddingTop: '68px',
   },
 });
 
