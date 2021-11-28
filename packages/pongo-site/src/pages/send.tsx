@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Header, Sidebar, Content } from '../components';
+import { Header, Sidebar, Content, SendSection } from '../components';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
 
@@ -9,6 +9,7 @@ export const Share: NextPage = () => {
       <Header />
       <Sidebar activePage="send" />
       <Content>Share</Content>
+      <SendSection />
     </FluentProvider>
   );
 };

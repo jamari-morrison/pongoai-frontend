@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import { Header, Sidebar, Content } from '../components';
+import { Header, Sidebar, Content, ReviewPanel, ReviewTimeline } from '../components';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
 import { Text, Body, SubHeadline } from '@pongoai/react-text';
@@ -118,6 +118,12 @@ export const Reviews: NextPage = () => {
           <div className={styles.cardContainer}>
             <ScoreCard />
             <KeywordsCard />
+          </div>
+          <div className={styles.cardContainer}>
+            <ReviewPanel />
+          </div>
+          <div className={styles.cardContainer}>
+            <ReviewTimeline />
           </div>
         </div>
       </Content>
