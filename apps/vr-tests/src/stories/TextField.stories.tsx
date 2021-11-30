@@ -1,21 +1,43 @@
 import * as React from 'react';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
-import { TextField, Password, Search } from '../../../../packages/pongo-ui/packages/react-textfield/src/index';
+import { TextField, Password, Search, Select } from '../../../../packages/pongo-ui/packages/react-textfield/src/index';
 import { makeStyles } from '@fluentui/react-make-styles';
 
 const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '45px',
+    gap: '35px',
   },
   row: {
     display: 'flex',
     flexDirection: 'row',
-    gap: '45px',
+    gap: '35px',
   },
 });
+
+const moneyOptions = [
+  { value: 'USD', label: '$' },
+  { value: 'EUR', label: '€' },
+  { value: 'BTC', label: '฿' },
+  { value: 'JPY', label: '¥' },
+];
+
+const dateOptions = [
+  { value: 'Jan', label: 'January' },
+  { value: 'Feb', label: 'February' },
+  { value: 'Mar', label: 'March' },
+  { value: 'Apr', label: 'April' },
+  { value: 'May', label: 'May' },
+  { value: 'Jun', label: 'June' },
+  { value: 'Jul', label: 'July' },
+  { value: 'Aug', label: 'August' },
+  { value: 'Sept', label: 'September' },
+  { value: 'Oct', label: 'October' },
+  { value: 'Nov', label: 'November' },
+  { value: 'Dec', label: 'December' },
+];
 
 const TestIcon = () => (
   <svg width="20" height="20" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,6 +150,21 @@ export const BasicTextFieldExample = () => {
           <TextField appearance="standard" placeholder="Enter your age" label="Age" number />
           <TextField appearance="outlined" placeholder="Enter your age" label="Age" number />
           <TextField appearance="filled" placeholder="Enter your age" label="Age" number />
+        </div>
+        <div className={styles.row}>
+          <Select appearance="standard" label="Select" options={moneyOptions} />
+          <Select appearance="outlined" label="Select" options={moneyOptions} />
+          <Select appearance="filled" label="Select" options={moneyOptions} />
+        </div>
+        <div className={styles.row}>
+          <Select appearance="standard" label="Choose a date" options={dateOptions} suffix={<TestIcon />} />
+          <Select appearance="outlined" label="Choose a date" options={dateOptions} suffix={<TestIcon />} />
+          <Select appearance="filled" label="Choose a date" options={dateOptions} suffix={<TestIcon />} />
+        </div>
+        <div className={styles.row}>
+          <Select appearance="standard" label="Choose a date" options={dateOptions} prefix={<TestIcon />} />
+          <Select appearance="outlined" label="Choose a date" options={dateOptions} prefix={<TestIcon />} />
+          <Select appearance="filled" label="Choose a date" options={dateOptions} prefix={<TestIcon />} />
         </div>
       </div>
     </FluentProvider>

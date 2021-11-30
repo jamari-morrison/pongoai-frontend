@@ -16,12 +16,11 @@ export const renderSelect = (state: SelectState) => {
             </slots.textFieldLegend>
           )}
         </slots.textFieldBorder>
-        <slots.inputWrapper {...slotProps.inputWrapper}>
-          <slots.input {...slotProps.input} />
-        </slots.inputWrapper>
+        <slots.input {...slotProps.input} />
+        {state.suffix !== undefined && <slots.textFieldSuffix {...slotProps.textFieldSuffix} />}
         {state.label !== undefined && <slots.textFieldLabel {...slotProps.textFieldLabel} />}
         <slots.selectButton {...slotProps.selectButton} />
-        <slots.chevron {...slotProps.chevron} />
+        {<slots.textFieldPrefix {...slotProps.textFieldPrefix} />}
       </slots.textFieldWrapper>
       <slots.list {...slotProps.list} />
       {state.helperText && <slots.textFieldHelperText {...slotProps.textFieldHelperText} />}

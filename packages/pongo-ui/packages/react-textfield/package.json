@@ -1,6 +1,6 @@
 {
   "name": "@pongoai/react-textfield",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Enables users to enter text.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",

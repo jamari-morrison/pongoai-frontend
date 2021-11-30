@@ -36,20 +36,21 @@ export const useSelectState = (state: SelectState) => {
     defaultValue,
     options = [],
     value,
-    disabled,
     helperText,
-    required,
-    error,
-    placeholder,
+    suffix,
+    prefix,
     label,
     onChange,
+    error,
+    disabled,
+    required,
   } = state;
   const { id } = state.root;
 
-  // const inputRef = useMergedRefs(state.input.ref);
   const labelId = label ? useId('select-label', id) : undefined;
   const helperTextId = helperText ? useId('select-label', id) : undefined;
-  const [visible, { setTrue: setVisibleTrue, setFalse: setVisibleFalse, toggle: toggleVisible }] = useBoolean(false);
+
+  const [visible, { setFalse: setVisibleFalse, toggle: toggleVisible }] = useBoolean(false);
   const [currentOptionIndex, setCurrentOptionIndex] = React.useState(0);
   const [currentValue, setCurrentValue] = useControllableState({
     defaultState: defaultValue,
@@ -59,6 +60,8 @@ export const useSelectState = (state: SelectState) => {
 
   const optionItemsRef = React.useRef([]);
   const selectButtonRef = React.useRef<any>(null);
+  const textFieldWrapperRef = React.useRef(null);
+
   const internalState = React.useRef({
     focusedValue: 0,
   });
@@ -107,8 +110,8 @@ export const useSelectState = (state: SelectState) => {
             break;
           }
           case 'Enter': {
-            selectButtonRef.current!.focus();
             updateValue(i, ev);
+            selectButtonRef.current!.focus();
             break;
           }
         }
@@ -148,7 +151,6 @@ export const useSelectState = (state: SelectState) => {
   }, [options, currentOptionIndex]);
 
   const onKeyUp = (ev: any) => {
-    //ev.preventDefault();
     ev.stopPropagation();
     switch (ev.key) {
       case 'Escape': {
@@ -182,25 +184,34 @@ export const useSelectState = (state: SelectState) => {
     opacity: visible ? 1 : 0,
   };
 
+  // TextField wrapper props
+  !disabled && (state.textFieldWrapper.onClick = toggleVisible);
+  state.textFieldWrapper.ref = useMergedRefs(state.textFieldWrapper.ref, textFieldWrapperRef, targetRef);
+
+  // Prefix Props
+  prefix
+    ? (state.textFieldPrefix.children = prefix)
+    : (state.textFieldPrefix.children = <Chevron visible={visible} disabled={disabled} />);
+
+  // Suffix Props
+  suffix && (state.textFieldSuffix.children = suffix);
+
   // Root Props
   state.root.onBlur = onBlur;
-
-  // Chevron Props
-  state.chevron.children = <Chevron visible={visible} />;
 
   // Border Props
   state.textFieldBorder['aria-hidden'] = true;
 
   // Label Props
-  label !== undefined && (state.textFieldLabel.children = label);
-  label !== undefined && (state.textFieldLabel.htmlFor = labelId);
+  label && (state.textFieldLabel.children = label);
+  label && (state.textFieldLabel.id = labelId);
 
   // Helper Text Props
   helperText && (state.textFieldHelperText.children = helperText);
   helperText && (state.textFieldHelperText.id = helperTextId);
 
   // Legend Props
-  label !== undefined && (state.textFieldLegend.children = label);
+  label && (state.textFieldLegend.children = label);
 
   // List Props
   state.list.children = visible && createOptions;
@@ -209,26 +220,21 @@ export const useSelectState = (state: SelectState) => {
 
   // Select Props
   state.selectButton.children = options[currentOptionIndex]?.label;
-  state.selectButton.onClick = toggleVisible;
-  state.selectButton.ref = useMergedRefs(state.selectButton.ref, selectButtonRef, targetRef);
-  state.selectButton.role = 'button';
-  state.selectButton.tabIndex = 0;
-  state.selectButton.onKeyUp = onKeyUp;
+  state.selectButton.ref = useMergedRefs(state.selectButton.ref, selectButtonRef);
+  state.selectButton.role = 'combobox';
+  state.selectButton.tabIndex = disabled ? -1 : 0;
+  !disabled && (state.selectButton.onKeyUp = onKeyUp);
   state.selectButton['aria-haspopup'] = 'listbox';
   state.selectButton['aria-expanded'] = visible;
+  required && (state.selectButton['aria-required'] = required);
+  disabled && (state.selectButton['aria-disabled'] = disabled);
+  error && (state.selectButton['aria-invalid'] = error);
+  helperText && (state.selectButton['aria-describedby'] = helperTextId);
+  label && (state.selectButton['aria-labelledby'] = labelId);
 
   // Input Props
   state.input.tabIndex = -1;
-  //state.input.value = currentValue;
-  // state.input.onChange = onInputChange;
-  // state.input.autoComplete = autocomplete;
-  // state.input.disabled = disabled;
-  // helperText && (state.input['aria-describedby'] = helperTextId);
-  // error && (state.input['aria-invalid'] = error);
-  // label && (state.input.id = labelId);
-  // required && (state.input.required = required);
-  // placeholder && (state.input.placeholder = placeholder);
-  // state.input.ref = inputRef;
+  state.input.value = currentValue;
 
   return state;
 };

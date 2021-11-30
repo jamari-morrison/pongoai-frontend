@@ -4,7 +4,7 @@ export type TextFieldSlots = {
   /**
    * The root of the TextField.
    */
-  root: IntrinsicShorthandProps<'div'>;
+  root: Omit<IntrinsicShorthandProps<'div'>, 'prefix'>;
 
   /**
    * The border around the TextField component.

@@ -3,7 +3,6 @@ import type { SelectState } from './Select.types';
 import {
   useRootStyles,
   useInputStyles,
-  useInputWrapperStyles,
   useTextFieldBorderStyles,
   useLabelStyles,
   useTextFieldLegendStyles,
@@ -17,9 +16,19 @@ import {
 import { Theme } from '@pongoai/react-theme';
 import { listClassName } from './useSelectState';
 
+const useSelectWrapperStyles = makeStyles({
+  enabled: {
+    cursor: 'pointer',
+  },
+
+  disabled: {
+    cursor: 'not-allowed',
+  },
+});
+
 const useSelectButtonStyles = makeStyles({
   selectButton: (theme: Theme) => ({
-    position: 'absolute',
+    position: 'relative',
     margin: '0px',
     padding: '0px',
     height: '100%',
@@ -36,14 +45,6 @@ const useSelectButtonStyles = makeStyles({
     fontFamily: theme.fonts.fontFamily.base,
     outline: 'none',
   }),
-
-  enabled: {
-    cursor: 'pointer',
-  },
-
-  disabled: {
-    cursor: 'not-allowed',
-  },
 });
 
 const useListStyles = makeStyles({
@@ -120,10 +121,9 @@ const useListStyles = makeStyles({
   },
 });
 
-const useChevronStyles = makeStyles({
-  chevron: {
-    pointerEvents: 'none',
-    userSelect: 'none',
+const useSelectInputStyles = makeStyles({
+  input: {
+    display: 'none',
   },
 });
 
@@ -131,15 +131,15 @@ export const useSelectStyles = (state: SelectState) => {
   const rootStyles = useRootStyles();
   const textFieldBorderStyles = useTextFieldBorderStyles();
   const inputStyles = useInputStyles();
-  const inputWrapperStyles = useInputWrapperStyles();
   const labelStyles = useLabelStyles();
   const listStyles = useListStyles();
-  const chevronStyles = useChevronStyles();
+  const selectWrapperStyles = useSelectWrapperStyles();
   const selectButtonStyles = useSelectButtonStyles();
   const textFieldLegendStyles = useTextFieldLegendStyles();
   const textFieldWrapperStyles = useTextFieldWrapperStyles();
   const helperTextStyles = useHelperTextStyles();
   const prefixSuffixStyles = useSuffixPrefixStyles();
+  const selectInputStyles = useSelectInputStyles();
 
   state.root.className = mergeClasses(
     rootStyles.root,
@@ -149,32 +149,25 @@ export const useSelectStyles = (state: SelectState) => {
     state.root.className,
   );
 
-  state.inputWrapper.className = mergeClasses(inputWrapperStyles.inputWrapper, state.inputWrapper.className);
-
-  state.input.className = mergeClasses(
-    inputStyles.input,
-    // state.suffix !== undefined && inputStyles.suffix,
-    // state.prefix !== undefined && inputStyles.prefix,
-    //state.label && state.placeholder && !state.suffix && inputStyles.labelPlaceholderFocus,
+  state.textFieldSuffix.className = mergeClasses(
+    prefixSuffixStyles.container,
     (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
-    state.disabled && inputStyles.disabled,
-    state.input.className,
+    state.disabled && prefixSuffixStyles.disabled,
+    state.textFieldSuffix.className,
+  );
+
+  state.textFieldPrefix.className = mergeClasses(
+    prefixSuffixStyles.container,
+    (state.appearance === 'filled' || state.appearance === 'standard') && prefixSuffixStyles.lowerTextAlignment,
+    state.disabled && prefixSuffixStyles.disabled,
+    state.textFieldPrefix.className,
   );
 
   state.selectButton.className = mergeClasses(
     selectButtonStyles.selectButton,
     (state.appearance === 'filled' || state.appearance === 'standard') && inputStyles.lowerTextAlignment,
     state.disabled && inputStyles.disabled,
-    state.disabled ? selectButtonStyles.disabled : selectButtonStyles.enabled,
     state.selectButton.className,
-  );
-
-  state.chevron.className = mergeClasses(
-    prefixSuffixStyles.container,
-    (state.appearance === 'filled' || state.appearance === 'standard') && prefixSuffixStyles.lowerTextAlignment,
-    state.disabled && prefixSuffixStyles.disabled,
-    chevronStyles.chevron,
-    state.chevron.className,
   );
 
   state.list.className = mergeClasses(
@@ -185,7 +178,13 @@ export const useSelectStyles = (state: SelectState) => {
     state.list.className,
   );
 
-  state.textFieldWrapper.className = mergeClasses(textFieldWrapperStyles.wrapper, state.textFieldWrapper.className);
+  state.input.className = mergeClasses(selectInputStyles.input, state.input.className);
+
+  state.textFieldWrapper.className = mergeClasses(
+    textFieldWrapperStyles.wrapper,
+    state.disabled ? selectWrapperStyles.disabled : selectWrapperStyles.enabled,
+    state.textFieldWrapper.className,
+  );
 
   state.textFieldHelperText.className = mergeClasses(
     helperTextStyles.helperText,

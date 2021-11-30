@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentState, ComponentProps, IntrinsicShorthandProps } from '@fluentui/react-utilities';
 import type { TextFieldSlots, TextFieldCommons } from '../TextField/TextField.types';
 
-export type SelectSlots = Omit<TextFieldSlots, 'textFieldSuffix' | 'textFieldPrefix'> & {
+export type SelectSlots = TextFieldSlots & {
   /**
    * The Select component's toggle button that switches between showing and hiding it's list.
    */
@@ -12,14 +12,9 @@ export type SelectSlots = Omit<TextFieldSlots, 'textFieldSuffix' | 'textFieldPre
    * The Select list of options.
    */
   list: IntrinsicShorthandProps<'ul'>;
-
-  /**
-   * The chevron icon within the Select component.
-   */
-  chevron: IntrinsicShorthandProps<'div'>;
 };
 
-export type SelectCommons = Omit<TextFieldCommons, 'type' | 'prefix' | 'suffix' | 'autocomplete'> & {
+export type SelectCommons = Omit<TextFieldCommons, 'type' | 'autocomplete'> & {
   /**
    * The options to render in the Select component.
    */
