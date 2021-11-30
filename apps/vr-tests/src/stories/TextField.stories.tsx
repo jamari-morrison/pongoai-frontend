@@ -6,14 +6,14 @@ import { makeStyles } from '@fluentui/react-make-styles';
 
 const useStyles = makeStyles({
   root: {
-    display: 'inline-flex',
+    display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '45px',
   },
   row: {
-    display: 'inline-flex',
+    display: 'flex',
     flexDirection: 'row',
-    gap: '10px',
+    gap: '45px',
   },
 });
 
@@ -51,6 +51,8 @@ export const BasicTextFieldExample = () => {
         </div>
         <div className={styles.row}>
           <TextField appearance="standard" placeholder="Enter your name" label="Required *" required />
+          <TextField appearance="filled" placeholder="Enter your name" label="Required *" required />
+          <TextField appearance="outlined" placeholder="Enter your name" label="Required *" required />
         </div>
         <div className={styles.row}>
           <Password appearance="standard" placeholder="Enter your password" label="Password" />

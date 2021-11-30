@@ -41,6 +41,10 @@ export const useTextFieldState = (state: TextFieldState) => {
     updateValue(ev.target.value, ev);
   };
 
+  const onTextFieldWrapperClick = () => inputRef.current?.focus();
+
+  suffix && (state.textFieldWrapper.onClick = onTextFieldWrapperClick);
+
   // Prefix Props
   prefix && (state.textFieldPrefix.children = prefix);
 

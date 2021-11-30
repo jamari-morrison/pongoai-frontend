@@ -90,7 +90,10 @@ const searchTaskBarStyles: React.CSSProperties = {
   paddingLeft: '20px',
   paddingRight: '20px',
   boxShadow: 'inset 0px 0px 25px 1px rgba(0, 0, 0, 0.04)',
+  gap: '12px',
 };
+
+const buttonStyles = { marginLeft: 'auto' };
 
 const selectOptions = [
   { value: 'Relevance', label: 'Relevance' },
@@ -98,6 +101,7 @@ const selectOptions = [
   { value: 'Rating', label: 'Rating' },
 ];
 
+const textFieldStyles = { zIndex: '1' };
 const Home: NextPage = () => {
   const renderCards = React.useMemo(() => {
     const list = [];
@@ -122,9 +126,9 @@ const Home: NextPage = () => {
       <Content>
         <>
           <div style={searchTaskBarStyles}>
-            <Search appearance="outlined" />
-            <Select appearance="outlined" options={selectOptions} />
-            <Button appearance="primary" shape="rounded" style={{ marginLeft: 'auto' }}>
+            <Search placeholder="Search your surveys..." appearance="outlined" style={textFieldStyles} />
+            <Select appearance="outlined" options={selectOptions} style={textFieldStyles} />
+            <Button appearance="primary" shape="rounded" style={buttonStyles}>
               + New Product
             </Button>
           </div>

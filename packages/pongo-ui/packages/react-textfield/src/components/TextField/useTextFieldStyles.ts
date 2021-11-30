@@ -10,8 +10,8 @@ export const labelClassName = 'pongoai-TextField-label';
 export const useRootStyles = makeStyles({
   root: {
     position: 'relative',
-    minWidth: '300px',
-    minHeight: '55px',
+    width: '300px',
+    height: '55px',
   },
 
   inputFocus: (theme: Theme) => ({
