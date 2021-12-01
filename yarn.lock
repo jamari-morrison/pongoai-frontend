@@ -2583,10 +2583,10 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-textfield@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-textfield/-/react-textfield-0.0.7.tgz#c316a6303370306258d716ca6bf338611e26a0ef"
-  integrity sha512-iKDv6GS1Xa0nawFh+3WX3X4cRl5Hc6VXbOumWVARdXui/iruRPoSOnsuXjEECuc6oo6cidoLXRw5NYEDenqSgA==
+"@pongoai/react-textfield@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-textfield/-/react-textfield-0.1.2.tgz#4f4847a359a8bcd9b089ca980618070aacd14a72"
+  integrity sha512-uWYSMcerprvzumdzIq/i5rO4nBVSuaxSg/R8mlG+rrG+C5KPeVIH8B7QUcnjbKXAM0/NvLiGWWPsIj/JIkhxOw==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-positioning" "9.0.0-beta.1"

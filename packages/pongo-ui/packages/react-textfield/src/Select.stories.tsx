@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   },
   smallSelect: {
     width: '180px',
+    height: '50px',
   },
 });
 

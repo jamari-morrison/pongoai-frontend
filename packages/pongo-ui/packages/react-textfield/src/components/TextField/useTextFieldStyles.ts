@@ -80,7 +80,7 @@ export const useTextFieldWrapperStyles = makeStyles({
   wrapper: () => ({
     position: 'relative',
     width: '100%',
-    height: '55px',
+    height: '100%',
     display: 'flex',
     flexDirection: 'row',
   }),

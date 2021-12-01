@@ -93,15 +93,29 @@ const searchTaskBarStyles: React.CSSProperties = {
   gap: '12px',
 };
 
-const buttonStyles = { marginLeft: 'auto' };
+const selectStyles = {
+  width: '150px',
+  height: '45px',
+  zIndex: '1',
+};
+
+const searchBarStyles = {
+  zIndex: '1',
+  height: '45px',
+};
+
+const circularBorder = {
+  borderRadius: '999px',
+};
+
+const buttonStyles = { fontSize: '18px', height: '45px', marginLeft: 'auto' };
 
 const selectOptions = [
   { value: 'Relevance', label: 'Relevance' },
-  { value: 'Date', label: 'Date' },
+  { value: 'Total', label: 'Total' },
   { value: 'Rating', label: 'Rating' },
 ];
 
-const textFieldStyles = { zIndex: '1' };
 const Home: NextPage = () => {
   const renderCards = React.useMemo(() => {
     const list = [];
@@ -126,8 +140,13 @@ const Home: NextPage = () => {
       <Content>
         <>
           <div style={searchTaskBarStyles}>
-            <Search placeholder="Search your surveys..." appearance="outlined" style={textFieldStyles} />
-            <Select appearance="outlined" options={selectOptions} style={textFieldStyles} />
+            <Search
+              placeholder="Search your surveys..."
+              appearance="outlined"
+              textFieldBorder={{ style: circularBorder }}
+              style={searchBarStyles}
+            />
+            <Select appearance="outlined" options={selectOptions} style={selectStyles} label="Sort by" />
             <Button appearance="primary" shape="rounded" style={buttonStyles}>
               + New Product
             </Button>

@@ -98,6 +98,7 @@ export const useSelectState = (state: SelectState) => {
 
       const onOptionKeyUp = (ev: any) => {
         ev.stopPropagation();
+        ev.preventDefault();
         switch (ev.key) {
           case 'Escape': {
             selectButtonRef.current!.focus();
@@ -119,6 +120,7 @@ export const useSelectState = (state: SelectState) => {
 
       const onOptionKeyDown = (ev: any) => {
         ev.stopPropagation();
+        ev.preventDefault();
         const incomingValue = getKeyDownValue(ev, internalState.current.focusedValue, options.length - 1);
         internalState.current.focusedValue = incomingValue;
         (optionItemsRef.current[internalState.current.focusedValue] as any).current.focus();
@@ -152,6 +154,7 @@ export const useSelectState = (state: SelectState) => {
 
   const onKeyUp = (ev: any) => {
     ev.stopPropagation();
+    ev.preventDefault();
     switch (ev.key) {
       case 'Escape': {
         setVisibleFalse();
