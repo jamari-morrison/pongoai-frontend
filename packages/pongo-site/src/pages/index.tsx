@@ -7,68 +7,68 @@ import { Search, Select } from '@pongoai/react-textfield';
 import { webLightTheme } from '@pongoai/react-theme';
 import { Header, Sidebar, Content, DashboardCard } from '../components';
 
-const cards: any = {
-  0: {
+const cards: any = [
+  {
     name: 'Jeans 1',
     rating: 4.5,
     ratingCount: 30,
   },
-  1: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  2: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  3: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  4: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  5: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  6: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  7: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  8: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  9: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  10: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-  11: {
+  {
     name: 'Jeans 2',
     rating: 3.2,
     ratingCount: 35,
   },
-};
+];
 
 const cardWrapperStyles: React.CSSProperties = {
   display: 'grid',
@@ -117,17 +117,56 @@ const selectOptions = [
 ];
 
 const Home: NextPage = () => {
-  const renderCards = React.useMemo(() => {
-    const list = [];
+  const [currentSurveys, setCurrentSurveys] = React.useState(cards);
+  const [searchValue, setSearchValue] = React.useState('');
+  const [selectValue, setSelectValue] = React.useState('relevance');
 
-    for (const card in cards) {
-      list.push(
-        <DashboardCard name={cards[card].name} rating={cards[card].rating} ratingCount={cards[card].ratingCount} />,
-      );
+  const onSelectChange = React.useCallback(ev => {
+    setSelectValue(ev.target.value);
+  }, []);
+
+  const onSearchChange = React.useCallback(ev => {
+    setSearchValue(ev.target.value);
+  }, []);
+
+  const onButtonClick = React.useCallback(() => {
+    cards.push({ name: 'Jeans 2', rating: 3.2, ratingCount: 35 });
+    setCurrentSurveys([...cards]);
+    console.log('called');
+  }, []);
+
+  const renderCards = React.useMemo(() => {
+    let sortedList = [];
+    const renderedSurveys = [];
+
+    switch (selectValue) {
+      case 'ratingHigh':
+        sortedList = [...currentSurveys];
+        sortedList.sort(function (a, b) {
+          return a.rating - b.rating;
+        });
+        break;
+      case 'ratingLow':
+        sortedList = [...currentSurveys];
+        sortedList.sort(function (a, b) {
+          return b.rating - a.rating;
+        });
+        break;
+      default:
+        sortedList = currentSurveys;
+        break;
     }
 
-    return list;
-  }, []);
+    for (let i = sortedList.length - 1; i >= 0; i--) {
+      const { name, rating, ratingCount } = sortedList[i];
+
+      if (name.toLowerCase().includes(searchValue.toLowerCase())) {
+        renderedSurveys.push(<DashboardCard name={name} rating={rating} ratingCount={ratingCount} />);
+      }
+    }
+
+    return renderedSurveys;
+  }, [selectValue, searchValue, currentSurveys]);
 
   return (
     <FluentProvider theme={webLightTheme}>
@@ -143,11 +182,20 @@ const Home: NextPage = () => {
             <Search
               placeholder="Search your surveys..."
               appearance="outlined"
+              value={searchValue}
+              onChange={onSearchChange}
               textFieldBorder={{ style: circularBorder }}
               style={searchBarStyles}
             />
-            <Select appearance="outlined" options={selectOptions} style={selectStyles} label="Sort by" />
-            <Button appearance="primary" shape="rounded" style={buttonStyles}>
+            <Select
+              value={selectValue}
+              onChange={onSelectChange}
+              appearance="outlined"
+              options={selectOptions}
+              style={selectStyles}
+              label="Sort by"
+            />
+            <Button onClick={onButtonClick} appearance="primary" shape="rounded" style={buttonStyles}>
               + New Product
             </Button>
           </div>
