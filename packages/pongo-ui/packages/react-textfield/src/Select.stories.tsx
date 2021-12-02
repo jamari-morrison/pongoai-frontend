@@ -52,7 +52,12 @@ const dateOptions = [
 ];
 
 export const BasicSelectExample = () => {
+  const [selectValue, setSelectValue] = React.useState('Jan');
   const styles = useStyles();
+
+  const onSelectChange = (ev: React.ChangeEvent<HTMLInputElement>, data: { value: string }) => {
+    setSelectValue(data.value);
+  };
 
   return (
     <div className={styles.root}>
@@ -61,6 +66,10 @@ export const BasicSelectExample = () => {
         <Select appearance="standard" label="Select" options={moneyOptions} />
         <Select appearance="outlined" label="Select" options={moneyOptions} />
         <Select appearance="filled" label="Select" options={moneyOptions} />
+      </div>
+      <Header2>Controlled Example - {selectValue}</Header2>
+      <div className={styles.row}>
+        <Select value={selectValue} onChange={onSelectChange} options={dateOptions} />
       </div>
       <Header2>Suffix</Header2>
       <div className={styles.row}>

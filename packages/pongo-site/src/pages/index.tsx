@@ -94,7 +94,7 @@ const searchTaskBarStyles: React.CSSProperties = {
 };
 
 const selectStyles = {
-  width: '150px',
+  width: '175px',
   height: '45px',
   zIndex: '1',
 };
@@ -112,8 +112,9 @@ const buttonStyles = { fontSize: '18px', height: '45px', marginLeft: 'auto' };
 
 const selectOptions = [
   { value: 'Relevance', label: 'Relevance' },
-  { value: 'Total', label: 'Total' },
-  { value: 'Rating', label: 'Rating' },
+  { value: 'ratingHigh', label: 'Rating - High' },
+  { value: 'ratingLow', label: 'Rating - Low' },
+  { value: 'count', label: 'Review Count' },
 ];
 
 const Home: NextPage = () => {
@@ -121,18 +122,17 @@ const Home: NextPage = () => {
   const [searchValue, setSearchValue] = React.useState('');
   const [selectValue, setSelectValue] = React.useState('relevance');
 
-  const onSelectChange = React.useCallback(ev => {
-    setSelectValue(ev.target.value);
+  const onSelectChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>, data: { value: string }) => {
+    setSelectValue(data.value);
   }, []);
 
-  const onSearchChange = React.useCallback(ev => {
+  const onSearchChange = React.useCallback((ev: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(ev.target.value);
   }, []);
 
   const onButtonClick = React.useCallback(() => {
-    cards.push({ name: 'Jeans 2', rating: 3.2, ratingCount: 35 });
+    cards.push({ name: 'Test', rating: 5, ratingCount: 305 });
     setCurrentSurveys([...cards]);
-    console.log('called');
   }, []);
 
   const renderCards = React.useMemo(() => {
@@ -150,6 +150,12 @@ const Home: NextPage = () => {
         sortedList = [...currentSurveys];
         sortedList.sort(function (a, b) {
           return b.rating - a.rating;
+        });
+        break;
+      case 'count':
+        sortedList = [...currentSurveys];
+        sortedList.sort(function (a, b) {
+          return a.ratingCount - b.ratingCount;
         });
         break;
       default:

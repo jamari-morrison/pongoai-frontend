@@ -81,6 +81,7 @@ export const useSelectState = (state: SelectState) => {
     setCurrentValue(optionValue);
     setVisibleFalse();
     setCurrentOptionIndex(clampedValue);
+    console.log(optionValue);
     onChange?.(ev, { value: optionValue });
   });
 
