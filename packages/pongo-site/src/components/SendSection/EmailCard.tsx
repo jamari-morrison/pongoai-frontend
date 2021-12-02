@@ -55,7 +55,7 @@ const useStyles = makeStyles({
   pillDeleteButton: { color: 'white' },
   emailSendButton: { backgroundColor: '#04A96D', border: '0', color: 'white', padding: '10px', height: '100%' },
   emailSendButtonContainer: { marginTop: '30px' },
-  textFieldLevel: { zIndex: 2 },
+  textField: { zIndex: 2, width: '90%' },
   addButtonContainer: { marginTop: 'auto', marginRight: '12px' },
 });
 
@@ -125,7 +125,7 @@ export const EmailCard = () => {
             appearance="outlined"
             error={isEmailError}
             onChange={handleEmailChange}
-            className={styles.textFieldLevel}
+            className={styles.textField}
           ></TextField>
         </div>
         <div className={styles.emailPillContianer}>

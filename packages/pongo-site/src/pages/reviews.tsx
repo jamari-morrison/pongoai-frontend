@@ -111,19 +111,23 @@ export const Reviews: NextPage = () => {
       <Sidebar activePage="reviews" />
       <Content>
         <div className={styles.cardCollection}>
-          <div className={styles.cardContainer}>
-            <SurveyAnalyticsCard />
-            <RatingCard />
-          </div>
-          <div className={styles.cardContainer}>
-            <ScoreCard />
-            <KeywordsCard />
-          </div>
-          <div className={styles.cardContainer}>
-            <ReviewPanel />
-          </div>
-          <div className={styles.cardContainer}>
-            <ReviewTimeline />
+          <div className={styles.horizontalCardCollection}>
+            <div>
+              <div className={styles.cardContainer}>
+                <SurveyAnalyticsCard />
+                <RatingCard />
+              </div>
+              <div className={styles.cardContainer}>
+                <ScoreCard />
+                <KeywordsCard />
+              </div>
+              <div className={styles.cardContainer}>
+                <ReviewTimeline />
+              </div>
+            </div>
+            <div className={styles.reviewCardContainer}>
+              <ReviewPanel />
+            </div>
           </div>
         </div>
       </Content>

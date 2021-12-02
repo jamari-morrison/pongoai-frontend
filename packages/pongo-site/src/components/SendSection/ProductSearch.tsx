@@ -46,8 +46,7 @@ const useStyles = makeStyles({
     width: '60vw',
     marginTop: '5px',
   },
-  textFieldContainer: { width: '100%', height: '45px' },
-  textFieldLevel: { zIndex: 2 },
+  textField: { zIndex: 2, width: '100%' },
   productList: {
     display: 'inline-grid',
     width: '100%',
@@ -137,15 +136,13 @@ export const ProductSearch = () => {
   return (
     <div className={styles.searchContainer}>
       <div className={styles.searchVerticalFlexbox}>
-        <div className={styles.textFieldContainer}>
-          <TextField
-            placeholder="Search For Products..."
-            appearance="outlined"
-            onChange={filter}
-            value={productName}
-            className={styles.textFieldLevel}
-          />
-        </div>
+        <TextField
+          placeholder="Search For Products..."
+          appearance="outlined"
+          onChange={filter}
+          value={productName}
+          className={styles.textField}
+        />
 
         <div className={styles.productList}>
           {foundProducts && foundProducts.length > 0 ? (

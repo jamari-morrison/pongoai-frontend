@@ -34,8 +34,8 @@ const useStyles = makeStyles({
     padding: '10px',
     top: '10px',
   },
-  textFieldContainer: { width: '90%' },
-  textFieldLevel: { zIndex: 2 },
+  textFieldContainer: { width: '100%' },
+  textField: { zIndex: 2, width: '90%' },
 });
 
 //removed noimplicit any, is that ok?
@@ -79,9 +79,7 @@ export const LinkCard = (props: ReviewCardProps) => {
               {isClicked}
             </Button>
           </div>
-          <div className={styles.textFieldContainer}>
-            <TextField value={props.url} appearance="outlined" className={styles.textFieldLevel}></TextField>
-          </div>
+          <TextField value={props.url} appearance="outlined" className={styles.textField}></TextField>
         </div>
       </div>
     </div>

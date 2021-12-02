@@ -5,16 +5,15 @@ import { LogoIcon } from '@pongoai/react-icon';
 import { Text } from '@pongoai/react-text';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 import { Button } from '@pongoai/react-button';
-
+import { Calendar } from './reviewTimelineIcons';
 import { Select } from '@pongoai/react-textfield';
 
 const useStyles = makeStyles({
-  timelineCard: { display: 'inline-block', padding: '30px', borderRadius: '10px', backgroundColor: 'white' },
+  timelineCard: { padding: '30px', borderRadius: '10px', backgroundColor: 'white', width: '580px' },
   timelineTitle: { marginBottom: '20px' },
-  metricContainer: { marginTop: '10px' },
   graphContainer: {
     border: '1px solid black',
-    width: '25vw',
+    width: '570px',
     height: '30vh',
     minHeight: '160px',
     minWidth: '200px',
@@ -23,7 +22,9 @@ const useStyles = makeStyles({
     marginTop: '15px',
   },
   graphSpacer: { width: '1px', height: '10px' },
-  textField: { zIndex: 2 },
+  textField: { zIndex: 2, width: '200px', marginTop: '10px', marginBottom: '10px' },
+
+  inputContainer: { display: 'flex', justifyContent: 'space-between' },
 });
 
 export const ReviewTimeline = () => {
@@ -205,8 +206,8 @@ export const ReviewTimeline = () => {
   ];
 
   const metricOptions = [
-    { value: 'rating', label: 'Star Rating' },
-    { value: 'NPS', label: 'Net Promoter Score' },
+    { value: 'rating', label: 'Rating' },
+    { value: 'NPS', label: 'NPS' },
   ];
 
   return (
@@ -216,16 +217,7 @@ export const ReviewTimeline = () => {
           Timeline
         </Text>
       </div>
-
-      <Select
-        appearance="outlined"
-        placeholder="Timeframe"
-        label="Timeframe"
-        options={timeframeOptions}
-        onChange={handleTimeframeChange}
-        className={styles.textField}
-      />
-      <div className={styles.metricContainer}>
+      <div className={styles.inputContainer}>
         <Select
           appearance="outlined"
           placeholder="Metric"
@@ -233,6 +225,15 @@ export const ReviewTimeline = () => {
           options={metricOptions}
           onChange={handleFilterChange}
           className={styles.textField}
+        />
+        <Select
+          appearance="outlined"
+          placeholder="Timeframe"
+          label="Timeframe"
+          options={timeframeOptions}
+          onChange={handleTimeframeChange}
+          className={styles.textField}
+          prefix={<Calendar />}
         />
       </div>
 

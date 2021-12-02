@@ -13,10 +13,12 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     borderRadius: '10px',
-    width: 'fit-content',
+    width: '47 vw',
+    minWidth: '700px',
+    height: '817px',
   },
-  inputContainer: { display: 'flex', justifyContent: 'space-between', width: '70vw', marginTop: '15px' },
-  textField: { width: '200px', zIndex: 2 },
+  inputContainer: { display: 'flex', justifyContent: 'space-around', width: 'auto', marginTop: '15px' },
+  textField: { width: '180px', zIndex: 2 },
   exportButton: {
     color: 'white',
     borderRadius: '99px',
@@ -25,17 +27,20 @@ const useStyles = makeStyles({
   },
   reviewFlexbox: {
     display: 'flex',
-    height: '30vh',
+    height: 'auto',
     overflow: 'hidden',
     overflowY: 'scroll',
-    width: '60vw',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    width: 'auto',
+    marginLeft: '10px',
+    marginRight: '10px',
+    marginBottom: '20px',
     flexDirection: 'column',
-    marginTop: '20px',
+    marginTop: '10px',
   },
   reviewCardContianer: { marginBottom: '40px' },
-  directionSwitchContainer: { textAlign: 'center' },
+  directionSwitchContainer: { display: ' flex', flexDirection: 'column', justifyContent: 'space-around' },
+  directionSwitch: { margin: 'auto' },
+  separator: { height: '2px', backgroundColor: 'black', margin: '30px 10px 10px 10px', opacity: '0.2' },
 });
 function ReviewsToCSV(inputList: any) {
   const csvString = [
@@ -181,7 +186,7 @@ export const ReviewPanel = () => {
   const orderByOptions = [
     { value: 'None', label: 'None' },
     { value: 'timestamp', label: 'Timestamp' },
-    { value: 'NPS', label: 'Net Promoter Score' },
+    { value: 'NPS', label: 'NPS' },
     { value: 'starRating', label: 'Star Rating' },
   ];
 
@@ -192,7 +197,7 @@ export const ReviewPanel = () => {
       </Text>
       <div className={styles.inputContainer}>
         <TextField
-          label="Search user feedback..."
+          label="Search..."
           appearance="outlined"
           onChange={handleSearchStrChange}
           className={styles.textField}
@@ -215,8 +220,8 @@ export const ReviewPanel = () => {
 
         {orderBy != 'None' ? (
           <div className={styles.directionSwitchContainer}>
-            <Switch onClick={handleDirectionChange}></Switch>
             <Text size={300}>{orderDirection}</Text>
+            <Switch onClick={handleDirectionChange} className={styles.directionSwitch}></Switch>
           </div>
         ) : (
           <div></div>
@@ -226,7 +231,7 @@ export const ReviewPanel = () => {
           Export
         </Button>
       </div>
-
+      <div className={styles.separator}></div>
       <div className={styles.reviewFlexbox}>
         {REVIEW_LIST.map(review => {
           return searchReviews(searchStr, review, searchFilter) ? (

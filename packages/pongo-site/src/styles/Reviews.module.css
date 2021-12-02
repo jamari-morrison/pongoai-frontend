@@ -66,6 +66,10 @@
   padding: 0px 0px 20px 0px;
 }
 
+.reviewCardContainer {
+  margin-left: 20px;
+}
+
 .successBodyText {
   color: #278536;
   line-height: 0;
@@ -77,4 +81,8 @@
 
 .cardCollection {
   padding: 20px;
+}
+
+.horizontalCardCollection {
+  display: flex;
 }
