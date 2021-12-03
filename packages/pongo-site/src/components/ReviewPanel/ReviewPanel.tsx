@@ -239,7 +239,7 @@ export const ReviewPanel = () => {
               <ReviewCard
                 customerName={review['customerName']}
                 starRating={review['starRating']}
-                npsImg={review['NPS']}
+                nps={review['NPS']}
                 profileImg={review['profileImg']}
                 isVerified={review['isVerified']}
                 location={review['location']}
@@ -247,7 +247,6 @@ export const ReviewPanel = () => {
                 reviewText={review['reviewText']}
                 productName={review['productName']}
                 id={review['productName'] + review['customerName'] + review['timestamp']}
-                isLink={false}
               />
             </div>
           ) : (

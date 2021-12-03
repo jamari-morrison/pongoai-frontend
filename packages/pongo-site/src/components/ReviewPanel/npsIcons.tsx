@@ -96,3 +96,30 @@ export const NPS10 = () => (
     />
   </svg>
 );
+
+export const selectNps = (nps: number) => {
+  switch (nps) {
+    case 0:
+      return <NPS0 />;
+    case 1:
+      return <NPS1 />;
+    case 2:
+      return <NPS2 />;
+    case 3:
+      return <NPS3 />;
+    case 4:
+      return <NPS4 />;
+    case 5:
+      return <NPS5 />;
+    case 6:
+      return <NPS6 />;
+    case 7:
+      return <NPS7 />;
+    case 8:
+      return <NPS8 />;
+    case 9:
+      return <NPS9 />;
+    case 10:
+      return <NPS10 />;
+  }
+};
