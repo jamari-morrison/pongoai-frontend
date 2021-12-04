@@ -108,7 +108,7 @@ const circularBorder = {
   borderRadius: '999px',
 };
 
-const buttonStyles = { fontSize: '18px', height: '45px', marginLeft: 'auto' };
+const buttonStyles = { fontSize: '18px', height: '45px', borderRadius: '999px', marginLeft: 'auto' };
 
 const selectOptions = [
   { value: 'Relevance', label: 'Relevance' },
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
               style={selectStyles}
               label="Sort by"
             />
-            <Button onClick={onButtonClick} appearance="primary" shape="rounded" style={buttonStyles}>
+            <Button onClick={onButtonClick} appearance="subtle" style={buttonStyles}>
               + New Product
             </Button>
           </div>

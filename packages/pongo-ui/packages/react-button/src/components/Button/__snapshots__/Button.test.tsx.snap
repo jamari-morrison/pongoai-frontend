@@ -4,7 +4,7 @@ exports[`Button when rendered as an anchor renders correctly 1`] = `
 <div>
   <a
     aria-disabled="false"
-    class="___11a081q f10pi13n ftuwxu6 f122n59 f4d9j23 fmrv4ls f14z66ap fcv2ht4 fmbxnhj f1e4rdhr fmd4ok8 fcsweqw f6kqwle f1s6fcnf f2hkw1w fdxsi5y f1i4q40k f1ab1e41 f1jd910e f1nw9czy f21wkpv fvk4ntw f1bkt4b4 f16hf5f2 fyyqeim f1qhqcal f1kbdjx9 fw1d893 f14hlsw1 fpuz8dn f1pyiwo4 f19m6738 f1ioparz ftwtw2f f184ipub fcobno7 f1o9ynst f4blu93 f1k6fduh f1y5ik6t f1d3e705 ftac7j7 f1w0yd9v fdwcyh7 f1h0xgbp fzkkow9 fcdblym fg706s2 fjik90z fnj9rhh ff5xd0 f81f84o f1d0fknw f1k2sg7s f1i4xqp8 fc268be fx9k009 fxo758k fnieqtq f1t9eafa f1v1fssx f1fa3979 f1qg7kce fifjimi f8rsvsd f18fiblo f1asnnh4"
+    class="___14wc3ya f10pi13n ftuwxu6 f122n59 f4d9j23 fmrv4ls f1k2aisq f1e4rdhr fmd4ok8 f1hd9hm2 f1s6fcnf f17b0tnj ftac7j7 f1w0yd9v fdwcyh7 f1h0xgbp fzkkow9 fcdblym fg706s2 fjik90z f19anq5y fo4sdag f1xvv62o f164ia6q f1eciw9o f1dlg1vo fidnpkz f1jha3t5 fqbsolo f1byrhu4 fthnq99 f1lkkfho fldu4wg f1vgjvse f1xh2tt3 fqlv8qd f145gpbr fbju5fl f4ydxgt fexrx97 f2hkw1w fdxsi5y f1i4q40k f1ab1e41 f1jd910e f1nw9czy f21wkpv fvk4ntw f1bkt4b4 f16hf5f2 fyyqeim f1qhqcal f1kbdjx9 fw1d893 f14hlsw1 fpuz8dn f1pyiwo4 f19m6738 f1ioparz ftwtw2f f184ipub fcobno7 f1o9ynst f4blu93 f1k6fduh f1y5ik6t f1d3e705 f1f9t5xu fcv2ht4 f6kqwle fifjimi f8rsvsd f18fiblo f1asnnh4"
     href="https://www.bing.com"
     role="button"
     tabindex="0"

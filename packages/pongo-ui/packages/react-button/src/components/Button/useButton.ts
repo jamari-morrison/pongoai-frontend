@@ -6,12 +6,14 @@ import type { ButtonProps, ButtonSlots, ButtonState } from './Button.types';
 export const buttonShorthandProps: (keyof ButtonSlots)[] = ['root'];
 
 export const useButton = (props: ButtonProps, ref: React.Ref<HTMLElement>): ButtonState => {
-  const { as, appearance = 'outline', disabled = false, shape = 'rounded' } = props;
+  const { as, appearance = 'outline', color = 'inherit', disabled = false, size = 'medium', shape = 'rounded' } = props;
 
   const state: ButtonState = {
     appearance,
     disabled,
     shape,
+    size,
+    color,
     components: {
       root: 'button',
     },

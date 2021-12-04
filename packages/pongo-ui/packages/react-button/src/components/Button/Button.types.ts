@@ -1,11 +1,12 @@
 import type { ComponentProps, ComponentState, IntrinsicShorthandProps } from '@fluentui/react-utilities';
-import { ARIAButtonShorthandProps } from '@fluentui/react-aria';
+
 export type ButtonSlots = {
   /**
    * The root of the Button.
    */
-  //root: IntrinsicShorthandProps<'button'> | IntrinsicShorthandProps<'a'>;
-  root: ARIAButtonShorthandProps;
+  root: IntrinsicShorthandProps<'button', 'a'> & {
+    disabled?: boolean;
+  };
 };
 
 export type ButtonCommons = {
@@ -15,6 +16,13 @@ export type ButtonCommons = {
    * @default outline
    */
   appearance?: 'outline' | 'primary' | 'subtle' | 'transparent';
+
+  /**
+   * The color type for the button.
+   *
+   * @default inherit
+   */
+  color?: 'inherit' | 'brand' | 'secondary' | 'success' | 'error' | 'social' | 'warning' | 'info';
 
   /**
    * Whether the button should be disabled.
@@ -28,7 +36,14 @@ export type ButtonCommons = {
    *
    * @default rounded
    */
-  shape?: 'rounded' | 'circular' | 'square';
+  shape?: 'rounded' | 'circular' | 'circle' | 'square';
+
+  /**
+   * The size of the button.
+   *
+   * @default medium
+   */
+  size?: 'small' | 'medium' | 'large';
 };
 
 export type ButtonProps = ComponentProps<ButtonSlots> & ButtonCommons;
