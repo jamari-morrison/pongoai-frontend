@@ -187,13 +187,7 @@ export const ProductSearch = () => {
         </div>
 
         <div className={styles.generateButtonContainer}>
-          <Button
-            style={{
-              backgroundColor: isGenerated ? '#04A96D' : '#2060CF',
-            }}
-            className={styles.generateButton}
-            onClick={handleGenerate}
-          >
+          <Button color={isGenerated ? 'success' : 'brand'} appearance="primary" size="large" onClick={handleGenerate}>
             {isGenerated ? 'Created!' : 'Create Form'}
           </Button>
         </div>

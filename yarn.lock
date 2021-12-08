@@ -2513,12 +2513,21 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pongoai/react-button@0.0.9", "@pongoai/react-button@^0.0.9":
+"@pongoai/react-button@0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.0.9.tgz#adca752dd3e2230cad0922496880c571316c3ef0"
   integrity sha512-wS3DmGDizKpe8/+gLZaaV9nIkKuegcm6wfgPvgViFcODFoZJvS63b8wxtYj2yzuVvmJht+2dqPWjwMxRTxT8gQ==
   dependencies:
     "@fluentui/react-aria" "^9.0.0-beta.2"
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-tabster" "9.0.0-alpha.68"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-button@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.1.1.tgz#ec247a33d951e51120a329d36c92a8a5f0b256df"
+  integrity sha512-GrB6kDDjNP583eQky6QqxWxbUyqm9UJeArBUBCwosPSIFFNNjsUX9m7CSnqvgah6vLGZckNKoCwbmsgTKyS8Kw==
+  dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"

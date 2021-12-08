@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     marginTop: '50px ',
     flexWrap: 'wrap',
   },
-  sendContainer: { textAlign: 'center' },
+  sendContainer: { textAlign: 'center', paddingTop: '20px' },
 });
 
 export const SendSection = () => {

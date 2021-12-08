@@ -28,12 +28,6 @@ const useStyles = makeStyles({
   linkDescContainer: { marginTop: '10px' },
   linkInputContianer: { display: 'flex', marginTop: '20px' },
   linkButtonContainer: { marginRight: '12px' },
-  linkButton: {
-    border: '0',
-    color: 'white',
-    padding: '10px',
-    top: '10px',
-  },
   textFieldContainer: { width: '100%' },
   textField: { zIndex: 2, width: '90%' },
 });
@@ -73,8 +67,9 @@ export const LinkCard = (props: ReviewCardProps) => {
           <div className={styles.linkButtonContainer}>
             <Button
               onClick={handleCopy}
-              className={styles.linkButton}
-              style={{ backgroundColor: isClicked == 'Copied!' ? '#04A96D' : '#636364' }}
+              color={isClicked == 'Copied!' ? 'success' : 'inherit'}
+              appearance="primary"
+              size="large"
             >
               {isClicked}
             </Button>

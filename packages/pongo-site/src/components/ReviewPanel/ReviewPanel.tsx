@@ -227,7 +227,7 @@ export const ReviewPanel = () => {
           <div></div>
         )}
 
-        <Button onClick={handleExportClick} className={styles.exportButton} style={{ backgroundColor: '#636364' }}>
+        <Button onClick={handleExportClick} appearance="primary" size="large" shape="circular">
           Export
         </Button>
       </div>

@@ -8,8 +8,9 @@ export const Share: NextPage = () => {
     <FluentProvider theme={webLightTheme}>
       <Header />
       <Sidebar activePage="send" />
-      <Content>Share</Content>
-      <SendSection />
+      <Content>
+        <SendSection />
+      </Content>
     </FluentProvider>
   );
 };

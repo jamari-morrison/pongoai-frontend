@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from '@pongoai/react-button';
 import { TextField } from '@pongoai/react-textfield';
 import { EmailSvg } from './sendIcons';
+
 const useStyles = makeStyles({
   pill: {
     position: 'relative',
@@ -44,16 +45,8 @@ const useStyles = makeStyles({
   emailImageContianer: { width: '30px', height: '30px', position: 'relative', marginRight: '10px', top: '-3px' },
   emailDescriptionContainer: { marginTop: '10px' },
   emailInputContainer: { display: 'flex', marginTop: '20px' },
-  emailAddButtonContainer: {
-    backgroundColor: '#2060CF',
-    border: '0',
-    color: 'white',
-    padding: '10px',
-    top: '-10px',
-  },
   emailPillContianer: { display: 'flex', position: 'relative', width: '100%', flexWrap: 'wrap', marginTop: '20px' },
   pillDeleteButton: { color: 'white' },
-  emailSendButton: { backgroundColor: '#04A96D', border: '0', color: 'white', padding: '10px', height: '100%' },
   emailSendButtonContainer: { marginTop: '30px' },
   textField: { zIndex: 2, width: '90%' },
   addButtonContainer: { marginTop: 'auto', marginRight: '12px' },
@@ -117,7 +110,7 @@ export const EmailCard = () => {
 
         <div className={styles.emailInputContainer}>
           <div className={styles.addButtonContainer}>
-            <Button onClick={handleAddEmail} className={styles.emailAddButtonContainer}>
+            <Button onClick={handleAddEmail} appearance="primary" size="large">
               Add
             </Button>
           </div>
@@ -145,7 +138,7 @@ export const EmailCard = () => {
           })}
         </div>
         <div className={styles.emailSendButtonContainer} hidden={numEmails == 0}>
-          <Button onClick={handleSend} className={styles.emailSendButton}>
+          <Button onClick={handleSend} size="large" color="social" appearance="primary">
             Send!
           </Button>
         </div>
