@@ -60,7 +60,7 @@ export const Header = () => {
   return (
     <div className={styles.header}>
       <Link href="/" passHref>
-        <LogoIcon className={styles.headerLeftOuterContainer} />
+        <LogoIcon color="neutral" size="large" className={styles.headerLeftOuterContainer} />
       </Link>
       <span className={styles.headerTitle}>
         <Link href="/" passHref>

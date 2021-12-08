@@ -2548,10 +2548,10 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-icon@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.2.tgz#0c50d9952ac18580ec8887465f93dd833706c9ce"
-  integrity sha512-wGDSMhJ+3MmCoRVtzokgpENRL217WnjA6ShKHUgX+FdIA4R/5x7eKAz2zXAIpSeG15E/ZvmLZO73O8csxLhgmA==
+"@pongoai/react-icon@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.3.tgz#a8fcdbbd48356463462b94871b91baf7bb78b99a"
+  integrity sha512-UGnNWZyJbVNsqwZddq1Ow/vMo9CvYa0Swh+xYO0YtSJKciomJ0R4eSBm/MF2yggb0xZfFHJeU6Qmstu/LkfN3g==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
