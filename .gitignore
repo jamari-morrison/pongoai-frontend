@@ -8,6 +8,7 @@ common/temp
 .bin
 temp
 lib
+lib-commonjs
 screenshots
 .cache
 
