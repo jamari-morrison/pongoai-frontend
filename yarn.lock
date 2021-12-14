@@ -2532,18 +2532,20 @@
     "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-checkbox@0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-checkbox/-/react-checkbox-0.0.0.tgz#7efdd800c280e5fcb0f21777591cf19691552584"
-  integrity sha512-DD5ELrtMiF7EjOG32W7RqRboG/BWQ8SdRqtk0LnWuYINIdAq6EMWNC7uEEOCob9ocj+ihDxrjfkc2hOUuYXTeA==
+"@pongoai/react-checkbox@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-checkbox/-/react-checkbox-0.0.1.tgz#f64fa8b10762848da6cdda7a56cece4df8d750be"
+  integrity sha512-uN68Ml2YkH85ppbs0F/nu5Vd8qExMAe3yiVb/gqjGUcO6C7sp98hv91PpxIPGhCNSYY3q8r54RCV5sffsqKweQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
+    "@pongoai/react-icon" "0.1.1"
 
-"@pongoai/react-icon@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.1.tgz#a87c8c7ed1ec35c9bd33824c4ea92c160d38da39"
-  integrity sha512-pC8ja6LynqeE4RxSGzZeHIAOMpU3E24zEB7dh6sXy9U0HPa2QaH+GK3xJP1WaM7AbLYqS47Z5D1t+lzchvdQNg==
+"@pongoai/react-icon@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.1.1.tgz#c403c8ff8509a993aa76610866ed81e255e6ac7a"
+  integrity sha512-r7RDFv3PgY0F3kZ3Z5nCxy3BKop+oL105TwBcoexPzUv2mE3qZ1SMtnkYoZrCxyKf17vSDzlCg1Lgk8SIzah4Q==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
@@ -2552,6 +2554,22 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.3.tgz#a8fcdbbd48356463462b94871b91baf7bb78b99a"
   integrity sha512-UGnNWZyJbVNsqwZddq1Ow/vMo9CvYa0Swh+xYO0YtSJKciomJ0R4eSBm/MF2yggb0xZfFHJeU6Qmstu/LkfN3g==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-icon@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.1.2.tgz#2af1de6d8134ce5fb47b288fad0a45cdd9e3b6b8"
+  integrity sha512-B0d5ygz072+8rB7ZUF8FUUYqqZN6ez4kRRKPi6LuCm08sMZlHDRX9LxUFi4kt2jHikBxLeN4OJLfK7zm4udHoA==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-label@0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-label/-/react-label-0.0.0.tgz#5d68770bed16969accfc45119b9d626a4443177f"
+  integrity sha512-jrZzHU3WbGoWMxlvnThupq5GQdBjiiwSNIsMmj1/KYPXY5hG7II44GUK+YCzs+pr8qDsya+n91HZlUH12UnJlA==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"

@@ -16,9 +16,14 @@ export type IconCommons = {
   /**
    * The size of the Icon.
    *
+   * * Smaller - `20px`
+   * * Small - `24px`
+   * * Medium - `28px`
+   * * Large - `32px`
+   *
    * @default medium
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: 'smaller' | 'small' | 'medium' | 'large';
 };
 
 export type IconProps = ComponentProps<IconSlots> & IconCommons;

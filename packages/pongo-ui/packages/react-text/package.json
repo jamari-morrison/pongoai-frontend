@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
-    "build": "tsc",
+    "build": "tsc && tsc --module commonjs --outDir lib-commonjs",
     "bundle-size": "bundle-size measure",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -34,6 +34,7 @@
     "@types/enzyme": "3.10.3",
     "@types/enzyme-adapter-react-16": "1.0.3",
     "enzyme": "~3.10.0",
+    "@testing-library/react": "^12.1.2",
     "enzyme-adapter-react-16": "^1.15.0",
     "eslint": "7.32.0",
     "jest": "^24.0.0",

@@ -6,10 +6,21 @@ import type { CheckboxProps, CheckboxSlots, CheckboxState } from './Checkbox.typ
 export const checkboxShorthandProps: (keyof CheckboxSlots)[] = ['root', 'indicator', 'input'];
 
 export const useCheckbox = (props: CheckboxProps, ref: React.Ref<HTMLElement>): CheckboxState => {
-  const { indicator, input, defaultChecked, checked, disabled, onChange } = props;
+  const {
+    indicator,
+    input,
+    defaultChecked = false,
+    checked,
+    disabled = false,
+    color = 'inherit',
+    size = 'medium',
+    onChange,
+  } = props;
 
   const state: CheckboxState = {
     defaultChecked,
+    color,
+    size,
     checked,
     disabled,
     onChange,

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
-import { Checkmark } from './DefaultIcons';
+import { CheckmarkIcon } from './DefaultIcons';
 import type { CheckboxState } from './Checkbox.types';
 
 export const useCheckboxState = (state: CheckboxState) => {
-  const { defaultChecked = false, checked, disabled = false, onChange } = state;
+  const { defaultChecked, checked, disabled, onChange, size } = state;
 
   const inputRef = useMergedRefs(state.input.ref);
 
@@ -31,8 +31,7 @@ export const useCheckboxState = (state: CheckboxState) => {
   });
 
   // Indicator Props
-  state.indicator.children = <Checkmark />;
-
+  state.indicator.children = internalValue && <CheckmarkIcon size={size!} />;
   // Input Props
   state.input.onChange = onInputChange;
   state.input.checked = internalValue;

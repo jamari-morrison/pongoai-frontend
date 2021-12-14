@@ -17,29 +17,203 @@ const useRootStyles = makeStyles({
     verticalAlign: 'middle',
   },
 
-  checked: (theme: Theme) => ({
-    ':hover .pongoai-Checkbox-indicator': {
-      background: theme.palette.brand1Hover,
-      '> svg': {
-        opacity: '.9',
-      },
+  brandChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.brand,
     },
-
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.brandHover,
+    },
     ':active .pongoai-Checkbox-indicator': {
-      background: theme.palette.brand1Active,
-      '> svg': {
-        opacity: '.8',
-      },
+      background: theme.palette.brandPressed,
     },
   }),
 
-  unchecked: (theme: Theme) => ({
+  inheritChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.inherit,
+    },
     ':hover .pongoai-Checkbox-indicator': {
-      borderColor: theme.palette.neutral3Hover,
+      background: theme.palette.inheritHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.inheritPressed,
+    },
+  }),
+
+  secondaryChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.secondary,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.secondaryHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.secondaryPressed,
+    },
+  }),
+
+  successChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.success,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.successHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.successPressed,
+    },
+  }),
+
+  warningChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.warning,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.warningHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.warningPressed,
+    },
+  }),
+
+  errorChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.error,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.errorHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.errorPressed,
+    },
+  }),
+
+  infoChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.info,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.infoHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.infoPressed,
+    },
+  }),
+
+  socialChecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      background: theme.palette.social,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      background: theme.palette.socialHover,
+    },
+    ':active .pongoai-Checkbox-indicator': {
+      background: theme.palette.socialPressed,
+    },
+  }),
+
+  brandUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.brand}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.brandHover,
     },
 
     ':active .pongoai-Checkbox-indicator': {
-      borderColor: theme.palette.neutral3Active,
+      borderColor: theme.palette.brandPressed,
+    },
+  }),
+
+  inheritUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.inherit}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.inheritHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.inheritPressed,
+    },
+  }),
+
+  secondaryUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.secondary}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.secondaryHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.secondaryPressed,
+    },
+  }),
+
+  successUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.success}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.successHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.successPressed,
+    },
+  }),
+
+  warningUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.warning}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.warningHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.warningPressed,
+    },
+  }),
+
+  errorUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.error}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.errorHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.errorPressed,
+    },
+  }),
+
+  infoUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.info}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.infoHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.infoPressed,
+    },
+  }),
+
+  socialUnchecked: (theme: Theme) => ({
+    '& .pongoai-Checkbox-indicator': {
+      border: `2px solid ${theme.palette.social}`,
+    },
+    ':hover .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.socialHover,
+    },
+
+    ':active .pongoai-Checkbox-indicator': {
+      borderColor: theme.palette.socialPressed,
     },
   }),
 
@@ -64,8 +238,6 @@ const useRootStyles = makeStyles({
 const useIndicatorStyles = makeStyles({
   indicator: {
     position: 'absolute',
-    width: '20px',
-    height: '20px',
     boxSizing: 'border-box',
     borderRadius: '2px',
     display: 'flex',
@@ -73,46 +245,85 @@ const useIndicatorStyles = makeStyles({
     justifyContent: 'center',
     overflow: 'hidden',
     transition: 'background 50ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 50ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-
-    '> svg': {
-      position: 'absolute',
-      width: '16px',
-      height: '16px',
-    },
   },
 
-  checked: (theme: Theme) => ({
-    background: theme.palette.brand1,
+  small: {
+    width: '16px',
+    height: '16px',
+  },
 
-    '> svg': {
-      opacity: '1',
-      fill: 'white',
-    },
+  medium: {
+    width: '20px',
+    height: '20px',
+  },
+
+  large: {
+    width: '24px',
+    height: '24px',
+  },
+
+  brandDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.brandDisabled,
   }),
 
-  unchecked: (theme: Theme) => ({
-    border: `2px solid ${theme.palette.neutral3}`,
-
-    '> svg': {
-      opacity: '0',
-    },
+  inheritDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.inheritDisabled,
   }),
 
-  disabledChecked: (theme: Theme) => ({
-    background: theme.palette.neutral2Disabled,
-
-    '> svg': {
-      opacity: '1',
-      fill: 'white',
-    },
+  secondaryDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.secondaryDisabled,
   }),
 
-  disabledUnchecked: (theme: Theme) => ({
-    border: `2px solid ${theme.palette.neutral2Disabled}`,
+  successDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.successDisabled,
+  }),
 
-    '> svg': {
-      opacity: '0',
-    },
+  errorDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.errorDisabled,
+  }),
+
+  warningDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.warningDisabled,
+  }),
+
+  infoDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.infoDisabled,
+  }),
+
+  socialDisabledChecked: (theme: Theme) => ({
+    background: theme.palette.socialDisabled,
+  }),
+
+  brandDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.brandDisabled}`,
+  }),
+
+  inheritDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.inheritDisabled}`,
+  }),
+
+  secondaryDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.secondaryDisabled}`,
+  }),
+
+  successDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.successDisabled}`,
+  }),
+
+  errorDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.errorDisabled}`,
+  }),
+
+  warningDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.warningDisabled}`,
+  }),
+
+  infoDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.infoDisabled}`,
+  }),
+
+  socialDisabledUnchecked: (theme: Theme) => ({
+    border: `2px solid ${theme.palette.socialDisabled}`,
   }),
 });
 
@@ -142,7 +353,10 @@ export const useCheckboxStyles = (state: CheckboxState) => {
 
   state.root.className = mergeClasses(
     rootStyles.root,
-    !state.disabled && (state.input.checked ? rootStyles.checked : rootStyles.unchecked),
+    !state.disabled &&
+      (state.input.checked
+        ? rootStyles[(state.color! + 'Checked') as 'inheritChecked']
+        : rootStyles[(state.color! + 'Unchecked') as 'inheritUnchecked']),
     !state.disabled && rootStyles.focusIndicator,
     state.root.className,
   );
@@ -150,8 +364,11 @@ export const useCheckboxStyles = (state: CheckboxState) => {
   state.indicator.className = mergeClasses(
     indicatorClassName,
     indicatorStyle.indicator,
-    !state.disabled && (state.input.checked ? indicatorStyle.checked : indicatorStyle.unchecked),
-    state.disabled && (state.input.checked ? indicatorStyle.disabledChecked : indicatorStyle.disabledUnchecked),
+    state.disabled &&
+      (state.input.checked
+        ? indicatorStyle[(state.color + 'DisabledChecked') as 'inheritDisabledChecked']
+        : indicatorStyle[(state.color + 'DisabledUnchecked') as 'inheritDisabledUnchecked']),
+    indicatorStyle[state.size!],
     state.indicator.className,
   );
 

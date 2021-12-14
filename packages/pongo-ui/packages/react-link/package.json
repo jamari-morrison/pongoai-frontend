@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
-    "build": "tsc",
+    "build": "tsc && tsc --module commonjs --outDir lib-commonjs",
     "test": "jest",
     "coverage": "jest --coverage",
     "lint": "eslint",

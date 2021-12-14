@@ -3,7 +3,18 @@ import { IconState } from './Icon.types';
 import { Theme } from '@pongoai/react-theme';
 
 export const useRootStyles = makeStyles({
+  smaller: {
+    width: '20px',
+    height: '20px',
+    '& svg': {
+      width: '20px',
+      height: '20px',
+    },
+  },
+
   small: {
+    width: '24px',
+    height: '24px',
     '& svg': {
       width: '24px',
       height: '24px',
@@ -11,6 +22,8 @@ export const useRootStyles = makeStyles({
   },
 
   medium: {
+    width: '28px',
+    height: '28px',
     '& svg': {
       width: '28px',
       height: '28px',
@@ -18,6 +31,8 @@ export const useRootStyles = makeStyles({
   },
 
   large: {
+    width: '32px',
+    height: '32px',
     '& svg': {
       width: '32px',
       height: '32px',

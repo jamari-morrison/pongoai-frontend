@@ -1,6 +1,6 @@
 {
   "name": "@pongoai/react-label",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.1",
   "description": "A Label that provides a title to a form component.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",
@@ -33,6 +33,7 @@
     "@types/enzyme-adapter-react-16": "1.0.3",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "^1.15.0",
+    "@testing-library/react": "^12.1.2",
     "eslint": "7.32.0",
     "jest": "^24.0.0",
     "ts-jest": "^24.3.0",

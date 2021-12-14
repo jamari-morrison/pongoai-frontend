@@ -48,8 +48,27 @@ export type CheckboxCommons = {
       checked: boolean;
     },
   ) => void;
+
+  /**
+   * The color of the Checkbox.
+   *
+   * @default inherit
+   */
+  color?: 'inherit' | 'brand' | 'secondary' | 'success' | 'error' | 'social' | 'warning' | 'info';
+
+  /**
+   * The size of the Checkbox.
+   *
+   * * Medium - `20px`
+   * * Large - `24px`
+   *
+   * *Note that this only changes the visible size of the indicator and not the touch target size of 34px*
+   *
+   * @default medium
+   */
+  size?: 'medium' | 'large';
 };
 
-export interface CheckboxProps extends Omit<ComponentProps<CheckboxSlots>, 'onChange'>, CheckboxCommons {}
+export interface CheckboxProps extends Omit<ComponentProps<CheckboxSlots>, 'onChange' | 'color'>, CheckboxCommons {}
 
 export type CheckboxState = ComponentState<CheckboxSlots> & CheckboxCommons;
