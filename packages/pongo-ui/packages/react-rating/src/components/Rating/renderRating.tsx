@@ -9,7 +9,7 @@ export const renderRating = (state: RatingState) => {
   return (
     <slots.root {...slotProps.root}>
       <slots.starWrapper {...slotProps.starWrapper} />
-      <slots.input {...slotProps.input} />
+      {!state.readOnly && <slots.input {...slotProps.input} />}
     </slots.root>
   );
 };

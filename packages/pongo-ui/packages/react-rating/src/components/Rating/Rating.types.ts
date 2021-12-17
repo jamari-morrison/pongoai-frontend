@@ -44,16 +44,32 @@ export type RatingCommons = {
   disabled?: boolean;
 
   /**
-   * Triggers a callback when the value has been changed.
-   */
-  onChange?: (ev: React.ChangeEvent<HTMLInputElement>, data: { value: number }) => void;
-
-  /**
-   * The number of steps that the Rating's `value` will increment upon change.
+   * The number of steps that the Rating's `value` will increment upon change
+   * (Example: `.5` would be a half step rating).
    *
    * @default 1
    */
   step?: number;
+
+  /**
+   * Whether the Rating is read only and can not be interacted with.
+   *
+   * @default false
+   */
+  readOnly?: boolean;
+
+  /**
+   * The size of the Rating
+   */
+  size?: 'small' | 'medium' | 'large';
+
+  /**
+   * Triggers a callback when the value has been changed.
+   */
+  onChange?: (
+    ev: React.ChangeEvent<HTMLInputElement> | React.PointerEvent<HTMLDivElement>,
+    data: { value: number },
+  ) => void;
 };
 
 export type RatingProps = Omit<ComponentProps<RatingSlots>, 'onChange' | 'defaultValue'> & RatingCommons;

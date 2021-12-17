@@ -13,6 +13,8 @@ export const useRating = (props: RatingProps, ref: React.Ref<HTMLElement>): Rati
     max = 5,
     disabled = false,
     step = 1,
+    readOnly = false,
+    size = 'medium',
     onChange,
 
     // Slots
@@ -26,7 +28,9 @@ export const useRating = (props: RatingProps, ref: React.Ref<HTMLElement>): Rati
     max,
     disabled,
     step,
+    readOnly,
     onChange,
+    size,
     components: {
       root: 'span',
       starWrapper: 'span',

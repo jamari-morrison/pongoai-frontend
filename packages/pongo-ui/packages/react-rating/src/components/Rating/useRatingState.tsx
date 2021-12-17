@@ -1,33 +1,87 @@
 import * as React from 'react';
 import { clamp, useControllableState, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
+import { useFluent } from '@fluentui/react-shared-contexts';
 import type { RatingState } from './Rating.types';
+import { RatingStarIcon } from './DefaultIcons';
+
+export const activeStarClassName = 'star-active';
+export const inactiveStarClassName = 'star-inactive';
+export const disabledActiveStarClassName = 'disabled-star-active';
+export const disabledInactiveStarClassName = 'disabled-star-inactive';
+
+/**
+ * Calculates the current position of the Rating
+ */
+const calculateSteps = (
+  ev: React.PointerEvent<HTMLDivElement>,
+  starWrapperRef: React.RefObject<HTMLDivElement>,
+  min: number,
+  max: number,
+  step: number,
+  dir: 'ltr' | 'rtl',
+) => {
+  const currentBounds = starWrapperRef?.current?.getBoundingClientRect();
+  const sliderSize = currentBounds!.width || 0;
+  let position;
+
+  if (dir === 'rtl') {
+    position = currentBounds!.right;
+  } else {
+    position = currentBounds!.left;
+  }
+
+  const totalSteps = (max - min) / step;
+  const stepLength = sliderSize / totalSteps;
+  const thumbPosition = ev.clientX;
+  const distance = dir === 'rtl' ? position - thumbPosition : thumbPosition - position;
+
+  return clamp(min + step * (distance / stepLength), min, max);
+};
+
+const on = (
+  element: Element | Window | Document,
+  eventName: string,
+  callback: (ev: any) => void,
+  useCapture?: boolean,
+) => {
+  element.addEventListener(eventName, callback as unknown as (ev: Event) => void, useCapture);
+  return () => element.removeEventListener(eventName, callback as unknown as (ev: Event) => void, useCapture);
+};
 
 export const useRatingState = (state: RatingState) => {
-  const { value, defaultValue = 0, max = 5, step, onChange, disabled } = state;
+  const { value, defaultValue = 0, max = 5, step, onChange, readOnly, disabled } = state;
+  const { onPointerDown: onPointerDownCallback, onKeyDown: onKeyDownCallback } = state.root;
 
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const { dir } = useFluent();
+
   const [currentValue, setCurrentValue] = useControllableState({
     state: value && clamp(value, 0, max),
     defaultState: clamp(defaultValue!, 0, max),
     initialState: 0,
   });
 
+  const starWrapperRef = React.useRef<HTMLDivElement>(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
+  const disposables = React.useRef<(() => void)[]>([]);
+
   /**
    * Updates the controlled `currentValue` to the new `incomingValue` and clamps it.
    */
-  const updateValue = useEventCallback((incomingValue: number, ev: React.ChangeEvent<HTMLInputElement>): void => {
-    const clampedValue = clamp(incomingValue, 0, max);
+  const updateValue = useEventCallback(
+    (incomingValue: number, ev: React.ChangeEvent<HTMLInputElement> | React.PointerEvent<HTMLDivElement>): void => {
+      const clampedValue = clamp(incomingValue, 0, max);
 
-    if (clampedValue !== 0 && clampedValue !== max) {
-      ev.stopPropagation();
-      if (ev.type === 'keydown') {
-        ev.preventDefault();
+      if (clampedValue !== 0 && clampedValue !== max) {
+        ev.stopPropagation();
+        if (ev.type === 'keydown') {
+          ev.preventDefault();
+        }
       }
-    }
 
-    onChange?.(ev, { value: clampedValue });
-    setCurrentValue(clampedValue);
-  });
+      onChange?.(ev, { value: clampedValue });
+      setCurrentValue(clampedValue);
+    },
+  );
 
   const onInputChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     updateValue(Number(ev.target.value), ev);
@@ -38,33 +92,88 @@ export const useRatingState = (state: RatingState) => {
 
     for (let i = 1; i <= max; i++) {
       const isChecked = currentValue >= i;
+      const starClassName = !disabled
+        ? isChecked
+          ? 'star-active'
+          : 'star-inactive'
+        : isChecked
+        ? 'disabled-star-active'
+        : 'disabled-star-inactive';
 
       elements.push(
-        <span key={'starWrapper-' + i}>
-          <svg
-            viewBox="0 0 45 45"
-            xmlns="http://www.w3.org/2000/svg"
-            fill={isChecked ? '#FFC83D' : '#dbdde1'}
-            stroke={isChecked ? 'black' : '#a1a2a5'}
-            key={'star-' + i}
-          >
-            <path d="M23.3653 2.12865L27.0248 13.3914C27.5482 15.0024 29.0494 16.093 30.7432 16.093H42.5856C43.4669 16.093 43.8334 17.2208 43.1204 17.7389L33.5396 24.6996C32.1693 25.6953 31.5959 27.46 32.1193 29.0709L35.7788 40.3337C36.0512 41.1719 35.0918 41.8689 34.3788 41.3509L24.7981 34.3901C23.4278 33.3945 21.5722 33.3945 20.2019 34.3901L10.6212 41.3509C9.90817 41.8689 8.94881 41.1719 9.22116 40.3337L12.8807 29.0709C13.4041 27.46 12.8307 25.6953 11.4603 24.6996L1.87965 17.7389C1.16663 17.2208 1.53308 16.093 2.41441 16.093H14.2568C15.9506 16.093 17.4518 15.0024 17.9752 13.3914L21.6347 2.12865C21.9071 1.29045 23.0929 1.29045 23.3653 2.12865Z" />
-          </svg>
+        <span className={starClassName} key={'starWrapper-' + i}>
+          <RatingStarIcon />
         </span>,
       );
     }
     return elements;
   };
 
-  state.starWrapper.children = renderStars();
+  const getCount = () => {
+    const gridTemplateColumnsCount = [];
+    for (let i = 1; i <= max; i++) {
+      gridTemplateColumnsCount.push('25%');
+    }
+    return gridTemplateColumnsCount.join('');
+  };
 
-  state.input.ref = useMergedRefs(state.input.ref, inputRef);
-  state.input.value = currentValue;
-  state.input.min = 1;
-  state.input.max = max;
-  state.input.step = step;
-  state.input.disabled = disabled;
-  state.input.onChange = onInputChange;
+  const onPointerMove = React.useCallback(
+    (ev: React.PointerEvent<HTMLDivElement>): void => {
+      const position = calculateSteps(ev, starWrapperRef, 1, max, step!, dir);
+      const currentStepPosition = Math.round(position / step!) * step!;
+
+      updateValue(currentStepPosition, ev);
+    },
+    [dir, max, step, updateValue],
+  );
+
+  const onPointerUp = React.useCallback((ev: React.PointerEvent<HTMLDivElement>): void => {
+    disposables.current.forEach(dispose => dispose());
+    disposables.current = [];
+    calculateSteps(ev, starWrapperRef, 1, max, step!, dir) === currentValue && updateValue(0, ev);
+    console.log(calculateSteps(ev, starWrapperRef, 1, max, step!, dir));
+    inputRef.current!.focus();
+  }, []);
+
+  const onStarWrapperPointerDown = React.useCallback(
+    (ev: React.PointerEvent<HTMLDivElement>): void => {
+      const { pointerId } = ev;
+      const target = ev.target as HTMLElement;
+
+      target.setPointerCapture?.(pointerId);
+
+      onPointerDownCallback?.(ev);
+
+      disposables.current.push(on(target, 'pointermove', onPointerMove), on(target, 'pointerup', onPointerUp), () => {
+        target.releasePointerCapture?.(pointerId);
+      });
+
+      onPointerMove(ev);
+    },
+    [onPointerDownCallback, onPointerMove],
+  );
+
+  const starWrapperStyles = {
+    gridTemplateColumns: getCount(),
+  };
+
+  state.starWrapper.children = renderStars();
+  state.starWrapper.style = starWrapperStyles;
+  state.starWrapper.ref = useMergedRefs(state.starWrapper.ref, starWrapperRef);
+  if (!readOnly && !disabled) {
+    state.starWrapper.onPointerDown = onStarWrapperPointerDown;
+  }
+
+  if (!readOnly) {
+    state.input.ref = useMergedRefs(state.input.ref, inputRef);
+    state.input.value = currentValue;
+    state.input.min = 1;
+    state.input.max = max;
+    state.input.step = step;
+    state.input.disabled = disabled;
+    state.input.onChange = onInputChange;
+    state.input.tabIndex = 0;
+  }
 
   return state;
 };

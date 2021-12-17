@@ -31,7 +31,8 @@ export type ColorTokens = {
   inheritDisabled: String;
   inheritForegroundHover: String;
   inheritForegroundPressed: String;
-
+  inheritBackground: String;
+  inheritBackgroundDisabled: String;
   neutral: String;
   brand: String;
   brandHover: String;
