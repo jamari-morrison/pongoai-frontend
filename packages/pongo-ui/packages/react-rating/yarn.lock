@@ -1265,10 +1265,25 @@
     "@fluentui/react-theme" "9.0.0-beta.1"
     tslib "^2.1.0"
 
+"@fluentui/react-shared-contexts@9.0.0-beta.4":
+  version "9.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-shared-contexts/-/react-shared-contexts-9.0.0-beta.4.tgz#18556451045fa800a90291164d7082fd7ccabe95"
+  integrity sha512-I4Wb0KHQfDAdWMXb+Af8LvmEvsnzMZ4Oky0ubxNTlueALSdwUE4mVj7dKEasCNESdxR0wXm8YooWh1xCX9WG7w==
+  dependencies:
+    "@fluentui/react-theme" "9.0.0-beta.4"
+    tslib "^2.1.0"
+
 "@fluentui/react-theme@9.0.0-beta.1":
   version "9.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@fluentui/react-theme/-/react-theme-9.0.0-beta.1.tgz#10277f79725dfe1eb8e67c1ba29958237e4af26d"
   integrity sha512-nxAttJ6S6cmtolNVH/O16gwI9fG/bJaUuikdYIsPFAILY423uetQ/snIqlwVj1UgS0xkVwY0S+zKKFmECbgdtg==
+  dependencies:
+    tslib "^2.1.0"
+
+"@fluentui/react-theme@9.0.0-beta.4":
+  version "9.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-theme/-/react-theme-9.0.0-beta.4.tgz#6a0603b9934cb26b04c8fdad5b6e0c44c46e80f7"
+  integrity sha512-dfmfZFgb03d43ZguIKbQIGuKEhyYUDNJLheLLV/1CdzZWHxayxEpHofILc6S7L7KVDIhZPniOSjgxmn+R3kzuw==
   dependencies:
     tslib "^2.1.0"
 

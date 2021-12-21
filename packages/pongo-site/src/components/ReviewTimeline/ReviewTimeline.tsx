@@ -1,10 +1,7 @@
 import * as React from 'react';
-import Link from 'next/link';
 import { makeStyles } from '@fluentui/react-make-styles';
-import { LogoIcon } from '@pongoai/react-icon';
 import { Text } from '@pongoai/react-text';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
-import { Button } from '@pongoai/react-button';
 import { Calendar } from './reviewTimelineIcons';
 import { Select } from '@pongoai/react-textfield';
 

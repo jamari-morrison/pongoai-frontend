@@ -22,12 +22,11 @@ type DashboardCardProps = {
 
 const cardStyle: React.CSSProperties = {
   width: '200px',
-  height: '80px',
+  height: '70px',
   background: 'white',
   borderRadius: '6px',
   cursor: 'pointer',
   padding: '10px',
-  gap: '10px',
   display: 'flex',
   flexDirection: 'column',
 };
@@ -37,6 +36,11 @@ const headerWrapper: React.CSSProperties = {
   flexDirection: 'row',
   justifyContent: 'space-between',
   verticalAlign: 'baseline',
+};
+
+const ratingStyles: React.CSSProperties = {
+  verticalAlign: 'bottom',
+  paddingTop: '5px',
 };
 
 export const DashboardCard = (props: DashboardCardProps) => {
@@ -49,8 +53,10 @@ export const DashboardCard = (props: DashboardCardProps) => {
         <DeleteSvg />
       </span>
       <span>
-        <Rating value={rating} />
-        <Body>( {ratingCount} )</Body>
+        <Rating value={rating} readOnly size="medium" style={ratingStyles} />
+      </span>
+      <span>
+        <Body> ( {ratingCount} ) </Body>
       </span>
     </div>
   );

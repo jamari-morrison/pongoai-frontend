@@ -47,7 +47,7 @@ const RatingCard = () => (
       Survey analytics
     </Text>
     <div className={styles.cardContent} style={{ margin: '3px 0 0 0' }}>
-      <Rating value={data.product1.ratingReview} />
+      <Rating value={data.product1.ratingReview} readOnly size="large" />
       <span>
         <Body>Average - </Body>
         <SubHeadline>{data.product1.ratingReview}</SubHeadline>

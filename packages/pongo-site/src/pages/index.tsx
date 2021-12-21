@@ -72,7 +72,7 @@ const cards: any = [
 
 const cardWrapperStyles: React.CSSProperties = {
   display: 'grid',
-  gridGap: '30px',
+  gridGap: '20px',
   gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
   justifyItems: 'space-evenly',
   paddingTop: '20px',

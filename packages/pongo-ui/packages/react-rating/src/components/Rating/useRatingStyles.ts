@@ -68,21 +68,6 @@ const useStarStyles = makeStyles({
     whiteSpace: 'nowrap',
     marginLeft: 'calc(var(--rating-star-size) / 2)',
     marginRight: 'calc(var(--rating-star-size) / 2)',
-    '&:hover': {
-      [`& .${activeStarClassName}`]: {
-        '> svg': {
-          fill: theme.palette.inheritHover,
-        },
-      },
-    },
-
-    '&:active': {
-      [`& .${activeStarClassName}`]: {
-        '> svg': {
-          fill: theme.palette.inheritPressed,
-        },
-      },
-    },
 
     [`& .${activeStarClassName}`]: {
       '> svg': {
@@ -122,21 +107,23 @@ const useStarStyles = makeStyles({
     },
   }),
   enabledStar: {
-    '> span': {
+    '> span': (theme: Theme) => ({
       '&:hover': {
         '> svg': {
+          fill: theme.palette.inheritHover,
           transform: 'scale(1.2, 1.2)',
         },
       },
       '&:active': {
         '> svg': {
+          fill: theme.palette.inheritPressed,
           transform: 'scale(1, 1)',
         },
       },
       '> svg': {
         transition: 'transform .1s cubic-bezier(0.33, 0.0, 0.67, 1) filter .1s cubic-bezier(0.33, 0.0, 0.67, 1)',
       },
-    },
+    }),
   },
 });
 

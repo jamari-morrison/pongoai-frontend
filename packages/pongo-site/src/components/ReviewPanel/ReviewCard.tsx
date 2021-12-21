@@ -174,7 +174,7 @@ export const ReviewCard = (props: ReviewCardProps) => {
       </div>
 
       <div className={styles.ratingContainer}>
-        <Rating value={props.starRating} />
+        <Rating value={props.starRating} readOnly />
         <div className={styles.npsContainer}>{selectNps(props.nps)}</div>
       </div>
 

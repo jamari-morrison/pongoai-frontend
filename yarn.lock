@@ -1564,6 +1564,14 @@
     "@fluentui/react-theme" "9.0.0-beta.3"
     tslib "^2.1.0"
 
+"@fluentui/react-shared-contexts@9.0.0-beta.4":
+  version "9.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-shared-contexts/-/react-shared-contexts-9.0.0-beta.4.tgz#18556451045fa800a90291164d7082fd7ccabe95"
+  integrity sha512-I4Wb0KHQfDAdWMXb+Af8LvmEvsnzMZ4Oky0ubxNTlueALSdwUE4mVj7dKEasCNESdxR0wXm8YooWh1xCX9WG7w==
+  dependencies:
+    "@fluentui/react-theme" "9.0.0-beta.4"
+    tslib "^2.1.0"
+
 "@fluentui/react-switch@9.0.0-beta.1":
   version "9.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@fluentui/react-switch/-/react-switch-9.0.0-beta.1.tgz#f9851103a83a898c4214b838e9d1b4528374254f"
@@ -1619,6 +1627,13 @@
   version "9.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/@fluentui/react-theme/-/react-theme-9.0.0-beta.3.tgz#433deb471d8e1de23c9a7512ddd66c535b743f88"
   integrity sha512-kidHLlshpHaFUooo1bbk/t5vIhRfMPDXSF/KmBpEy/EovxTQwMZi3Z7GnyOfyGSXQbiYDNJtezaDV9SO5vUWew==
+  dependencies:
+    tslib "^2.1.0"
+
+"@fluentui/react-theme@9.0.0-beta.4":
+  version "9.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-theme/-/react-theme-9.0.0-beta.4.tgz#6a0603b9934cb26b04c8fdad5b6e0c44c46e80f7"
+  integrity sha512-dfmfZFgb03d43ZguIKbQIGuKEhyYUDNJLheLLV/1CdzZWHxayxEpHofILc6S7L7KVDIhZPniOSjgxmn+R3kzuw==
   dependencies:
     tslib "^2.1.0"
 
@@ -2582,12 +2597,13 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-rating@^0.0.2-alpha.0":
-  version "0.0.2-alpha.0"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-rating/-/react-rating-0.0.2-alpha.0.tgz#d275264c86c982821d1f4376f880a082d9d2eed6"
-  integrity sha512-fAg8vkUUXrAMXDBfi2zuQsK16loaLiCzUMyChxUOodgvN48OVmUbCXBx2sOOLIgEJFae6+Ib/AAmsgjEkQsAWg==
+"@pongoai/react-rating@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-rating/-/react-rating-0.0.2.tgz#11d37ebabbdb9e72224e1a3dfaa7235408769880"
+  integrity sha512-9ZoE8tS5Uk4vdWzIvd8tmS1Xo1ilksFyekXdpf2z078k1Gr+sL34NLSb1+VvPVztcPd9uaZyn6HCOTh3MmJ61g==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-shared-contexts" "9.0.0-beta.4"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
 "@pongoai/react-switch@0.0.0":
