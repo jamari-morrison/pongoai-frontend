@@ -40,6 +40,9 @@ export type ColorTokens = {
   brandDisabled: String;
   brandForegroundHover: String;
   brandForegroundPressed: String;
+  brandBackground: String;
+  brandBackgroundHover: String;
+  brandBackgroundPressed: String;
   secondary: String;
   secondaryHover: String;
   secondaryPressed: String;

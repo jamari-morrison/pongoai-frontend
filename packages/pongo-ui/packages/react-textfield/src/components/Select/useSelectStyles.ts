@@ -74,20 +74,20 @@ const useListStyles = makeStyles({
 
   activeListItem: (theme: Theme) => ({
     [`& .active`]: {
-      background: '#e6e9ff',
+      background: theme.palette.brandBackground,
       ':hover': {
-        background: '#ccd1ff',
+        background: theme.palette.brandBackgroundHover,
       },
       ':active': {
-        background: '#abb3ff',
+        background: theme.palette.brandBackgroundPressed,
       },
       ':focus-within': {
-        background: '#ccd1ff',
+        background: theme.palette.brandBackground,
         ':hover': {
-          background: '#c2c8ff',
+          background: theme.palette.brandBackgroundHover,
         },
         ':active': {
-          background: '#abb3ff',
+          background: theme.palette.brandBackgroundPressed,
         },
       },
     },
@@ -97,13 +97,13 @@ const useListStyles = makeStyles({
     [`& .inactive`]: {
       background: 'white',
       ':hover': {
-        background: theme.palette.neutral2Hover,
+        background: theme.palette.brandForegroundHover,
       },
       ':active': {
-        background: theme.palette.neutral2Active,
+        background: theme.palette.brandForegroundPressed,
       },
       ':focus-within': {
-        background: theme.palette.neutral2Active,
+        background: theme.palette.brandForegroundPressed,
       },
     },
   }),

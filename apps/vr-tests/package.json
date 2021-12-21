@@ -14,8 +14,10 @@
   "devDependencies": {},
   "dependencies": {
     "chromatic": "^v6.0.6",
-    "@pongoai/react-theme": "0.1.6",
+    "@pongoai/react-theme": "0.1.7",
     "@pongoai/react-text": "0.0.4",
+    "@pongoai/react-textfield": "0.1.6",
+    "@pongoai/react-button": "0.1.2",
     "@pongoai/react-icon": "^0.1.2",
     "@pongoai/react-switch": "0.0.0",
     "@pongoai/react-checkbox": "0.0.1",

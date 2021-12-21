@@ -16,15 +16,19 @@ export const listClassName = 'pongoai-Select-list-option';
 const getKeyDownValue = (ev: any, currentValue: number, max: number) => {
   switch (ev.key) {
     case 'ArrowDown': {
+      ev.preventDefault();
       return clamp(currentValue + 1, 0, max);
     }
     case 'ArrowUp': {
+      ev.preventDefault();
       return clamp(currentValue - 1, 0, max);
     }
     case 'Home': {
+      ev.preventDefault();
       return 0;
     }
     case 'End': {
+      ev.preventDefault();
       return max;
     }
   }
@@ -99,7 +103,6 @@ export const useSelectState = (state: SelectState) => {
 
       const onOptionKeyUp = (ev: any) => {
         ev.stopPropagation();
-        ev.preventDefault();
         switch (ev.key) {
           case 'Escape': {
             selectButtonRef.current!.focus();
@@ -121,7 +124,7 @@ export const useSelectState = (state: SelectState) => {
 
       const onOptionKeyDown = (ev: any) => {
         ev.stopPropagation();
-        ev.preventDefault();
+        // ev.preventDefault();
         const incomingValue = getKeyDownValue(ev, internalState.current.focusedValue, options.length - 1);
         internalState.current.focusedValue = incomingValue;
         (optionItemsRef.current[internalState.current.focusedValue] as any).current.focus();

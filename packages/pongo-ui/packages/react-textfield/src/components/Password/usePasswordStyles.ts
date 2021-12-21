@@ -37,7 +37,7 @@ export const useShowIconStyles = makeStyles({
 
   icon: {
     '& .pongoai-Password-show-button': {
-      width: '34px',
+      minWidth: '34px',
       height: '34px',
       tabIndex: 1,
     },

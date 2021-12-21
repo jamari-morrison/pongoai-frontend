@@ -1,6 +1,6 @@
 {
   "name": "@pongoai/react-button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Button control that allows users to make an action through a press.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
-    "build": "tsc",
+    "build": "tsc && tsc --module commonjs --outDir lib-commonjs",
     "bundle-size": "bundle-size measure",
     "test": "jest",
     "coverage": "jest --coverage",

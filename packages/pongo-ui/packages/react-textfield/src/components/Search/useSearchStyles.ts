@@ -56,7 +56,7 @@ export const useButtonStyles = makeStyles({
 
   icon: {
     '& .pongoai-Search-clear-button': {
-      width: '34px',
+      minWidth: '34px',
       height: '34px',
       tabIndex: 1,
     },

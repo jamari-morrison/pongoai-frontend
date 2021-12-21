@@ -17,10 +17,10 @@ export const useRootStyles = makeStyles({
   inputFocus: (theme: Theme) => ({
     ':focus-within': {
       [`& .${textFieldBorderClassName}`]: {
-        borderColor: theme.palette.brand1,
+        borderColor: theme.palette.brand,
       },
       [`& .${labelClassName}`]: {
-        color: theme.palette.brand1,
+        color: theme.palette.brand,
       },
     },
   }),
@@ -111,7 +111,7 @@ export const useInputStyles = makeStyles({
     ':focus': {
       '::placeholder': {
         opacity: '1',
-        color: theme.palette.neutral2Disabled,
+        color: theme.palette.inheritDisabled,
       },
     },
   }),
@@ -130,9 +130,9 @@ export const useInputStyles = makeStyles({
 
   disabled: (theme: Theme) => ({
     cursor: 'not-allowed',
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
     '::placeholder': {
-      color: theme.palette.neutral2Disabled,
+      color: theme.palette.inheritDisabled,
     },
   }),
 });
@@ -153,27 +153,27 @@ export const useTextFieldBorderStyles = makeStyles({
   },
 
   outlined: (theme: Theme) => ({
-    border: `2px solid ${theme.palette.neutral3}`,
+    border: `2px solid ${theme.palette.inherit}`,
     borderRadius: '4px',
   }),
 
   standard: (theme: Theme) => ({
-    borderBottom: `2px solid ${theme.palette.neutral3}`,
+    borderBottom: `2px solid ${theme.palette.inherit}`,
   }),
 
   filled: (theme: Theme) => ({
-    background: theme.palette.neutral3Background,
+    background: theme.palette.inheritForegroundPressed,
     borderRadius: '6px 6px 0px 0px',
-    borderBottom: `2px solid ${theme.palette.neutral3}`,
+    borderBottom: `2px solid ${theme.palette.inherit}`,
   }),
 
   disabled: (theme: Theme) => ({
-    borderColor: theme.palette.neutral2Disabled,
+    borderColor: theme.palette.inheritDisabled,
     cursor: 'not-allowed',
   }),
 
   error: (theme: Theme) => ({
-    borderColor: 'red',
+    borderColor: theme.palette.error,
   }),
 });
 
@@ -201,15 +201,15 @@ export const useLabelStyles = makeStyles({
   }),
 
   enabled: (theme: Theme) => ({
-    color: theme.palette.neutral3,
+    color: theme.palette.inherit,
   }),
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
   }),
 
   error: (theme: Theme) => ({
-    color: 'red',
+    color: theme.palette.error,
   }),
 
   standard: {
@@ -268,11 +268,11 @@ export const useHelperTextStyles = makeStyles({
   }),
 
   enabled: (theme: Theme) => ({
-    color: theme.palette.neutral3,
+    color: theme.palette.inherit,
   }),
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
   }),
 
   error: (theme: Theme) => ({
@@ -297,7 +297,7 @@ export const useSuffixPrefixStyles = makeStyles({
     justifyContent: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    color: theme.palette.neutral3,
+    color: theme.palette.inherit,
     alignItems: 'center',
     whiteSpace: 'nowrap',
     flexShrink: 0,
@@ -312,7 +312,7 @@ export const useSuffixPrefixStyles = makeStyles({
   },
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
   }),
 });
 
