@@ -16,7 +16,7 @@
     "@pongoai/react-link": "^0.0.1",
     "@pongoai/react-rating": "^0.0.2",
     "@pongoai/react-textfield": "^0.1.6",
-    "@pongoai/react-switch": "^0.0.1",
+    "@pongoai/react-switch": "^0.0.2",
     "@pongoai/react-text": "^0.0.6",
     "next": "11.1.2",
     "react": "17.0.2",

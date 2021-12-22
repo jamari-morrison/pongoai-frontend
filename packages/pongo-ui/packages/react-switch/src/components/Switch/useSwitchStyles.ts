@@ -45,25 +45,25 @@ const useRootStyles = makeStyles({
   unchecked: (theme: Theme) => ({
     ':hover .pongoai-Switch-thumb': {
       ':before': {
-        background: theme.palette.neutral3Hover,
+        background: theme.palette.inheritHover,
       },
     },
 
     ':hover .pongoai-Switch-track': {
       ':before': {
-        borderColor: theme.palette.neutral3Hover,
+        borderColor: theme.palette.inheritHover,
       },
     },
 
     ':active .pongoai-Switch-thumb': {
       ':before': {
-        background: theme.palette.neutral3Active,
+        background: theme.palette.inheritPressed,
       },
     },
 
     ':active .pongoai-Switch-track': {
       ':before': {
-        borderColor: theme.palette.neutral3Active,
+        borderColor: theme.palette.inheritPressed,
       },
     },
   }),
@@ -71,13 +71,13 @@ const useRootStyles = makeStyles({
   checked: (theme: Theme) => ({
     ':hover .pongoai-Switch-track': {
       ':after': {
-        background: theme.palette.brand1Hover,
+        background: theme.palette.brandHover,
       },
     },
 
     ':active .pongoai-Switch-track': {
       ':after': {
-        background: theme.palette.brand1Active,
+        background: theme.palette.brandPressed,
       },
     },
   }),
@@ -128,28 +128,28 @@ const useTrackStyles = makeStyles({
 
   unchecked: (theme: Theme) => ({
     ':before': {
-      border: `1px solid ${theme.palette.neutral3}`,
+      border: `1.5px solid ${theme.palette.inherit}`,
       background: 'none',
     },
   }),
 
   checked: (theme: Theme) => ({
     ':after': {
-      background: theme.palette.brand1,
+      background: theme.palette.brand,
       border: 'none',
     },
   }),
 
   disabledUnchecked: (theme: Theme) => ({
     ':before': {
-      border: `1px solid ${theme.palette.neutral2Disabled}`,
+      border: `1.5px solid ${theme.palette.inheritDisabled}`,
     },
   }),
 
   disabledChecked: (theme: Theme) => ({
     ':after': {
-      border: `1px solid ${theme.palette.neutral2Disabled}`,
-      background: theme.palette.neutral2Disabled,
+      border: `1.5px solid ${theme.palette.inheritDisabled}`,
+      background: theme.palette.inheritDisabled,
     },
   }),
 });
@@ -204,26 +204,26 @@ const useThumbStyles = makeStyles({
 
   unchecked: (theme: Theme) => ({
     ':before': {
-      background: theme.palette.neutral3,
+      background: theme.palette.inherit,
     },
   }),
 
   checked: (theme: Theme) => ({
     ':after': {
-      background: theme.palette.neutral2,
+      background: theme.palette.neutral,
     },
   }),
 
   disabledUnchecked: (theme: Theme) => ({
     ':before': {
-      border: `1px solid ${theme.palette.neutral2Disabled}`,
-      background: theme.palette.neutral2Disabled,
+      border: `1.5px solid ${theme.palette.inheritDisabled}`,
+      background: theme.palette.inheritDisabled,
     },
   }),
 
   disabledChecked: (theme: Theme) => ({
     ':after': {
-      background: theme.palette.neutral2,
+      background: theme.palette.neutral,
     },
   }),
 });

@@ -2596,19 +2596,10 @@
     "@fluentui/react-shared-contexts" "9.0.0-beta.4"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-switch@0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-switch/-/react-switch-0.0.0.tgz#b3a370e885ccaf3d4d5873ece4d79913722cbfa3"
-  integrity sha512-mnuz6cszpKyumkRDEkVBAKCD3NesbwrnZs6+WzNoxeWjul5DM2Mh2Qnel0SSQv5J4KmWSewTPg5dr6ImsaQYVQ==
-  dependencies:
-    "@fluentui/react-make-styles" "9.0.0-beta.1"
-    "@fluentui/react-switch" "9.0.0-beta.1"
-    "@fluentui/react-utilities" "9.0.0-beta.1"
-
-"@pongoai/react-switch@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-switch/-/react-switch-0.0.1.tgz#d84c62db5e04ae49b372a3841fe2f665c8db48a3"
-  integrity sha512-+EgLlZR0JFu0DkrjfkiQ+VROvPLpOXJzS1hAhGCPYybxZrK5OCyBOMH/6lfMbDde8/XqAqh+4iYi1jkJaFvP4Q==
+"@pongoai/react-switch@0.0.2", "@pongoai/react-switch@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-switch/-/react-switch-0.0.2.tgz#29b2d6ac4990fa4dc89d17fae4c129e20ebdd481"
+  integrity sha512-4RTNjR/yzHKmMXYJfHv1BwhSZjOegw6nRTr+zfN266Va3Gaj8hFAPAeYv6KnFKyO23j2Uh7uDZY3S3qfM86vdQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-switch" "9.0.0-beta.1"
