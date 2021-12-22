@@ -4,10 +4,10 @@ import { Theme } from '@pongoai/react-theme';
 
 const useStyles = makeStyles({
   disabled: (theme: Theme) => ({
-    stroke: theme.palette.neutral2Disabled,
+    stroke: theme.palette.inheritDisabled,
   }),
   enabled: (theme: Theme) => ({
-    stroke: theme.palette.neutral3,
+    stroke: theme.palette.inherit,
   }),
 });
 

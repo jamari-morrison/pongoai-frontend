@@ -1,6 +1,6 @@
 {
   "name": "@pongoai/react-link",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A customizable link that helps with site navigation.",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",

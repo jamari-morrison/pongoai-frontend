@@ -8,7 +8,7 @@ const useRootStyles = makeStyles({
   }),
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
   }),
 
   enabled: (theme: Theme) => ({

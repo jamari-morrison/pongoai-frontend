@@ -25,7 +25,7 @@ export const useButtonStyles = makeStyles({
     justifyContent: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    color: theme.palette.neutral3,
+    color: 'black',
     alignItems: 'center',
     whiteSpace: 'nowrap',
     flexShrink: 0,
@@ -43,7 +43,7 @@ export const useButtonStyles = makeStyles({
           right: '0px',
           bottom: '0px',
           left: '0px',
-          background: theme.palette.neutral3,
+          background: 'black',
           border: `none`,
           opacity: '.2',
           zIndex: '-1',
@@ -71,7 +71,7 @@ export const useButtonStyles = makeStyles({
   },
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
   }),
 });
 

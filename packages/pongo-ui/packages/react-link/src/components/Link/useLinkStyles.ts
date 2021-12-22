@@ -18,20 +18,20 @@ const useRootStyles = makeStyles({
   }),
 
   disabled: (theme: Theme) => ({
-    color: theme.palette.neutral2Disabled,
+    color: theme.palette.inheritDisabled,
     textDecoration: 'underline',
     cursor: 'not-allowed',
   }),
 
   enabled: (theme: Theme) => ({
-    color: theme.palette.brand1,
+    color: theme.palette.brand,
     cursor: 'pointer',
     ':hover': {
-      color: theme.palette.brand1Hover,
+      color: theme.palette.brandHover,
       textDecoration: 'underline',
     },
     ':active': {
-      color: theme.palette.brand1Active,
+      color: theme.palette.brandPressed,
       textDecoration: 'underline',
     },
   }),

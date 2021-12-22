@@ -7,24 +7,6 @@ export type Theme = {
  * Color theme tokens.
  */
 export type ColorTokens = {
-  brand1: string;
-  brand1Hover: string;
-  brand1Active: string;
-  brand1Stroke: string;
-  brand1StrokeHover: string;
-  brand1StrokeActive: string;
-  neutral1: string;
-  neutral1Hover: string;
-  neutral1Active: string;
-  neutral2: string;
-  neutral2Hover: string;
-  neutral2Active: string;
-  neutral2Disabled: string;
-  neutral2DisabledBackground: string;
-  neutral3: string;
-  neutral3Background: string;
-  neutral3Hover: string;
-  neutral3Active: string;
   inherit: String;
   inheritHover: String;
   inheritPressed: String;
