@@ -1645,10 +1645,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pongoai/react-theme@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.1.7.tgz#50c00bb94bd8632effffaea761f2176c246aad26"
-  integrity sha512-Vn/NsxQjN4PYSRRisRU8WZLjvKqF3dEOdb4ueVWdTNnB66zzR1U8qVBmwBdQE/9v3WC+9am42iWtSSdJuB2ajA==
+"@pongoai/react-theme@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.1.8.tgz#2cc97f07b315c7333d2206cb45f5576ee05c64e2"
+  integrity sha512-RtW/ywNmc8ioOClmM2kwfHui9q0wxFCewhl1dhsUzWtbRboq3BuQ273x+no85apWxvAclkmom8Q7iWtbH4YQ7g==
 
 "@popperjs/core@^2.5.4", "@popperjs/core@^2.6.0":
   version "2.10.2"

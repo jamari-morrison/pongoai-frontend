@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useId, useControllableState, useBoolean, useEventCallback, useMergedRefs } from '@fluentui/react-utilities';
-import { Button } from '../../../../react-button/src/index';
+import { Button } from '@pongoai/react-button';
 import { PasswordShowIcon, PasswordHideIcon } from './defaultIcons';
 import type { PasswordState } from './Password.types';
 

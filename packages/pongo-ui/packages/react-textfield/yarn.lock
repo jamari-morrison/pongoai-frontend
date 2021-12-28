@@ -1855,10 +1855,10 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pongoai/react-button@0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.1.2.tgz#bf36ff457847c74162fd81c1e52ba39fec7b097d"
-  integrity sha512-Iw8t6cJThJ0TbtYQmBtw0UotDYfMQuLpizb0XYH9IG1PDHyxrGrAYgvTQ4marSGeciNrOWuVKbIRYIVgiBTuQg==
+"@pongoai/react-button@0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.1.3.tgz#0f1caac1eb671c00f3dd18547e314cbba96f4e3a"
+  integrity sha512-5VDxDjzLz89IY0/1W73DiQpGiPWr/ODF1nRmu0vk5pcRe/PE5buxUXNkbD7afc+a5jg6tzmPd4N16D5EvDApFQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-tabster" "9.0.0-alpha.68"
