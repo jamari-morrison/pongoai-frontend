@@ -86,6 +86,27 @@ const useRootStyles = makeStyles({
     fontSize: theme.fonts.fontSize[1000],
     lineHeight: theme.fonts.fontSize[1000],
   }),
+  brand: (theme: Theme) => ({
+    color: theme.palette.brand,
+  }),
+  secondary: (theme: Theme) => ({
+    color: theme.palette.secondary,
+  }),
+  success: (theme: Theme) => ({
+    color: theme.palette.success,
+  }),
+  error: (theme: Theme) => ({
+    color: theme.palette.error,
+  }),
+  social: (theme: Theme) => ({
+    color: theme.palette.social,
+  }),
+  warning: (theme: Theme) => ({
+    color: theme.palette.warning,
+  }),
+  info: (theme: Theme) => ({
+    color: theme.palette.info,
+  }),
 });
 
 export const useTextStyles = (state: TextState): TextState => {
@@ -100,6 +121,7 @@ export const useTextStyles = (state: TextState): TextState => {
     state.underline && styles.underline,
     state.strikethrough && styles.strikethrough,
     state.underline && state.strikethrough && styles.strikethroughUnderline,
+    styles[state.color!],
     state.root.className,
   );
   return state;

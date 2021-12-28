@@ -1,6 +1,6 @@
 import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import type { LabelState } from './Label.types';
-import { Theme } from '@pongoai/react-theme';
+import type { Theme } from '@pongoai/react-theme';
 
 const useRootStyles = makeStyles({
   root: (theme: Theme) => ({

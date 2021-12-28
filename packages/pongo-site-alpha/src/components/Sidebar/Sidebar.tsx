@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { HomeIcon, SettingIcon, HomeIconActive, SettingIconActive } from './defaultIcons';
+import type { Theme } from '@pongoai/react-theme';
 
 const linkClassName = 'pongo-ai-sidebar-link';
 
@@ -36,7 +37,7 @@ const useStyles = makeStyles({
     cursor: 'pointer',
   },
 
-  sidebarAnchorLink: {
+  sidebarAnchorLink: (theme: Theme) => ({
     position: 'relative',
     ':after': {
       content: "''",
@@ -46,24 +47,24 @@ const useStyles = makeStyles({
       width: '100%',
       height: '2px',
       borderRadius: '999px',
-      backgroundColor: '#aaadac',
+      backgroundColor: theme.palette.inheritBackground,
       transition: 'opacity 150ms, transform 150ms',
       opacity: '0',
       transform: 'scale(0)',
       transformOrigin: 'center',
     },
-  },
+  }),
 
-  sidebarAnchorLinkActive: {
+  sidebarAnchorLinkActive: (theme: Theme) => ({
     boxShadow: 'inset 0px 0px 3px 0px rgba(0, 0, 0, 0.2)',
     [`& .${linkClassName}`]: {
       ':after': {
         opacity: '1',
         transform: 'scale(1)',
-        backgroundColor: '#2060cf',
+        backgroundColor: theme.palette.brand,
       },
     },
-  },
+  }),
 
   sidebarLinkInactive: {
     [`:hover .${linkClassName}`]: {

@@ -2637,18 +2637,10 @@
     "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-text@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.4.tgz#ae810c62f54f9f0b42717518b8d0da03556a85d0"
-  integrity sha512-ukyYS0J/AweWwHx6MsExcJYOcSPh3MqdfY5vmlO72Tl7wqG69lbKB/sUSWrj8ylvhTxaLxPBAwNGo8zHzX+V1g==
-  dependencies:
-    "@fluentui/react-make-styles" "9.0.0-beta.1"
-    "@fluentui/react-utilities" "9.0.0-beta.1"
-
-"@pongoai/react-text@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.6.tgz#b8440d6df27cc9e7fa2706db9488e9bfe4b6b6f5"
-  integrity sha512-wHD65Hb7lbN3Gl9uCuXnHVG907aw2DyfKADJdQITgn+Y++C4SoIIXk01y5T1gRokB1tYYqP4NY+T5d/V9yUpUQ==
+"@pongoai/react-text@0.0.7", "@pongoai/react-text@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.7.tgz#1ed133e753aea81522bd644e88b6ca4c352d36c1"
+  integrity sha512-AJu6DP/tf9ldT3M9nXpEOfAlN0Gq0d0XavZGaNOpD00U30p1pQ5vgm4d8qxyIKFBSI6tSHtgxaZxyxpxDghPdw==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"

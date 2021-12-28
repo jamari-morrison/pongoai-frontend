@@ -11,6 +11,7 @@ export const useText = (props: TextProps, ref: React.Ref<HTMLElement>): TextStat
     italic = false,
     underline = false,
     strikethrough = false,
+    color,
   } = props;
 
   const state: TextState = {
@@ -20,6 +21,7 @@ export const useText = (props: TextProps, ref: React.Ref<HTMLElement>): TextStat
     italic,
     underline,
     strikethrough,
+    color,
     components: {
       root: 'span',
     },

@@ -3,20 +3,21 @@ import Link from 'next/link';
 import { makeStyles } from '@fluentui/react-make-styles';
 import { LogoIcon } from '@pongoai/react-icon';
 import { Text } from '@pongoai/react-text';
+import type { Theme } from '@pongoai/react-theme';
 
 const useStyles = makeStyles({
-  header: {
+  header: (theme: Theme) => ({
     position: 'fixed',
     height: '68px',
     width: '100%',
     display: 'flex',
     justifyContent: 'left',
     alignItems: 'center',
-    background: '#2060cf',
+    background: theme.palette.brand,
     boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
     gap: '15px',
     zIndex: 100,
-  },
+  }),
 
   headerLeftOuterContainer: {
     position: 'relative',

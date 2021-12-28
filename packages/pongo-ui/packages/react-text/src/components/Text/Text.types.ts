@@ -30,6 +30,11 @@ export type TextCommons = {
   weight?: 'thin' | 'light' | 'regular' | 'medium' | 'bold' | 'black';
 
   /**
+   * The color of the text.
+   */
+  color?: 'brand' | 'secondary' | 'success' | 'error' | 'social' | 'warning' | 'info';
+
+  /**
    * Whether to render italic text.
    *
    * @defaultValue false
