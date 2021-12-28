@@ -21,6 +21,7 @@
   },
   "projects": {
     "pongo-site": { "implicitDependencies": [] },
+    "pongo-site-alpha": { "implicitDependencies": [] },
     "@pongoai/header": { "implicitDependencies": [] },
     "@pongoai/react-button": { "implicitDependencies": [] },
     "@pongoai/react-checkbox": { "implicitDependencies": [] },

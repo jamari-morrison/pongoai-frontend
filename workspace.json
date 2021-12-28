@@ -5,6 +5,10 @@
       "root": "packages/pongo-site",
       "projectType": "library"
     },
+    "pongo-site-alpha": {
+      "root": "packages/pongo-site-alpha",
+      "projectType": "library"
+    },
     "@pongoai/header": {
       "root": "packages/pongo-shared-controls/packages/header",
       "projectType": "library"
