@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@fluentui/react-provider": "9.0.0-alpha.85",
-    "@pongoai/react-button": "^0.1.3",
-    "@pongoai/react-icon": "^0.0.3",
+    "@pongoai/react-button": "^0.1.2",
+    "@pongoai/react-icon": "^0.1.3",
     "@pongoai/react-link": "^0.0.2",
     "@pongoai/react-rating": "^0.0.2",
     "@pongoai/react-switch": "^0.0.2",

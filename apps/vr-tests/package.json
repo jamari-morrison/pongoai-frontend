@@ -18,7 +18,7 @@
     "@pongoai/react-text": "0.0.7",
     "@pongoai/react-textfield": "0.2.0",
     "@pongoai/react-button": "0.1.3",
-    "@pongoai/react-icon": "^0.1.2",
+    "@pongoai/react-icon": "^0.1.3",
     "@pongoai/react-switch": "0.0.2",
     "@pongoai/react-checkbox": "0.0.1",
     "@fluentui/react-provider": "9.0.0-alpha.85",

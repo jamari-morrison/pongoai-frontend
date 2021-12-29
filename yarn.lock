@@ -2559,7 +2559,7 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
-"@pongoai/react-button@0.1.3", "@pongoai/react-button@^0.1.3":
+"@pongoai/react-button@0.1.3", "@pongoai/react-button@^0.1.2", "@pongoai/react-button@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@pongoai/react-button/-/react-button-0.1.3.tgz#0f1caac1eb671c00f3dd18547e314cbba96f4e3a"
   integrity sha512-5VDxDjzLz89IY0/1W73DiQpGiPWr/ODF1nRmu0vk5pcRe/PE5buxUXNkbD7afc+a5jg6tzmPd4N16D5EvDApFQ==
@@ -2586,18 +2586,18 @@
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-icon@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.0.3.tgz#a8fcdbbd48356463462b94871b91baf7bb78b99a"
-  integrity sha512-UGnNWZyJbVNsqwZddq1Ow/vMo9CvYa0Swh+xYO0YtSJKciomJ0R4eSBm/MF2yggb0xZfFHJeU6Qmstu/LkfN3g==
-  dependencies:
-    "@fluentui/react-make-styles" "9.0.0-beta.1"
-    "@fluentui/react-utilities" "9.0.0-beta.1"
-
 "@pongoai/react-icon@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.1.2.tgz#2af1de6d8134ce5fb47b288fad0a45cdd9e3b6b8"
   integrity sha512-B0d5ygz072+8rB7ZUF8FUUYqqZN6ez4kRRKPi6LuCm08sMZlHDRX9LxUFi4kt2jHikBxLeN4OJLfK7zm4udHoA==
+  dependencies:
+    "@fluentui/react-make-styles" "9.0.0-beta.1"
+    "@fluentui/react-utilities" "9.0.0-beta.1"
+
+"@pongoai/react-icon@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-icon/-/react-icon-0.1.3.tgz#9b45bae2f1f3997c284e045aafe4cecd193770e8"
+  integrity sha512-nkOM/JPDZ+KbUOD2U5neB2da3ALzdbRKaiNDxNkwNrnJyMF5e5YFPLJ4o+lEQHeUODxcRNie2vAsW971k1RifQ==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"

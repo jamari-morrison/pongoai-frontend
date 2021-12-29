@@ -1,4 +1,4 @@
-import { makeStyles } from '@fluentui/react-make-styles';
+import { makeStyles, mergeClasses } from '@fluentui/react-make-styles';
 import { Text } from '@pongoai/react-text';
 
 type CardProps = {
@@ -11,6 +11,8 @@ type CardProps = {
    * The content for the Card
    */
   children: any;
+
+  size?: 'small' | 'medium' | 'large';
 };
 
 const useStyles = makeStyles({
@@ -32,14 +34,31 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     padding: '0px',
   },
+
+  small: {
+    width: '230px',
+    height: '140px',
+  },
+
+  medium: {
+    width: '530px',
+    height: '400px',
+  },
+
+  large: {
+    width: '270px',
+    height: '150px',
+  },
 });
 
 export const Card = (props: CardProps) => {
-  const { headerText, children } = props;
+  const { headerText, children, size = 'small' } = props;
   const styles = useStyles();
 
+  const cardWrapperStyles = mergeClasses(styles.card, styles[size!]);
+
   return (
-    <div className={styles.card}>
+    <div className={cardWrapperStyles}>
       <Text size={600} weight="bold">
         {headerText}
       </Text>
