@@ -11,7 +11,7 @@ type NpsCardProps = {
   /**
    * The monthly change in the NPS score.
    */
-  monthlyNps: String;
+  monthlyNps: number;
 };
 
 const textPadding = { paddingLeft: '10px' };
@@ -29,7 +29,9 @@ export const NpsCard = (props: NpsCardProps) => {
         <Body style={textPadding}>Average - </Body>
         <SubHeadline>{totalNps}</SubHeadline>
       </span>
-      <Body color="success">{monthlyNps} in September</Body>
+      <Body color={monthlyNps !== 0 ? (monthlyNps > 0 ? 'success' : 'error') : undefined}>
+        {monthlyNps}% change in September
+      </Body>
     </Card>
   );
 };

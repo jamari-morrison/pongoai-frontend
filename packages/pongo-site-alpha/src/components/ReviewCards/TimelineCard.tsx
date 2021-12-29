@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { CalendarIcon } from '@pongoai/react-icon';
 import { Select } from '@pongoai/react-textfield';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 import { Card } from './Card';
 
 type timelineData = {

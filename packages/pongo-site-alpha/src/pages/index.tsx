@@ -9,17 +9,18 @@ import {
   NpsCard,
   KeywordCard,
   TimelineCard,
+  ReviewCard,
 } from '../components';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
 
 const data = {
-  totalReviews: '18',
-  monthlySubmissions: '1',
+  totalReviews: 18,
+  monthlySubmissions: 0,
   totalRating: 4.3,
-  monthlyRating: '10%',
+  monthlyRating: -10,
   totalNps: 9.7,
-  monthlyNps: '18%',
+  monthlyNps: -18,
   dailyData: [
     {
       name: '3:57 PM',
@@ -190,24 +191,70 @@ const data = {
     '?',
     'super cool',
   ],
-  itemName: {
-    '12321312': {
-      userName: 'steve',
+  reviews: [
+    {
+      name: 'Fred',
+      item: 'Air Jordan XI',
       nps: 9,
       rating: 5,
-      writtenReview: 'Hello world!',
-      date: 'Dec 24th, 2021',
+      writtenReview: 'The shoes are pretty good. I wish that they were slightly larger though.',
+      time: 'Dec 24th, 2021 11:11 AM',
+      location: 'Seattle, Washington',
       keywords: ['hello', 'world'],
     },
-    '3223131': {
-      userName: 'bill',
+    {
+      name: 'bill',
+      item: 'Air Jordan XI',
       nps: 9,
       rating: 5,
       writtenReview: '!world hello',
-      date: 'Dec 24th, 2021',
+      time: 'Dec 24th, 2021 11:11 AM',
+      location: 'Redmond, Washington',
       keywords: ['hello', 'world'],
     },
-  },
+    {
+      name: 'bill',
+      item: 'Air Jordan XI',
+      nps: 9,
+      rating: 5,
+      writtenReview: '!world hello',
+      time: 'Dec 24th, 2021 11:11 AM',
+      location: 'Redmond, Washington',
+      keywords: ['hello', 'world'],
+    },
+    {
+      name: 'bill',
+      item: 'Air Jordan XI',
+      nps: 9,
+      rating: 5,
+      writtenReview: '!world hello',
+      time: 'Dec 24th, 2021 11:11 AM',
+      location: 'Redmond, Washington',
+      keywords: ['hello', 'world'],
+    },
+    {
+      name: 'FredFredFredFredFredFredFredFredFredFredFredFredFred',
+      item: 'Air Jordan XI overflowTextStyles asdjknad asdkbhad bk asdkhjadsjkh  adsjhkasd ad',
+      nps: 9,
+      rating: 5,
+      writtenReview:
+        'The shoes are pretty good. I wish that they were slightly larger though. he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.',
+      time: 'Dec 24th, 2021 11:11 AM Dec 24th, 2021 11:11 AM Dec 24th, 2021 11:11 AM',
+      location: 'Seattle, Washington',
+      keywords: ['hello', 'world'],
+    },
+    {
+      name: 'Fred',
+      item: 'Air Jordan XI',
+      nps: 9,
+      rating: 5,
+      writtenReview:
+        'The shoes are pretty good. I wish that they were slightly larger though. he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.he shoes are pretty good. I wish that they were slightly larger though.',
+      time: 'Dec 24th, 2021 11:11 AM',
+      location: 'Seattle, Washington',
+      keywords: ['hello', 'world'],
+    },
+  ],
 };
 
 const cardWrapperStyles: React.CSSProperties = { display: 'flex', flexDirection: 'row', gap: '10px' };
@@ -245,16 +292,7 @@ const Home: NextPage = () => {
               yearlyData={data.yearlyData}
             />
           </div>
-          <div
-            style={{
-              minWidth: '590px',
-              maxWidth: '590px',
-              width: '100%',
-              height: '800px',
-              background: 'pink',
-              borderRadius: '6px',
-            }}
-          />
+          <ReviewCard reviews={data.reviews} />
         </div>
       </Content>
     </FluentProvider>

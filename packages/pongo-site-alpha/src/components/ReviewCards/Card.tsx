@@ -46,8 +46,10 @@ const useStyles = makeStyles({
   },
 
   large: {
-    width: '270px',
-    height: '150px',
+    minWidth: '530px',
+    maxWidth: '530px',
+    width: '100%',
+    height: '780px',
   },
 });
 

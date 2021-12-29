@@ -5,12 +5,12 @@ type SubmissionsCardProps = {
   /**
    * The total number of survey submissions.
    */
-  totalSubmissions: String;
+  totalSubmissions: number;
 
   /**
    * The number of survey submission this month.
    */
-  monthlySubmissions: String;
+  monthlySubmissions: number;
 };
 
 export const SubmissionsCard = (props: SubmissionsCardProps) => {
@@ -22,7 +22,9 @@ export const SubmissionsCard = (props: SubmissionsCardProps) => {
       <Text size={700} weight="bold">
         {totalSubmissions}
       </Text>
-      <Body color="success">+{monthlySubmissions} in September</Body>
+      <Body color={monthlySubmissions !== 0 ? (monthlySubmissions > 0 ? 'success' : 'error') : undefined}>
+        {monthlySubmissions} new in September
+      </Body>
     </Card>
   );
 };

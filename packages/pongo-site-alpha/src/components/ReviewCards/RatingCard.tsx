@@ -11,7 +11,7 @@ type RatingCardProps = {
   /**
    * The monthly change in rating.
    */
-  monthlyRating: String;
+  monthlyRating: number;
 };
 
 const ratingPadding = { padding: '0px 0px 10px 0px' };
@@ -26,7 +26,9 @@ export const RatingCard = (props: RatingCardProps) => {
         <Body>Average - </Body>
         <SubHeadline>{totalRating}</SubHeadline>
       </span>
-      <Body color="success">{monthlyRating} in September</Body>
+      <Body color={monthlyRating !== 0 ? (monthlyRating > 0 ? 'success' : 'error') : undefined}>
+        {monthlyRating}% change in September
+      </Body>
     </Card>
   );
 };
