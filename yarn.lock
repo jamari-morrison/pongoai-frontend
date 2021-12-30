@@ -2637,10 +2637,10 @@
     "@fluentui/react-tabster" "9.0.0-alpha.68"
     "@fluentui/react-utilities" "9.0.0-beta.1"
 
-"@pongoai/react-text@0.0.7", "@pongoai/react-text@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.7.tgz#1ed133e753aea81522bd644e88b6ca4c352d36c1"
-  integrity sha512-AJu6DP/tf9ldT3M9nXpEOfAlN0Gq0d0XavZGaNOpD00U30p1pQ5vgm4d8qxyIKFBSI6tSHtgxaZxyxpxDghPdw==
+"@pongoai/react-text@0.0.8", "@pongoai/react-text@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-text/-/react-text-0.0.8.tgz#1910cfc33265fcc856a4e3a91345b7f300fd2080"
+  integrity sha512-XcW/YH2g10gkMBYDe+e8K0hP+VgZ2Qo012KJJXZA2FFQgIclGPGDu1h0ONy03jE8EtpnX8VTbklkSQqQZ9KEHg==
   dependencies:
     "@fluentui/react-make-styles" "9.0.0-beta.1"
     "@fluentui/react-utilities" "9.0.0-beta.1"
@@ -2656,10 +2656,10 @@
     "@fluentui/react-utilities" "9.0.0-beta.1"
     "@pongoai/react-button" "0.1.3"
 
-"@pongoai/react-theme@0.1.8", "@pongoai/react-theme@^0.1.8":
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.1.8.tgz#2cc97f07b315c7333d2206cb45f5576ee05c64e2"
-  integrity sha512-RtW/ywNmc8ioOClmM2kwfHui9q0wxFCewhl1dhsUzWtbRboq3BuQ273x+no85apWxvAclkmom8Q7iWtbH4YQ7g==
+"@pongoai/react-theme@0.1.", "@pongoai/react-theme@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@pongoai/react-theme/-/react-theme-0.1.9.tgz#6e6926f57a296cfc7101474e590bfabafc085864"
+  integrity sha512-78kK++IeW2BYyRsqvX1FupBm/HZ2pYcGwsRigyoyly/r1ZlO0PHl37DMpnB1NjSKhYmJtXhp0Pzv5IHDb0afkQ==
 
 "@popperjs/core@^2.5.4", "@popperjs/core@^2.6.0":
   version "2.10.2"

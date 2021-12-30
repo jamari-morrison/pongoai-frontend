@@ -6,12 +6,12 @@ const useStyles = makeStyles({
   root: {
     display: 'inline-flex',
     flexDirection: 'column',
-    gap: '10px',
+    // gap: '10px',
   },
   row: {
     display: 'inline-flex',
     flexDirection: 'row',
-    gap: '10px',
+    // gap: '10px',
   },
 });
 
@@ -20,7 +20,7 @@ export const BasicTextExample = () => {
 
   return (
     <div className={styles.root}>
-      <Text size={600}>Header</Text>
+      <Text size={1000}>Header</Text>
       <div className={styles.row}>
         <Text>Basic</Text>
         <Text italic>Italic</Text>

@@ -59,8 +59,6 @@ const selectStyles: React.CSSProperties = { zIndex: '10', width: '140px', height
 const textFieldBorderStyles: React.CSSProperties = { borderRadius: '999px' };
 const searchWrapperStyles: React.CSSProperties = { display: 'flex', flexDirection: 'row', gap: '10px' };
 const contentWrapperStyles: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '10px' };
-const overflowStyles: React.CSSProperties = { whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' };
-const overflowTextStyles: React.CSSProperties = { whiteSpace: 'nowrap' };
 const reviewWrapperStyles: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',

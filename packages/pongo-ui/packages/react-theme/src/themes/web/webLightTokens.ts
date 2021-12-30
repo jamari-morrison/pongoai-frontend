@@ -1,6 +1,8 @@
 import type { ColorTokens } from '../../types';
 
 export const webLightTokens: ColorTokens = {
+  base: '#000000',
+  neutral: '#FFFFFF',
   inherit: '#4d4d4d',
   inheritHover: '#3e3e3e',
   inheritPressed: '#363636',
@@ -9,7 +11,6 @@ export const webLightTokens: ColorTokens = {
   inheritForegroundPressed: '#ebebeb',
   inheritBackground: '#dbdbdb',
   inheritBackgroundDisabled: '#f1f1f1',
-  neutral: '#FFFFFF',
   brand: '#2060CF',
   brandHover: '#1a4da6',
   brandPressed: '#164391',

@@ -9,6 +9,7 @@ const useRootStyles = makeStyles({
     whiteSpace: 'normal',
     overflow: 'visible',
     textOverflow: 'clip',
+    margin: '0px',
   },
   base: (theme: Theme) => ({
     fontFamily: theme.fonts.fontFamily.base,
@@ -48,63 +49,72 @@ const useRootStyles = makeStyles({
   },
   100: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[100],
-    lineHeight: theme.fonts.fontSize[100],
+    lineHeight: theme.fonts.fontLineHeight[1000],
   }),
   200: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[200],
-    lineHeight: theme.fonts.fontSize[200],
+    lineHeight: theme.fonts.fontLineHeight[200],
   }),
   300: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[300],
-    lineHeight: theme.fonts.fontSize[300],
+    lineHeight: theme.fonts.fontLineHeight[300],
   }),
   400: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[400],
-    lineHeight: theme.fonts.fontSize[400],
+    lineHeight: theme.fonts.fontLineHeight[400],
   }),
   500: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[500],
-    lineHeight: theme.fonts.fontSize[500],
+    lineHeight: theme.fonts.fontLineHeight[500],
   }),
   600: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[600],
-    lineHeight: theme.fonts.fontSize[600],
+    lineHeight: theme.fonts.fontLineHeight[600],
   }),
   700: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[700],
-    lineHeight: theme.fonts.fontSize[700],
+    lineHeight: theme.fonts.fontLineHeight[700],
   }),
   800: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[800],
-    lineHeight: theme.fonts.fontSize[800],
+    lineHeight: theme.fonts.fontLineHeight[800],
   }),
   900: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[900],
-    lineHeight: theme.fonts.fontSize[900],
+    lineHeight: theme.fonts.fontLineHeight[900],
   }),
   1000: (theme: Theme) => ({
     fontSize: theme.fonts.fontSize[1000],
-    lineHeight: theme.fonts.fontSize[1000],
+    lineHeight: theme.fonts.fontLineHeight[1000],
   }),
-  brand: (theme: Theme) => ({
+  inherit: (theme: Theme) => ({
+    color: theme.palette.inherit,
+  }),
+  baseColor: (theme: Theme) => ({
+    color: theme.palette.base,
+  }),
+  neutralColor: (theme: Theme) => ({
+    color: theme.palette.neutral,
+  }),
+  brandColor: (theme: Theme) => ({
     color: theme.palette.brand,
   }),
-  secondary: (theme: Theme) => ({
+  secondaryColor: (theme: Theme) => ({
     color: theme.palette.secondary,
   }),
-  success: (theme: Theme) => ({
+  successColor: (theme: Theme) => ({
     color: theme.palette.success,
   }),
-  error: (theme: Theme) => ({
+  errorColor: (theme: Theme) => ({
     color: theme.palette.error,
   }),
-  social: (theme: Theme) => ({
+  socialColor: (theme: Theme) => ({
     color: theme.palette.social,
   }),
-  warning: (theme: Theme) => ({
+  warningColor: (theme: Theme) => ({
     color: theme.palette.warning,
   }),
-  info: (theme: Theme) => ({
+  infoColor: (theme: Theme) => ({
     color: theme.palette.info,
   }),
 });
@@ -121,7 +131,7 @@ export const useTextStyles = (state: TextState): TextState => {
     state.underline && styles.underline,
     state.strikethrough && styles.strikethrough,
     state.underline && state.strikethrough && styles.strikethroughUnderline,
-    styles[state.color!],
+    styles[(state.color! + 'Color') as 'baseColor'],
     state.root.className,
   );
   return state;

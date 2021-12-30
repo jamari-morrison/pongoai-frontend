@@ -14,21 +14,25 @@ type RatingCardProps = {
   monthlyRating: number;
 };
 
-const ratingPadding = { padding: '0px 0px 10px 0px' };
+const date = new Date();
+const month = date.toLocaleString('default', { month: 'long' });
 
 export const RatingCard = (props: RatingCardProps) => {
   const { totalRating, monthlyRating } = props;
 
   return (
     <Card headerText={'Average Rating'}>
-      <Rating value={totalRating} readOnly size="large" style={ratingPadding} />
+      <Rating value={totalRating} readOnly size="large" />
       <span>
-        <Body>Average - </Body>
+        <Body>Average Rating: </Body>
         <SubHeadline>{totalRating}</SubHeadline>
       </span>
-      <Body color={monthlyRating !== 0 ? (monthlyRating > 0 ? 'success' : 'error') : undefined}>
-        {monthlyRating}% change in September
-      </Body>
+      <div>
+        <SubHeadline color={monthlyRating !== 0 ? (monthlyRating > 0 ? 'success' : 'error') : undefined}>
+          {monthlyRating}
+        </SubHeadline>
+        <Body> increase in {month}</Body>
+      </div>
     </Card>
   );
 };

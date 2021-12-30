@@ -65,7 +65,7 @@ export const Header = () => {
       </Link>
       <span className={styles.headerTitle}>
         <Link href="/" passHref>
-          <Text size={500} weight="bold">
+          <Text size={500} weight="bold" color="neutral">
             Pongo AI
           </Text>
         </Link>

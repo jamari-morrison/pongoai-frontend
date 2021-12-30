@@ -7,6 +7,8 @@ export type Theme = {
  * Color theme tokens.
  */
 export type ColorTokens = {
+  base: String;
+  neutral: String;
   inherit: String;
   inheritHover: String;
   inheritPressed: String;
@@ -15,7 +17,6 @@ export type ColorTokens = {
   inheritForegroundPressed: String;
   inheritBackground: String;
   inheritBackgroundDisabled: String;
-  neutral: String;
   brand: String;
   brandHover: String;
   brandPressed: String;

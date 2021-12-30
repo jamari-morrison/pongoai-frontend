@@ -1,4 +1,4 @@
-import { Text, Body } from '@pongoai/react-text';
+import { SubHeadline, Body, Header1 } from '@pongoai/react-text';
 import { Card } from './Card';
 
 type SubmissionsCardProps = {
@@ -13,18 +13,23 @@ type SubmissionsCardProps = {
   monthlySubmissions: number;
 };
 
+const date = new Date();
+const month = date.toLocaleString('default', { month: 'long' });
+const year = date.getFullYear();
+
 export const SubmissionsCard = (props: SubmissionsCardProps) => {
   const { totalSubmissions, monthlySubmissions } = props;
 
   return (
     <Card headerText={'Submissions'}>
       <Body>Total submissions</Body>
-      <Text size={700} weight="bold">
-        {totalSubmissions}
-      </Text>
-      <Body color={monthlySubmissions !== 0 ? (monthlySubmissions > 0 ? 'success' : 'error') : undefined}>
-        {monthlySubmissions} new in September
-      </Body>
+      <Header1 weight="bold">{totalSubmissions}</Header1>
+      <div>
+        <SubHeadline color={monthlySubmissions !== 0 ? (monthlySubmissions > 0 ? 'success' : 'error') : undefined}>
+          {monthlySubmissions}
+        </SubHeadline>
+        <Body> new in {month}</Body>
+      </div>
     </Card>
   );
 };

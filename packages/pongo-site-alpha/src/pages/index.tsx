@@ -16,10 +16,10 @@ import { webLightTheme } from '@pongoai/react-theme';
 
 const data = {
   totalReviews: 18,
-  monthlySubmissions: 0,
+  monthlySubmissions: 10,
   totalRating: 4.3,
-  monthlyRating: -10,
-  totalNps: 9.7,
+  monthlyRating: 0.1,
+  totalNps: 80,
   monthlyNps: -18,
   dailyData: [
     {

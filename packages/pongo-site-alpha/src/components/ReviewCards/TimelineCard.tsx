@@ -49,7 +49,6 @@ const timelineOptions = [
 const wrapperStyles: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '20px' };
 const selectWrapperStyles: React.CSSProperties = { display: 'flex', gap: '10px' };
 const selectStyles: React.CSSProperties = { zIndex: '10', width: '180px', height: '45px' };
-const lineChartStyles: React.CSSProperties = { padding: '0px', margin: '0px', left: '-40px' };
 
 export const TimelineCard = (props: SubmissionsCardProps) => {
   const [metricValue, setMetricValue] = React.useState('submissions');
@@ -86,7 +85,7 @@ export const TimelineCard = (props: SubmissionsCardProps) => {
           />
         </div>
         <div>
-          <LineChart width={570} height={300} data={props[timeValue]} style={lineChartStyles}>
+          <LineChart width={550} height={300} data={props[timeValue]}>
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip animationDuration={150} />

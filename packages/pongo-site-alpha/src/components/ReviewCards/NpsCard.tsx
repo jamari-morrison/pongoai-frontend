@@ -14,24 +14,22 @@ type NpsCardProps = {
   monthlyNps: number;
 };
 
-const textPadding = { paddingLeft: '10px' };
-const npsIconWrapper = { verticalAlign: 'middle' };
+const date = new Date();
+const month = date.toLocaleString('default', { month: 'long' });
+const year = date.getFullYear();
 
 export const NpsCard = (props: NpsCardProps) => {
   const { totalNps, monthlyNps } = props;
 
   return (
     <Card headerText={'Average NPS'}>
+      <NpsIndicator nps={totalNps} size="large" />
       <span>
-        <span style={npsIconWrapper}>
-          <NpsIndicator nps={totalNps} />
-        </span>
-        <Body style={textPadding}>Average - </Body>
-        <SubHeadline>{totalNps}</SubHeadline>
+        <SubHeadline color={monthlyNps !== 0 ? (monthlyNps > 0 ? 'success' : 'error') : undefined}>
+          {monthlyNps}
+        </SubHeadline>
+        <Body> for {month}</Body>
       </span>
-      <Body color={monthlyNps !== 0 ? (monthlyNps > 0 ? 'success' : 'error') : undefined}>
-        {monthlyNps}% change in September
-      </Body>
     </Card>
   );
 };

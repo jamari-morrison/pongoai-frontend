@@ -31,8 +31,10 @@ export type TextCommons = {
 
   /**
    * The color of the text.
+   *
+   * @default inherent
    */
-  color?: 'brand' | 'secondary' | 'success' | 'error' | 'social' | 'warning' | 'info';
+  color?: 'base' | 'neutral' | 'brand' | 'secondary' | 'success' | 'error' | 'social' | 'warning' | 'info';
 
   /**
    * Whether to render italic text.
