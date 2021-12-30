@@ -10,9 +10,12 @@ import {
   KeywordCard,
   TimelineCard,
   ReviewCard,
+  AuthenticationPopup,
+  WelcomeMessage,
 } from '../components';
 import { FluentProvider } from '@fluentui/react-provider';
 import { webLightTheme } from '@pongoai/react-theme';
+import UserStore from '../stores/UserStore';
 
 const data = {
   totalReviews: 18,
@@ -270,30 +273,72 @@ const wrapperStyles: React.CSSProperties = {
 const cardContainerStyles: React.CSSProperties = { display: 'flex', flexDirection: 'column', gap: '10px' };
 
 const Home: NextPage = () => {
+  const [isLogin, setIsLogin] = React.useState(true);
+  const [isShowingAuthPopup, setIsShowingAuthPopup] = React.useState(false);
+
+  React.useEffect(() => {
+    console.log('joe');
+    console.log(UserStore);
+    //TO ADD LOGIN CHECK ENDPOINT HERE
+    //Get username,
+  }, []);
+
+  const logout = async () => {
+    console.log('logging out');
+    try {
+      let res = await fetch('ENDPOINT/logout', { method: 'post', headers: { 'Content-type': 'application/json' } });
+      let result = await res.json();
+
+      if (result && result.success) {
+        UserStore.isLoggedIn = false;
+        UserStore.username = '';
+      } else {
+        UserStore.loading = false;
+        UserStore.isLoggedIn = false;
+      }
+    } catch (e) {
+      UserStore.loading = false;
+      UserStore.isLoggedIn = false;
+    }
+  };
   return (
     <FluentProvider theme={webLightTheme}>
-      <Header />
-      <Sidebar activePage="home" />
+      <Header setIsShowingAuthPopup={setIsShowingAuthPopup} setIsLogin={setIsLogin} isLoggedIn={UserStore.isLoggedIn} />
+      {isShowingAuthPopup ? (
+        <AuthenticationPopup
+          isLogin={isLogin}
+          setIsShowingAuthPopup={setIsShowingAuthPopup}
+          isShowingAuthPopup={isShowingAuthPopup}
+          setIsLogin={setIsLogin}
+        />
+      ) : (
+        <div></div>
+      )}
+      {UserStore.isLoggedIn ? <Sidebar activePage="home" /> : <div></div>}
       <Content>
-        <div style={wrapperStyles}>
-          <div style={cardContainerStyles}>
-            <div style={cardWrapperStyles}>
-              <SubmissionsCard totalSubmissions={data.totalReviews} monthlySubmissions={data.monthlySubmissions} />
-              <RatingCard totalRating={data.totalRating} monthlyRating={data.monthlyRating} />
+        {UserStore.isLoggedIn ? (
+          <div style={wrapperStyles}>
+            <div style={cardContainerStyles}>
+              <div style={cardWrapperStyles}>
+                <SubmissionsCard totalSubmissions={data.totalReviews} monthlySubmissions={data.monthlySubmissions} />
+                <RatingCard totalRating={data.totalRating} monthlyRating={data.monthlyRating} />
+              </div>
+              <div style={cardWrapperStyles}>
+                <NpsCard totalNps={data.totalNps} monthlyNps={data.monthlyNps} />
+                <KeywordCard topKeywords={data.topKeywords} />
+              </div>
+              <TimelineCard
+                dailyData={data.dailyData}
+                weeklyData={data.weeklyData}
+                monthlyData={data.monthlyData}
+                yearlyData={data.yearlyData}
+              />
             </div>
-            <div style={cardWrapperStyles}>
-              <NpsCard totalNps={data.totalNps} monthlyNps={data.monthlyNps} />
-              <KeywordCard topKeywords={data.topKeywords} />
-            </div>
-            <TimelineCard
-              dailyData={data.dailyData}
-              weeklyData={data.weeklyData}
-              monthlyData={data.monthlyData}
-              yearlyData={data.yearlyData}
-            />
+            <ReviewCard reviews={data.reviews} />
           </div>
-          <ReviewCard reviews={data.reviews} />
-        </div>
+        ) : (
+          <WelcomeMessage setIsShowingAuthPopup={setIsShowingAuthPopup} setIsLogin={setIsLogin} />
+        )}
       </Content>
     </FluentProvider>
   );

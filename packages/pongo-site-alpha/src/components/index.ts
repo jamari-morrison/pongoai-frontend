@@ -4,3 +4,4 @@ export * from './Content';
 export * from './ReviewCards';
 export * from './NpsIndicator';
 export * from './UserIcon';
+export * from './Authentication';

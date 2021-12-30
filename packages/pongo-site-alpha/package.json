@@ -18,6 +18,8 @@
     "@pongoai/react-text": "^0.0.8",
     "@pongoai/react-textfield": "^0.2.0",
     "@pongoai/react-theme": "^0.1.9",
+    "mobx": "^6.3.10",
+    "mobx-react": "^7.2.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
